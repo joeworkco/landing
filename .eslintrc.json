@@ -1,12 +1,7 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "@next/next/no-img-element": [
-      "warn",
-      {
-        "ignoreHtmlFiles": true
-      }
-    ],
+    "@next/next/no-img-element": "warn",
     "jsx-a11y/alt-text": "warn"
   },
   "ignorePatterns": ["components/footer/Footer.tsx", "components/mdx/**/*"]
