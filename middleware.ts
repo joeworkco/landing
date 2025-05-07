@@ -1,19 +1,16 @@
-import createMiddleware from 'next-intl/middleware';
-import { routing } from './i18n/routing';
+import createMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
 
-export default createMiddleware(routing);
+// Create the middleware but don't export it as default
+const intlMiddleware = createMiddleware(routing);
 
+// Export an empty middleware function instead
+export default function middleware() {
+  // Do nothing - effectively disabling the internationalization
+  return;
+}
+
+// Keep the config to prevent Next.js from complaining
 export const config = {
-  matcher: [
-    // Enable a redirect to a matching locale at the root
-    '/',
-
-    // Set a cookie to remember the previous locale for
-    // all requests that have a locale prefix
-    '/(en|zh|ja)/:path*',
-
-    // Enable redirects that add missing locales
-    // (e.g. `/pathnames` -> `/en/pathnames`)
-    '/((?!api|_next|_vercel|.*\\.|favicon.ico).*)'
-  ]
+  matcher: [],
 };
