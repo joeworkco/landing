@@ -4,14 +4,6 @@ import { useTranslations } from "next-intl";
 
 export const headerLinks = [
   {
-    name: "blogs",
-    href: "/blogs",
-  },
-  {
-    name: "about",
-    href: "/about",
-  },
-  {
     name: "sourceCode",
     href: SOURCE_CODE_URL,
     target: "_blank",
