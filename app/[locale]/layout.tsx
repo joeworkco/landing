@@ -2,9 +2,7 @@ import BaiDuAnalytics from "@/app/BaiDuAnalytics";
 import GoogleAdsense from "@/app/GoogleAdsense";
 import GoogleAnalytics from "@/app/GoogleAnalytics";
 import PlausibleAnalytics from "@/app/PlausibleAnalytics";
-import Footer from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
-import { LanguageDetectionAlert } from "@/components/LanguageDetectionAlert";
+import JoeWorkHeader from "@/components/landing/JoeWorkHeader";
 import { TailwindIndicator } from "@/components/TailwindIndicator";
 import { siteConfig } from "@/config/site";
 import { DEFAULT_LOCALE, Locale, routing } from "@/i18n/routing";
@@ -15,7 +13,7 @@ import "@/styles/loading.css";
 import { Analytics } from "@vercel/analytics/react";
 import { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getMessages } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
 import { notFound } from "next/navigation";
 
@@ -27,15 +25,14 @@ export async function generateMetadata({
   params,
 }: MetadataProps): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Home" });
 
   return constructMetadata({
     page: "Home",
-    title: t("title"),
-    description: t("description"),
+    title: "JoeWork – AI Staff Ready on‑Screen",
+    description:
+      "Drop‑in AI workers that run your browser tasks so humans don't have to.",
     locale: locale as Locale,
     path: `/`,
-    // canonicalUrl: `/blogs/${slug}`,
   });
 }
 
@@ -66,7 +63,7 @@ export default async function LocaleLayout({
       <head />
       <body
         className={cn(
-          "min-h-screen bg-background flex flex-col font-sans antialiased"
+          "min-h-screen bg-white dark:bg-gray-950 flex flex-col font-sans antialiased"
         )}
       >
         <NextIntlClientProvider messages={messages}>
@@ -75,14 +72,11 @@ export default async function LocaleLayout({
             defaultTheme={siteConfig.defaultNextTheme}
             enableSystem
           >
-            {messages.LanguageDetection && <LanguageDetectionAlert />}
-            {messages.Header && <Header />}
+            <JoeWorkHeader />
 
             <main className="flex-1 flex flex-col items-center">
               {children}
             </main>
-
-            {messages.Footer && <Footer />}
           </ThemeProvider>
         </NextIntlClientProvider>
         <TailwindIndicator />
