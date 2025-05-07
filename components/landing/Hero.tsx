@@ -10,12 +10,12 @@ const Hero = () => {
           JoeWork – AI Staff Ready on‑Screen.
         </h1>
         <p className="mt-6 text-lg sm:text-xl leading-8 text-gray-600 dark:text-gray-300 text-balance">
-          Drop‑in AI workers that run your browser tasks so humans don't have
-          to.
+          Drop‑in AI workers that run your browser tasks so humans don&apos;t
+          have to.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link
-            href="https://wa.me/123456789?text=I'm%20interested%20in%20joining%20the%20JoeWork%20beta!"
+            href="https://wa.me/123456789?text=I%27m%20interested%20in%20joining%20the%20JoeWork%20beta!"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-md bg-indigo-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400"

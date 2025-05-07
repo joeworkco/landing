@@ -8,7 +8,7 @@ export default function ThanksPage() {
           Thanks for joining!
         </h1>
         <p className="mt-4 text-lg sm:text-xl text-gray-700 dark:text-gray-300">
-          We'll be in touch soon with updates about JoeWork.co.
+          We&apos;ll be in touch soon with updates about JoeWork.co.
         </p>
       </main>
     </div>
