@@ -3,6 +3,7 @@
 import FeatureCard from "@/components/landing/FeatureCard";
 import Footer from "@/components/landing/Footer";
 import Hero from "@/components/landing/Hero";
+import JoeWorkHeader from "@/components/landing/JoeWorkHeader";
 import { Globe, MonitorPlay, Video } from "lucide-react";
 
 const features = [
@@ -29,6 +30,8 @@ const features = [
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen w-full bg-white dark:bg-gray-950">
+      <JoeWorkHeader />
+
       <Hero />
 
       <section
