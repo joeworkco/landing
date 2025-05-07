@@ -1,122 +1,82 @@
-// import { siteConfig } from "@/config/site"; // This line will be removed
-import { DEFAULT_LOCALE, LOCALE_NAMES, Locale } from "@/i18n/routing";
+// © 2025 JoeWork.co
+import { siteConfig } from "@/config/site";
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 
-type MetadataProps = {
-  page?: string;
-  title?: string;
-  description?: string;
-  images?: string[];
-  noIndex?: boolean;
-  locale: Locale;
-  path?: string;
-  canonicalUrl?: string;
-};
-
-const siteConfig = {
-  name: "JoeWork.co",
-  description:
-    "Drop‑in AI workers that run your browser tasks so humans don't have to.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000", // Add fallback URL
-  ogImage:
-    (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000") +
-    "/opengraph-image.png", // Add fallback URL
-  links: {
-    twitter: "https://twitter.com/joework", // Replace with actual Twitter if available
-    github: "https://github.com/joework",
-  },
-  creator: "JoeWork.co Team", // Or your name/handle
-  authors: [{ name: "JoeWork.co", url: process.env.NEXT_PUBLIC_SITE_URL! }], // Or your name/handle
+// Base metadata used across the site
+const baseMetadata = {
+  name: siteConfig.name,
+  siteUrl: siteConfig.url,
+  description: siteConfig.description,
+  ogImage: `${siteConfig.url}/og/default.png`, // Default OG Image path
+  authors: siteConfig.authors,
+  creator: siteConfig.creator,
   keywords: [
     "AI staff",
     "AI worker",
     "browser automation",
     "task automation",
+    "automatización",
+    "asistente virtual",
+    "PyME LATAM",
     "JoeWork",
+    // Add more relevant keywords
   ],
 };
 
-export async function constructMetadata({
-  page = "Home",
-  title = "JoeWork – AI Staff Ready on‑Screen",
-  description = "Drop‑in AI workers that run your browser tasks so humans don't have to.",
-  images = [],
+type MetadataProps = {
+  title?: string;
+  description?: string;
+  path?: string; // Relative path (e.g., '/use-cases/sunat')
+  ogImageName?: string; // e.g., 'use-case-sunat.png' to load from /public/og/
+  noIndex?: boolean;
+};
+
+export function constructMetadata({
+  title,
+  description,
+  path = "",
+  ogImageName = "default.png",
   noIndex = false,
-  locale,
-  path,
-  canonicalUrl,
-}: MetadataProps): Promise<Metadata> {
-  // get translations
-  const t = await getTranslations({ locale, namespace: "Home" });
-
-  // get page specific metadata translations
-  const pageTitle = title || t(`title`);
-  const pageDescription = description || t(`description`);
-
-  // build full title
-  const finalTitle =
-    page === "Home"
-      ? `${pageTitle} - ${t("tagLine")}`
-      : `${pageTitle} | ${t("title")}`;
-
-  // build image URLs
-  const imageUrls =
-    images.length > 0
-      ? images.map((img) => ({
-          url: img.startsWith("http") ? img : `${siteConfig.url}/${img}`,
-          alt: pageTitle,
-        }))
-      : [
-          {
-            url: `${siteConfig.url}/og.png`,
-            alt: pageTitle,
-          },
-        ];
-
-  // Open Graph Site
-  const pageURL =
-    `${locale === DEFAULT_LOCALE ? "" : locale}${path}` || siteConfig.url;
-
-  // build alternate language links
-  const alternateLanguages = Object.keys(LOCALE_NAMES).reduce(
-    (acc, lang) => {
-      const path = canonicalUrl
-        ? `/${lang === DEFAULT_LOCALE ? "" : lang}${canonicalUrl}`
-        : `/${lang === DEFAULT_LOCALE ? "" : lang}`;
-      acc[lang] = `${siteConfig.url}/${path}`;
-      return acc;
-    },
-    {} as Record<string, string>
-  );
+}: MetadataProps = {}): Metadata {
+  const pageTitle = title
+    ? `${title} | ${baseMetadata.name}`
+    : baseMetadata.name;
+  const pageDescription = description || baseMetadata.description;
+  const pageUrl = `${baseMetadata.siteUrl}${path}`;
+  const ogImageUrl = `${baseMetadata.siteUrl}/og/${ogImageName}`;
 
   return {
-    title: finalTitle,
+    title: pageTitle,
     description: pageDescription,
-    keywords: [],
-    authors: siteConfig.authors,
-    creator: siteConfig.creator,
-    metadataBase: new URL(siteConfig.url),
+    keywords: baseMetadata.keywords,
+    authors: baseMetadata.authors,
+    creator: baseMetadata.creator,
+    metadataBase: new URL(baseMetadata.siteUrl),
     alternates: {
-      canonical: canonicalUrl ? `${siteConfig.url}/${canonicalUrl}` : undefined,
-      languages: alternateLanguages,
+      canonical: pageUrl,
     },
     openGraph: {
       type: "website",
-      title: finalTitle,
+      title: pageTitle,
       description: pageDescription,
-      url: pageURL,
-      siteName: "JoeWork – AI Staff Ready on‑Screen",
-      locale: locale,
-      images: imageUrls,
+      url: pageUrl,
+      siteName: baseMetadata.name,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200, // Standard OG width
+          height: 630, // Standard OG height
+          alt: pageTitle,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
-      title: finalTitle,
+      title: pageTitle,
       description: pageDescription,
-      site: `${siteConfig.url}/${pageURL}`,
-      images: imageUrls,
-      creator: siteConfig.creator,
+      site: pageUrl, // Or maybe siteConfig.socialLinks.twitter handle?
+      images: [ogImageUrl],
+      creator: baseMetadata.creator,
     },
     robots: {
       index: !noIndex,
@@ -126,5 +86,7 @@ export async function constructMetadata({
         follow: !noIndex,
       },
     },
+    // Add icons if not handled in root layout
+    // icons: siteConfig.icons,
   };
 }
