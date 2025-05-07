@@ -11,7 +11,7 @@ const Footer = () => {
           ©2025 JoeWork.co
         </p>
         <Link
-          href="https://github.com/joework"
+          href="https://github.com/joeworkco"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors"

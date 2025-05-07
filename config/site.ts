@@ -5,10 +5,10 @@ import { SiteConfig } from "@/types/siteConfig";
 export const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://joework.co";
 
-export const SOURCE_CODE_URL = "https://github.com/joework";
+export const SOURCE_CODE_URL = "https://github.com/joeworkco";
 export const PRO_VERSION = "";
 
-const GITHUB_URL = "https://github.com/joework";
+const GITHUB_URL = "https://github.com/joeworkco";
 const EMAIL_URL = "mailto:hello@joework.co";
 
 export const siteConfig: SiteConfig = {
