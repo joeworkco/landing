@@ -12,10 +12,10 @@ const GITHUB_URL = "https://github.com/joeworkco";
 const EMAIL_URL = "mailto:hello@joework.co";
 
 export const siteConfig: SiteConfig = {
-  name: "JoeWork.co",
-  tagLine: "AI Staff Ready on‑Screen",
+  name: "JoeWork",
+  tagLine: "AI staff, ready on‑screen",
   description:
-    "Drop‑in AI workers that run your browser tasks so humans don't have to.",
+    "Record any web task once – our bilingual AI assistant repeats it 24/7, saving teams 5 hrs/week.",
   url: BASE_URL,
   authors: [
     {

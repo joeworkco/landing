@@ -1,0 +1,6 @@
+This is a placeholder file. 
+
+A proper 1200x630 OG image for the homepage should be created and stored at this location.
+The design should match the specifications: dark background (#0D0D0D), JoeWork logo on the left, headline on the right, and a teal gradient button.
+
+The dynamic OG image at /api/og will be the primary source, but this static image serves as a fallback. 

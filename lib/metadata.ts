@@ -35,12 +35,12 @@ export function constructMetadata({
   title,
   description,
   path = "",
-  ogImageName = "default.png",
+  ogImageName = "og-home.png", // Default to new OG image
   noIndex = false,
 }: MetadataProps = {}): Metadata {
   const pageTitle = title
     ? `${title} | ${baseMetadata.name}`
-    : baseMetadata.name;
+    : `${baseMetadata.name} – ${siteConfig.tagLine}`;
   const pageDescription = description || baseMetadata.description;
   const pageUrl = `${baseMetadata.siteUrl}${path}`;
   const ogImageUrl = `${baseMetadata.siteUrl}/og/${ogImageName}`;
@@ -54,19 +54,22 @@ export function constructMetadata({
     metadataBase: new URL(baseMetadata.siteUrl),
     alternates: {
       canonical: pageUrl,
+      languages: {
+        es: `${baseMetadata.siteUrl}/es${path}`,
+      },
     },
     openGraph: {
       type: "website",
-      title: pageTitle,
+      title: `${baseMetadata.name} – ${siteConfig.tagLine}`,
       description: pageDescription,
       url: pageUrl,
       siteName: baseMetadata.name,
       images: [
         {
           url: ogImageUrl,
-          width: 1200, // Standard OG width
-          height: 630, // Standard OG height
-          alt: pageTitle,
+          width: 1200,
+          height: 630,
+          alt: "AI staff that run your browser tasks.",
         },
       ],
     },
