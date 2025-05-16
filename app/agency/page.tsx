@@ -3,9 +3,11 @@ import { BackgroundPaths } from "@/components/ui/background-paths";
 import FaqItem from "@/components/ui/FaqItem";
 import { FeatureSectionWithBentoGrid } from "@/components/ui/feature-section-with-bento-grid";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { Timeline } from "@/components/ui/timeline";
 import { constructMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 import { AlertTriangle, FileText, Zap } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 const featureSectionItemsData = [
@@ -29,12 +31,53 @@ const featureSectionItemsData = [
   },
 ];
 
-const howWeWorkSteps = [
+const howWeWorkStepsRaw = [
   "Auditoría (gratis)",
   "PoC (1 flujo, 6 000 PEN)",
   "Implementación (a medida)",
   "Soporte mensual",
 ];
+
+const timelineData = howWeWorkStepsRaw.map((step, index) => {
+  let contentText = "";
+  switch (index) {
+    case 0:
+      contentText =
+        "Analizamos tus procesos actuales para identificar cuellos de botella y oportunidades de automatización. Sin costo alguno.";
+      break;
+    case 1:
+      contentText =
+        "Desarrollamos una Prueba de Concepto (PoC) enfocada en un flujo crítico para demostrar el valor y la viabilidad rápidamente.";
+      break;
+    case 2:
+      contentText =
+        "Una vez validado el PoC, procedemos con la implementación completa, adaptando la solución a todas tus necesidades específicas.";
+      break;
+    case 3:
+      contentText =
+        "Ofrecemos soporte continuo y mantenimiento para asegurar que tus procesos automatizados sigan funcionando de manera óptima.";
+      break;
+    default:
+      contentText = "Detalles del paso.";
+  }
+  return {
+    title: `Paso ${index + 1}: ${step.split(" (")[0]}`,
+    content: (
+      <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base">
+        {contentText}
+      </p>
+    ),
+    media: (
+      <Image
+        src="/path/to/your/image.jpg"
+        alt={`Visual for ${step.split(" (")[0]}`}
+        width={500}
+        height={300}
+        className="rounded-md object-cover"
+      />
+    ),
+  };
+});
 
 const techStack = ["Rust", "Stagehand", "Gemini", "Docker"];
 
@@ -114,7 +157,7 @@ export default function AgencyPage() {
       {/* Hero */}
       <BackgroundPaths title="Automatizamos tus procesos críticos con IA en 7 días" />
 
-      {/* Feature Section with Bento Grid (replaces the old pain/payoff cards) */}
+      {/* Feature Section with Bento Grid */}
       <FeatureSectionWithBentoGrid
         badgeText="Nuestra Solución"
         mainTitle="Transforma tu Operación, Sin Fricción"
@@ -122,26 +165,12 @@ export default function AgencyPage() {
         items={featureSectionItemsData}
       />
 
-      {/* How we work */}
-      <section id="auditoria" className="py-12 md:py-20 bg-neutral-900">
-        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-          <h2 className="text-3xl font-bold mb-10 text-center text-neutral-100">
-            ¿Cómo trabajamos?
-          </h2>
-          <ol className="space-y-6">
-            {howWeWorkSteps.map((step, i) => (
-              <li key={i} className="flex items-start gap-4">
-                <span className="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-lg shrink-0">
-                  {i + 1}
-                </span>
-                <span className="text-lg font-medium mt-2 text-neutral-300">
-                  {step}
-                </span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+      {/* How we work - REPLACED with Timeline */}
+      <Timeline
+        data={timelineData}
+        sectionTitle="Nuestro Proceso Simplificado"
+        sectionDescription="Así es como llevamos tus operaciones al siguiente nivel, paso a paso."
+      />
 
       {/* Proof bar */}
       <section className="py-8 md:py-12 bg-neutral-800 border-y border-neutral-700">
