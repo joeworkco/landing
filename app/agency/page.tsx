@@ -1,8 +1,7 @@
 // © 2025 JoeWork.co
-import { Button } from "@/components/ui/button";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 import FaqItem from "@/components/ui/FaqItem";
 import { constructMetadata } from "@/lib/metadata";
-import { Fragment } from "react";
 
 const painPayoffCards = [
   {
@@ -61,24 +60,9 @@ export const generateMetadata = () =>
 
 export default function AgencyPage() {
   return (
-    <Fragment>
+    <>
       {/* Hero */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-background to-muted/50 dark:from-background dark:to-background text-center">
-        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-balance">
-            Automatizamos tus procesos críticos con IA en 7 días
-          </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground sm:text-xl">
-            Deja que nuestro equipo de expertos digitalice y optimice tus flujos
-            clave, sin fricción ni sorpresas.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="px-10 py-4 text-lg" asChild>
-              <a href="#auditoria">Reserva tu auditoría</a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BackgroundPaths title="Automatizamos tus procesos críticos con IA en 7 días" />
 
       {/* Pain → Payoff section */}
       <section className="py-12 md:py-20 bg-muted">
@@ -173,18 +157,6 @@ export default function AgencyPage() {
           </div>
         </div>
       </section>
-
-      {/* Sticky footer CTA (mobile only) */}
-      <div className="fixed bottom-0 left-0 w-full z-50 block md:hidden">
-        <div className="bg-primary text-primary-foreground flex items-center justify-between px-4 py-3 shadow-lg">
-          <span className="font-semibold text-lg">
-            ¿Listo para automatizar?
-          </span>
-          <Button size="lg" className="ml-4 px-6 py-3 text-base" asChild>
-            <a href="#auditoria">Reserva tu auditoría</a>
-          </Button>
-        </div>
-      </div>
-    </Fragment>
+    </>
   );
 }
