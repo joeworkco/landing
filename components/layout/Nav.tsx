@@ -27,6 +27,7 @@ const Nav = () => {
         { href: "/use-cases", label: "View All Use Cases" },
       ],
     },
+    { href: "/agency", label: "Agency" },
     { href: "/docs", label: "Docs" },
     { href: "/pricing", label: "Pricing" },
     { href: "/blog", label: "Blog" },
