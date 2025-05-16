@@ -130,8 +130,8 @@ export default function AgencyPage() {
               <span className="text-lg font-bold text-primary">Viajamas</span>
             </div>
             <blockquote className="text-muted-foreground italic max-w-xs">
-              "Automatizamos reportes SUNAT y ahorramos 40+ horas al mes. El
-              equipo de JoeWork lo resolvió en días."
+              Automatizamos reportes SUNAT y ahorramos 40+ horas al mes. El
+              equipo de JoeWork lo resolvió en días.
             </blockquote>
           </div>
           {/* Metrics counter */}
