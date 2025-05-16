@@ -1,4 +1,5 @@
 // © 2025 JoeWork.co
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import FaqItem from "@/components/ui/FaqItem";
 import { FeatureSectionWithBentoGrid } from "@/components/ui/feature-section-with-bento-grid";
@@ -142,6 +143,42 @@ const GridItem = ({ icon, title, description, className }: GridItemProps) => {
   );
 };
 
+const agencyTestimonials = [
+  {
+    id: 1,
+    name: "Gerente General",
+    role: "Viajamas",
+    company: "Agencia de Viajes",
+    content:
+      "Automatizamos reportes SUNAT y ahorramos 40+ horas al mes. El equipo de JoeWork lo resolvió en días.",
+    rating: 5,
+    avatar:
+      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop", // Placeholder for Viajamas
+  },
+  {
+    id: 2,
+    name: "Ana Pérez",
+    role: "Jefa de Operaciones",
+    company: "Logística Eficaz",
+    content:
+      "La automatización de nuestros procesos de facturación ha sido un cambio radical. Más rápido, menos errores y el equipo está más contento.",
+    rating: 5,
+    avatar:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29170?q=80&w=200&auto=format&fit=crop",
+  },
+  {
+    id: 3,
+    name: "Carlos Rodríguez",
+    role: "CEO",
+    company: "Consultores Tech",
+    content:
+      "Implementar IA en nuestros flujos de trabajo parecía complicado, pero JoeWork lo hizo sencillo y los resultados superaron nuestras expectativas.",
+    rating: 5,
+    avatar:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200&auto=format&fit=crop",
+  },
+];
+
 export const generateMetadata = () =>
   constructMetadata({
     title: "Agencia de Automatización",
@@ -172,30 +209,16 @@ export default function AgencyPage() {
         sectionDescription="Así es como llevamos tus operaciones al siguiente nivel, paso a paso."
       />
 
-      {/* Proof bar */}
-      <section className="py-8 md:py-12 bg-neutral-800 border-y border-neutral-700">
-        <div className="container mx-auto px-4 md:px-6 max-w-5xl flex flex-col md:flex-row items-center gap-8 justify-between">
-          <div className="flex items-center gap-4">
-            <div className="h-14 w-32 bg-neutral-700 rounded-lg border border-neutral-600 flex items-center justify-center">
-              <span className="text-lg font-bold text-neutral-100">
-                Viajamas
-              </span>
-            </div>
-            <blockquote className="text-neutral-400 italic max-w-xs">
-              Automatizamos reportes SUNAT y ahorramos 40+ horas al mes. El
-              equipo de JoeWork lo resolvió en días.
-            </blockquote>
-          </div>
-          <div className="flex flex-col items-center mt-6 md:mt-0">
-            <span className="text-4xl font-extrabold text-emerald-400">
-              +40
-            </span>
-            <span className="text-lg text-neutral-400">
-              horas ahorradas/mes
-            </span>
-          </div>
-        </div>
-      </section>
+      {/* Proof bar - REPLACED with AnimatedTestimonials */}
+      <AnimatedTestimonials
+        title="Empresas que Confían en JoeWork.co"
+        subtitle="Descubre cómo hemos ayudado a negocios como el tuyo a ahorrar tiempo y optimizar procesos con IA."
+        badgeText="Resultados Comprobados"
+        testimonials={agencyTestimonials}
+        trustedCompanies={["Viajamas", "PWC", "EY", "Deloitte", "KPMG"]}
+        trustedCompaniesTitle="Usado por equipos en"
+        className="bg-neutral-900 dark:bg-neutral-950 border-y border-neutral-800 dark:border-neutral-700"
+      />
 
       {/* Tech trust row */}
       <section className="py-8 md:py-12 bg-neutral-900">
