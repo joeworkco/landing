@@ -64,7 +64,7 @@ export default function AgencyPage() {
     <Fragment>
       {/* Hero */}
       <section className="py-20 md:py-32 bg-gradient-to-b from-background to-muted/50 dark:from-background dark:to-background text-center">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-balance">
             Automatizamos tus procesos críticos con IA en 7 días
           </h1>
@@ -82,7 +82,7 @@ export default function AgencyPage() {
 
       {/* Pain → Payoff section */}
       <section className="py-12 md:py-20 bg-muted">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {painPayoffCards.map((card, i) => (
               <div
@@ -103,7 +103,7 @@ export default function AgencyPage() {
 
       {/* How we work */}
       <section id="auditoria" className="py-12 md:py-20">
-        <div className="container mx-auto px-4 md:px-6 max-w-2xl">
+        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
           <h2 className="text-2xl font-bold mb-8 text-center">
             ¿Cómo trabajamos?
           </h2>
@@ -122,7 +122,7 @@ export default function AgencyPage() {
 
       {/* Proof bar */}
       <section className="py-8 md:py-12 bg-muted border-y border-border">
-        <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center gap-8 justify-between">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl flex flex-col md:flex-row items-center gap-8 justify-between">
           {/* Viajamas logo + quote */}
           <div className="flex items-center gap-4">
             <div className="h-14 w-32 bg-white rounded-lg border flex items-center justify-center">
@@ -148,7 +148,7 @@ export default function AgencyPage() {
 
       {/* Tech trust row */}
       <section className="py-8 md:py-12">
-        <div className="container mx-auto px-4 md:px-6 flex flex-wrap items-center justify-center gap-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl flex flex-wrap items-center justify-center gap-6">
           {techStack.map((tech) => (
             <span
               key={tech}
@@ -162,11 +162,11 @@ export default function AgencyPage() {
 
       {/* Mini FAQ */}
       <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4 md:px-6 max-w-2xl">
+        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
           <h2 className="text-2xl font-bold mb-8 text-center">
             Preguntas frecuentes
           </h2>
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
             {miniFaq.map((item, i) => (
               <FaqItem key={i} question={item.question} answer={item.answer} />
             ))}
