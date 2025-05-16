@@ -1,20 +1,31 @@
 // © 2025 JoeWork.co
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import FaqItem from "@/components/ui/FaqItem";
+import { FeatureSectionWithBentoGrid } from "@/components/ui/feature-section-with-bento-grid";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { constructMetadata } from "@/lib/metadata";
+import { cn } from "@/lib/utils";
+import { AlertTriangle, FileText, Zap } from "lucide-react";
+import React from "react";
 
-const painPayoffCards = [
+const featureSectionItemsData = [
   {
-    pain: "Flujos llenos de papel",
-    payoff: "→ Envíos SUNAT en 3 clics",
+    icon: <FileText className="w-6 h-6 stroke-1" />,
+    title: "Flujos llenos de papel",
+    description: "Envíos SUNAT eficientes en solo 3 clics.",
+    lgColSpan: 1,
   },
   {
-    pain: "Errores manuales costosos",
-    payoff: "→ 0 errores, 100% digital",
+    icon: <AlertTriangle className="w-6 h-6 stroke-1" />,
+    title: "Errores manuales costosos",
+    description: "Operación 100% digital, minimizando errores.",
+    lgColSpan: 1,
   },
   {
-    pain: "Procesos lentos y repetitivos",
-    payoff: "→ Automatización en 7 días",
+    icon: <Zap className="w-6 h-6 stroke-1" />,
+    title: "Procesos lentos y repetitivos",
+    description: "Automatización ágil implementada en 7 días.",
+    lgColSpan: 1,
   },
 ];
 
@@ -49,6 +60,45 @@ const miniFaq = [
   },
 ];
 
+interface GridItemProps {
+  icon: React.ReactNode;
+  title: string;
+  description: React.ReactNode;
+  className?: string;
+}
+
+const GridItem = ({ icon, title, description, className }: GridItemProps) => {
+  return (
+    <li className={cn("min-h-[14rem] list-none", className)}>
+      <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
+        <GlowingEffect
+          spread={40}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+          borderWidth={3}
+        />
+        <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+          <div className="relative flex flex-1 flex-col justify-between gap-3">
+            <div className="w-fit rounded-lg border-[0.75px] border-border bg-muted p-2">
+              {icon}
+            </div>
+            <div className="space-y-1">
+              <h3 className="pt-0.5 text-xl leading-[1.375rem] font-semibold font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance text-foreground">
+                {title}
+              </h3>
+              <div className="font-sans text-xl md:text-2xl font-bold text-emerald-600">
+                {description}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+};
+
 export const generateMetadata = () =>
   constructMetadata({
     title: "Agencia de Automatización",
@@ -64,31 +114,18 @@ export default function AgencyPage() {
       {/* Hero */}
       <BackgroundPaths title="Automatizamos tus procesos críticos con IA en 7 días" />
 
-      {/* Pain → Payoff section */}
-      <section className="py-12 md:py-20 bg-muted">
-        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {painPayoffCards.map((card, i) => (
-              <div
-                key={i}
-                className="bg-background rounded-xl shadow p-8 flex flex-col items-center text-center border border-border"
-              >
-                <span className="text-xl font-semibold text-primary mb-2">
-                  {card.pain}
-                </span>
-                <span className="text-2xl font-bold text-emerald-600">
-                  {card.payoff}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Feature Section with Bento Grid (replaces the old pain/payoff cards) */}
+      <FeatureSectionWithBentoGrid
+        badgeText="Nuestra Solución"
+        mainTitle="Transforma tu Operación, Sin Fricción"
+        mainDescription="Digitalizamos y optimizamos tus flujos clave con IA, permitiéndote enfocarte en crecer tu negocio."
+        items={featureSectionItemsData}
+      />
 
       {/* How we work */}
-      <section id="auditoria" className="py-12 md:py-20">
+      <section id="auditoria" className="py-12 md:py-20 bg-neutral-900">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
-          <h2 className="text-2xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-10 text-center text-neutral-100">
             ¿Cómo trabajamos?
           </h2>
           <ol className="space-y-6">
@@ -97,7 +134,9 @@ export default function AgencyPage() {
                 <span className="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-lg shrink-0">
                   {i + 1}
                 </span>
-                <span className="text-lg font-medium mt-2">{step}</span>
+                <span className="text-lg font-medium mt-2 text-neutral-300">
+                  {step}
+                </span>
               </li>
             ))}
           </ol>
@@ -105,25 +144,24 @@ export default function AgencyPage() {
       </section>
 
       {/* Proof bar */}
-      <section className="py-8 md:py-12 bg-muted border-y border-border">
+      <section className="py-8 md:py-12 bg-neutral-800 border-y border-neutral-700">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl flex flex-col md:flex-row items-center gap-8 justify-between">
-          {/* Viajamas logo + quote */}
           <div className="flex items-center gap-4">
-            <div className="h-14 w-32 bg-white rounded-lg border flex items-center justify-center">
-              {/* Replace with actual logo */}
-              <span className="text-lg font-bold text-primary">Viajamas</span>
+            <div className="h-14 w-32 bg-neutral-700 rounded-lg border border-neutral-600 flex items-center justify-center">
+              <span className="text-lg font-bold text-neutral-100">
+                Viajamas
+              </span>
             </div>
-            <blockquote className="text-muted-foreground italic max-w-xs">
+            <blockquote className="text-neutral-400 italic max-w-xs">
               Automatizamos reportes SUNAT y ahorramos 40+ horas al mes. El
               equipo de JoeWork lo resolvió en días.
             </blockquote>
           </div>
-          {/* Metrics counter */}
           <div className="flex flex-col items-center mt-6 md:mt-0">
-            <span className="text-4xl font-extrabold text-emerald-600">
+            <span className="text-4xl font-extrabold text-emerald-400">
               +40
             </span>
-            <span className="text-lg text-muted-foreground">
+            <span className="text-lg text-neutral-400">
               horas ahorradas/mes
             </span>
           </div>
@@ -131,12 +169,12 @@ export default function AgencyPage() {
       </section>
 
       {/* Tech trust row */}
-      <section className="py-8 md:py-12">
+      <section className="py-8 md:py-12 bg-neutral-900">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl flex flex-wrap items-center justify-center gap-6">
           {techStack.map((tech) => (
             <span
               key={tech}
-              className="text-lg font-semibold bg-muted px-6 py-2 rounded-full border border-border"
+              className="text-lg font-semibold bg-neutral-800 text-neutral-300 px-6 py-2 rounded-full border border-neutral-700"
             >
               {tech}
             </span>
@@ -145,9 +183,9 @@ export default function AgencyPage() {
       </section>
 
       {/* Mini FAQ */}
-      <section className="py-12 md:py-20">
+      <section className="py-12 md:py-20 bg-black">
         <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-          <h2 className="text-2xl font-bold mb-8 text-center">
+          <h2 className="text-3xl font-bold mb-10 text-center text-neutral-100">
             Preguntas frecuentes
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
