@@ -1,7 +1,8 @@
 // © 2025 JoeWork.co
+import { FaqSectionDemo } from "@/components/demos/FaqSectionDemo";
+import { Features8Demo } from "@/components/demos/Features8Demo";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { BackgroundPaths } from "@/components/ui/background-paths";
-import FaqItem from "@/components/ui/FaqItem";
 import { FeatureSectionWithBentoGrid } from "@/components/ui/feature-section-with-bento-grid";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Timeline } from "@/components/ui/timeline";
@@ -220,33 +221,11 @@ export default function AgencyPage() {
         className="bg-neutral-900 dark:bg-neutral-950 border-y border-neutral-800 dark:border-neutral-700"
       />
 
-      {/* Tech trust row */}
-      <section className="py-8 md:py-12 bg-neutral-900">
-        <div className="container mx-auto px-4 md:px-6 max-w-4xl flex flex-wrap items-center justify-center gap-6">
-          {techStack.map((tech) => (
-            <span
-              key={tech}
-              className="text-lg font-semibold bg-neutral-800 text-neutral-300 px-6 py-2 rounded-full border border-neutral-700"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </section>
+      {/* Tech trust row - REPLACED with Features8Demo */}
+      <Features8Demo />
 
-      {/* Mini FAQ */}
-      <section className="py-12 md:py-20 bg-black">
-        <div className="container mx-auto px-4 md:px-6 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-10 text-center text-neutral-100">
-            Preguntas frecuentes
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-            {miniFaq.map((item, i) => (
-              <FaqItem key={i} question={item.question} answer={item.answer} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Mini FAQ - REPLACED with FaqSectionDemo */}
+      <FaqSectionDemo />
     </>
   );
 }
