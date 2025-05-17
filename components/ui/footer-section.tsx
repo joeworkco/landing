@@ -29,14 +29,14 @@ function FooterSection() {
   };
 
   return (
-    <footer className="relative border-t bg-black text-foreground transition-colors duration-300">
+    <footer className="relative border-t bg-gray-100 dark:bg-black text-neutral-800 dark:text-foreground transition-colors duration-300">
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-neutral-900 dark:text-white">
               Mantente Conectado
             </h2>
-            <p className="mb-6 text-muted-foreground">
+            <p className="mb-6 text-neutral-600 dark:text-muted-foreground">
               Únete a nuestro boletín para recibir las últimas actualizaciones y
               ofertas exclusivas.
             </p>
@@ -44,7 +44,7 @@ function FooterSection() {
               <Input
                 type="email"
                 placeholder="Ingresa tu correo electrónico"
-                className="pr-12 backdrop-blur-sm"
+                className="pr-12 bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700 placeholder:text-neutral-500 dark:placeholder:text-neutral-400"
               />
               <Button
                 type="submit"
@@ -58,50 +58,56 @@ function FooterSection() {
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Enlaces Rápidos</h3>
+            <h3 className="mb-4 text-lg font-semibold text-neutral-900 dark:text-white">
+              Enlaces Rápidos
+            </h3>
             <nav className="space-y-2 text-sm">
               <a
                 href="/"
-                className="block transition-colors hover:text-primary"
+                className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
               >
                 Inicio
               </a>
               <a
                 href="/about"
-                className="block transition-colors hover:text-primary"
+                className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
               >
                 Nosotros
               </a>
               <a
                 href="/agency"
-                className="block transition-colors hover:text-primary"
+                className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
               >
                 Servicios de Agencia
               </a>
               <a
                 href="/pricing"
-                className="block transition-colors hover:text-primary"
+                className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
               >
                 Precios
               </a>
               <a
                 href="/contact"
-                className="block transition-colors hover:text-primary"
+                className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
               >
                 Contacto
               </a>
             </nav>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Contáctanos</h3>
-            <address className="space-y-2 text-sm not-italic">
+            <h3 className="mb-4 text-lg font-semibold text-neutral-900 dark:text-white">
+              Contáctanos
+            </h3>
+            <address className="space-y-2 text-sm not-italic text-neutral-600 dark:text-neutral-300">
               <p>Calle Ficticia 123, Lima, Perú</p>
               <p>Teléfono: (+51) 987 654 321</p>
               <p>Email: hola@joework.co</p>
             </address>
           </div>
           <div className="relative">
-            <h3 className="mb-4 text-lg font-semibold">Síguenos</h3>
+            <h3 className="mb-4 text-lg font-semibold text-neutral-900 dark:text-white">
+              Síguenos
+            </h3>
             <div className="mb-6 flex space-x-4">
               <TooltipProvider>
                 <Tooltip>
@@ -109,7 +115,7 @@ function FooterSection() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="rounded-full"
+                      className="rounded-full border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
                       asChild
                     >
                       <a href="#" aria-label="Facebook">
@@ -128,7 +134,7 @@ function FooterSection() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="rounded-full"
+                      className="rounded-full border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
                       asChild
                     >
                       <a href="#" aria-label="Twitter">
@@ -147,7 +153,7 @@ function FooterSection() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="rounded-full"
+                      className="rounded-full border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
                       asChild
                     >
                       <a href="#" aria-label="Instagram">
@@ -166,7 +172,7 @@ function FooterSection() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="rounded-full"
+                      className="rounded-full border-neutral-300 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800"
                       asChild
                     >
                       <a
@@ -186,37 +192,41 @@ function FooterSection() {
               </TooltipProvider>
             </div>
             <div className="flex items-center space-x-2">
-              <Sun className="h-4 w-4" />
+              <Sun className="h-4 w-4 text-neutral-600 dark:text-neutral-300" />
               <Switch
                 id="dark-mode"
                 checked={theme === "dark"}
                 onCheckedChange={handleThemeChange}
+                className="data-[state=checked]:bg-primary data-[state=unchecked]:bg-neutral-300 dark:data-[state=unchecked]:bg-neutral-700"
               />
-              <Moon className="h-4 w-4" />
+              <Moon className="h-4 w-4 text-neutral-600 dark:text-neutral-300" />
               <Label htmlFor="dark-mode" className="sr-only">
                 Cambiar tema
               </Label>
             </div>
           </div>
         </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-neutral-300 dark:border-neutral-700 pt-8 text-center md:flex-row">
+          <p className="text-sm text-neutral-500 dark:text-muted-foreground">
             © 2025 JoeWork.co. Todos los derechos reservados.
           </p>
           <nav className="flex gap-4 text-sm">
             <a
               href="/privacy-policy"
-              className="block transition-colors hover:text-primary"
+              className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
             >
               Política de Privacidad
             </a>
             <a
               href="/terms-of-service"
-              className="block transition-colors hover:text-primary"
+              className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
             >
               Términos de Servicio
             </a>
-            <a href="#" className="block transition-colors hover:text-primary">
+            <a
+              href="#"
+              className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
+            >
               Configuración de Cookies
             </a>
           </nav>

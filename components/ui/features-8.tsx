@@ -7,7 +7,7 @@ interface Features8Props {
 
 export function Features8({ techStack }: Features8Props) {
   return (
-    <section className="bg-gray-50 py-16 md:py-32 dark:bg-transparent">
+    <section className="dark:bg-black bg-white py-16 md:py-32 dark:bg-transparent">
       <div className="mx-auto max-w-3xl lg:max-w-5xl px-6">
         <div className="relative">
           <div className="relative z-10 grid grid-cols-6 gap-3">

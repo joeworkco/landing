@@ -27,7 +27,7 @@ export default function RootLayout({ children }: Props) {
     // Defaulting lang to 'en' for now
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className="min-h-screen bg-white dark:bg-gray-950 font-sans antialiased flex flex-col">
+      <body className="min-h-screen bg-white dark:bg-black font-sans antialiased flex flex-col">
         {/* Removed NextIntlClientProvider */}
         <ThemeProvider
           attribute="class"
