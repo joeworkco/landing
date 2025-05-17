@@ -1,6 +1,7 @@
 // © 2025 JoeWork.co
 import { FaqSectionDemo } from "@/components/demos/FaqSectionDemo";
 import { Features8Demo } from "@/components/demos/Features8Demo";
+import { FooterDemo } from "@/components/demos/FooterDemo";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { FeatureSectionWithBentoGrid } from "@/components/ui/feature-section-with-bento-grid";
@@ -226,6 +227,9 @@ export default function AgencyPage() {
 
       {/* Mini FAQ - REPLACED with FaqSectionDemo */}
       <FaqSectionDemo />
+
+      {/* Footer */}
+      <FooterDemo />
     </>
   );
 }

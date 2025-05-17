@@ -1,5 +1,5 @@
 // © 2025 JoeWork.co
-import Footer from "@/components/layout/Footer";
+// import Footer from "@/components/layout/Footer"; // Removed Footer import
 import Nav from "@/components/layout/Nav";
 import { siteConfig } from "@/config/site";
 import { constructMetadata } from "@/lib/metadata";
@@ -38,7 +38,8 @@ export default function RootLayout({ children }: Props) {
           <main className="flex-grow flex flex-col items-center w-full">
             {children}
           </main>
-          <Footer />
+          {/* <Footer /> */}
+          {/* Removed Footer component */}
         </ThemeProvider>
       </body>
     </html>
