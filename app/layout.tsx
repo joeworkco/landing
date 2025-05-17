@@ -1,5 +1,6 @@
 // © 2025 JoeWork.co
 // import Footer from "@/components/layout/Footer"; // Removed Footer import
+import { FooterDemo } from "@/components/demos/FooterDemo"; // Added FooterDemo import
 import Nav from "@/components/layout/Nav";
 import { siteConfig } from "@/config/site";
 import { constructMetadata } from "@/lib/metadata";
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: Props) {
           </main>
           {/* <Footer /> */}
           {/* Removed Footer component */}
+          <FooterDemo /> {/* Added new FooterDemo component here */}
         </ThemeProvider>
       </body>
     </html>
