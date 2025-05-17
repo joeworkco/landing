@@ -20,6 +20,7 @@ import {
   Twitter,
 } from "lucide-react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 function FooterSection() {
   const { theme, setTheme } = useTheme();
@@ -62,36 +63,36 @@ function FooterSection() {
               Enlaces Rápidos
             </h3>
             <nav className="space-y-2 text-sm">
-              <a
+              <Link
                 href="/"
                 className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
               >
                 Inicio
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/about"
                 className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
               >
                 Nosotros
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/agency"
                 className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
               >
                 Servicios de Agencia
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/pricing"
                 className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
               >
                 Precios
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/contact"
                 className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
               >
                 Contacto
-              </a>
+              </Link>
             </nav>
           </div>
           <div>
@@ -211,24 +212,24 @@ function FooterSection() {
             © 2025 JoeWork.co. Todos los derechos reservados.
           </p>
           <nav className="flex gap-4 text-sm">
-            <a
+            <Link
               href="/privacy-policy"
               className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
             >
               Política de Privacidad
-            </a>
-            <a
+            </Link>
+            <Link
               href="/terms-of-service"
               className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
             >
               Términos de Servicio
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="block text-neutral-600 dark:text-neutral-300 transition-colors hover:text-primary dark:hover:text-primary"
             >
               Configuración de Cookies
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users } from "lucide-react";
+import Image from "next/image";
 
 interface Features8Props {
   techStack?: string[];
@@ -231,19 +232,23 @@ export function Features8({ techStack }: Features8Props) {
                         Analyst AI
                       </span>
                       <div className="ring-background size-7 ring-4">
-                        <img
+                        <Image
                           className="size-full rounded-full"
                           src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=40&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                           alt="AI Analyst Avatar"
+                          width={28}
+                          height={28}
                         />
                       </div>
                     </div>
                     <div className="relative ml-[calc(50%-1rem)] flex items-center gap-2">
                       <div className="ring-background size-8 ring-4">
-                        <img
+                        <Image
                           className="size-full rounded-full"
                           src="https://images.unsplash.com/photo-1494790108377-be9c29b29170?q=80&w=40&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                           alt="AI Specialist Avatar"
+                          width={32}
+                          height={32}
                         />
                       </div>
                       <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
@@ -255,10 +260,12 @@ export function Features8({ techStack }: Features8Props) {
                         Support AI
                       </span>
                       <div className="ring-background size-7 ring-4">
-                        <img
+                        <Image
                           className="size-full rounded-full"
                           src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=40&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                           alt="AI Support Avatar"
+                          width={28}
+                          height={28}
                         />
                       </div>
                     </div>
