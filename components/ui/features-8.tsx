@@ -106,9 +106,9 @@ export function Features8({ techStack }: Features8Props) {
                   <h2 className="group-hover:text-secondary-950 text-lg font-medium transition dark:text-white">
                     AI-Powered Efficiency
                   </h2>
-                  <p className="text-foreground">
-                    Unlock unprecedented productivity. Our AI staff automates
-                    repetitive tasks, freeing your team for strategic work.
+                  <p className="text-muted-foreground">
+                    Our AI staff automates tasks, freeing your team for
+                    strategic work.
                   </p>
                 </div>
               </CardContent>
@@ -162,7 +162,7 @@ export function Features8({ techStack }: Features8Props) {
                     />
                     <path
                       className="text-primary-600 dark:text-primary-500"
-                      d="M3 121.077C3 121.077 15.3041 93.6691 36.0195 87.756C56.7349 81.8429 66.6632 80.9723 66.6632 80.9723C66.6632 80.9723 80.0327 80.9723 91.4656 80.9723C102.898 80.9723 100.415 64.2824 108.556 64.2824C116.696 64.2824 117.693 92.1332 125.226 92.1332C132.759 92.1332 142.07 78.5115 153.591 80.5508C165.113 83.0716 186.092 92.1332 193 92.1332C199.908 92.1332 205.274 64.2824 213.017 64.2824C220.76 64.2824 237.832 93.8946 243.39 92.1332C248.948 90.3718 257.923 60.5 265.284 60.5C271.145 60.5 283.204 87.7182 285.772 87.756C293.823 87.8746 299.2 73.0802 304.411 73.0802C311.283 73.0802 321.425 65.9506 333.552 64.2824C345.68 62.6141 346.91 82.4553 362.27 80.9723C367.875 80.1335 372.949 82.2017 376.437 87.1008C379.446 91.3274 381.054 97.4325 382.521 104.647C383.479 109.364 382.521 123 382.521 123"
+                      d="M3 121.077C3 121.077 15.3041 93.6691 36.0195 87.756C56.7349 81.8429 66.6632 80.9723 66.6632 80.9723C66.6632 80.9723 80.0327 80.9723 91.4656 80.9723C102.898 80.9723 100.415 64.2824 108.556 64.2824C116.696 64.2824 117.693 92.1332 125.226 92.1332C132.759 92.1332 142.07 78.5115 153.591 80.5508C165.113 83.0716 186.092 92.1332 193 92.1332C199.908 92.1332 205.274 64.2824 213.017 64.2824C220.76 64.2824 237.832 93.8946 243.39 92.1332C248.948 90.3718 257.923 60.5 265.284 60.5C271.145 60.5 283.204 87.7182 285.772 88.0957C294.762 88.2171 300.192 72.9284 305.423 72.9284C312.323 72.9284 323.377 65.2437 335.553 63.5348C347.729 61.8259 348.218 82.07 363.639 80.5508C367.875 80.1335 372.949 82.2017 376.437 87.1008C379.446 91.3274 381.054 97.4325 382.521 104.647C383.479 109.364 382.521 123 382.521 123"
                       stroke="currentColor"
                       strokeWidth="3"
                     />
@@ -201,10 +201,9 @@ export function Features8({ techStack }: Features8Props) {
                   <h2 className="text-lg font-medium transition">
                     Seamless Integration
                   </h2>
-                  <p className="text-foreground">
+                  <p className="text-muted-foreground">
                     JoeWork.co integrates smoothly with your existing tools and
-                    workflows, ensuring a disruption-free transition to
-                    AI-powered operations.
+                    workflows.
                   </p>
                 </div>
               </CardContent>
@@ -219,10 +218,9 @@ export function Features8({ techStack }: Features8Props) {
                     <h2 className="text-lg font-medium transition">
                       Your Dedicated AI Team
                     </h2>
-                    <p className="text-foreground">
-                      Think of us as your on-demand AI specialists, ready to
-                      tackle any operational challenge and scale with your
-                      business needs.
+                    <p className="text-muted-foreground">
+                      On-demand AI specialists to tackle challenges and scale
+                      with your business.
                     </p>
                   </div>
                 </div>

@@ -3,21 +3,26 @@
 import { FaqSection } from "@/components/ui/faq"; // Adjusted import path
 import { useRouter } from "next/navigation"; // Import useRouter
 
-const DEMO_FAQS = [
+// Using the Spanish FAQ data
+const JOEWORK_FAQS = [
   {
-    question: "What makes your platform unique?",
-    answer:
-      "Our platform stands out through its intuitive design, powerful automation capabilities, and seamless integration options. We\'ve focused on creating a user experience that combines simplicity with advanced features.",
+    question: "¿Cuánto dura la auditoría?",
+    answer: "La auditoría inicial es gratuita y toma 1-2 días hábiles.",
   },
   {
-    question: "How does the pricing structure work?",
+    question: "¿Qué incluye el PoC?",
     answer:
-      "We offer flexible, transparent pricing tiers designed to scale with your needs. Each tier includes a core set of features, with additional capabilities as you move up. All plans start with a 14-day free trial.",
+      "Automatizamos un flujo crítico de tu negocio para que veas resultados reales antes de avanzar.",
   },
   {
-    question: "What kind of support do you offer?",
+    question: "¿Puedo escalar a más procesos?",
     answer:
-      "We provide comprehensive support through multiple channels. This includes 24/7 live chat, detailed documentation, video tutorials, and dedicated account managers for enterprise clients.",
+      "Sí, tras el PoC, automatizamos tantos flujos como necesites, a medida.",
+  },
+  {
+    question: "¿Ofrecen soporte continuo?",
+    answer:
+      "Sí, nuestro equipo brinda soporte y mantenimiento mensual para asegurar la continuidad.",
   },
 ];
 
@@ -30,13 +35,13 @@ export function FaqSectionDemo() {
 
   return (
     <FaqSection
-      title="Frequently Asked Questions"
-      description="Everything you need to know about our platform"
-      items={DEMO_FAQS}
+      title="Preguntas Frecuentes"
+      description="Todo lo que necesitas saber sobre nuestros servicios de automatización con IA"
+      items={JOEWORK_FAQS}
       contactInfo={{
-        title: "Still have questions?",
-        description: "We\'re here to help you",
-        buttonText: "Contact Support",
+        title: "¿Aún tienes preguntas?",
+        description: "Estamos aquí para ayudarte",
+        buttonText: "Contactar a Soporte",
         onContact: handleContact, // Use the new handler
       }}
     />
