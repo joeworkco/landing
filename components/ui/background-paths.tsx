@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function FloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 36 }, (_, i) => ({
@@ -96,29 +96,21 @@ export function BackgroundPaths({
             ))}
           </h1>
 
-          <div
-            className="inline-block group relative bg-gradient-to-b from-black/10 to-white/10 
-                        dark:from-white/10 dark:to-black/10 p-px rounded-2xl backdrop-blur-lg 
-                        overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
-            <Button
-              variant="ghost"
-              className="rounded-[1.15rem] px-8 py-6 text-lg font-semibold backdrop-blur-md 
-                            bg-white/95 hover:bg-white/100 dark:bg-black/95 dark:hover:bg-black/100 
-                            text-black dark:text-white transition-all duration-300 
-                            group-hover:-translate-y-0.5 border border-black/10 dark:border-white/10
-                            hover:shadow-md dark:hover:shadow-neutral-800/50"
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3s8zM9S_5FSCobJFVfQjijKHzCKivWKEK-Etuqoc-sXNRfMJobq4dygOb7uafwEAnw-Ts26ibo?gv=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-base font-medium text-primary-foreground shadow-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background transition-transform duration-300 ease-in-out hover:scale-105"
             >
-              <span className="opacity-90 group-hover:opacity-100 transition-opacity">
-                Discover Excellence
-              </span>
-              <span
-                className="ml-3 opacity-70 group-hover:opacity-100 group-hover:translate-x-1.5 
-                                transition-all duration-300"
-              >
-                →
-              </span>
-            </Button>
+              Consultoría Gratuita
+            </Link>
+            <Link
+              href="#use-cases-section"
+              className="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-base font-medium text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-700 transition-transform duration-300 ease-in-out hover:scale-105"
+            >
+              Casos de Uso
+            </Link>
           </div>
         </motion.div>
       </div>

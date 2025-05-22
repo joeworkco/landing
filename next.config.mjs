@@ -6,6 +6,10 @@
 const nextConfig = {
   images: {
     remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
       ...(process.env.R2_PUBLIC_URL
         ? [
             {
