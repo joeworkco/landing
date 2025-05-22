@@ -234,7 +234,7 @@ export default function AgencyPage() {
         subtitle="Descubre cómo hemos ayudado a negocios como el tuyo a ahorrar tiempo y optimizar procesos con IA."
         badgeText="Resultados Comprobados"
         testimonials={agencyTestimonials}
-        trustedCompanies={["Viajamas", "PWC", "EY", "Deloitte", "KPMG"]}
+        trustedCompanies={["Viajamas"]}
         trustedCompaniesTitle="Usado por equipos en"
         className="bg-neutral-900 dark:bg-neutral-950 border-y border-neutral-800 dark:border-neutral-700"
       />
