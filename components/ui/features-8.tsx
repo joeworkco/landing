@@ -32,8 +32,8 @@ export function Features8({ techStack }: Features8Props) {
                 </div>
                 <h2 className="mt-6 text-center text-3xl font-semibold">
                   {techStack && techStack.length > 0
-                    ? "Our Stack"
-                    : "Customizable"}
+                    ? "Nuestro Stack"
+                    : "Personalizable"}
                 </h2>
                 {techStack && techStack.length > 0 && (
                   <div className="mt-4 text-center">
@@ -105,11 +105,11 @@ export function Features8({ techStack }: Features8Props) {
                 </div>
                 <div className="relative z-10 mt-6 space-y-2 text-center">
                   <h2 className="group-hover:text-secondary-950 text-lg font-medium transition dark:text-white">
-                    AI-Powered Efficiency
+                    Eficiencia Impulsada por IA
                   </h2>
                   <p className="text-muted-foreground">
-                    Our AI staff automates tasks, freeing your team for
-                    strategic work.
+                    Nuestro personal de IA automatiza tareas, liberando a tu
+                    equipo para el trabajo estratégico.
                   </p>
                 </div>
               </CardContent>
@@ -200,11 +200,11 @@ export function Features8({ techStack }: Features8Props) {
                 </div>
                 <div className="relative z-10 mt-14 space-y-2 text-center">
                   <h2 className="text-lg font-medium transition">
-                    Seamless Integration
+                    Integración Perfecta
                   </h2>
                   <p className="text-muted-foreground">
-                    JoeWork.co integrates smoothly with your existing tools and
-                    workflows.
+                    JoeWork.co se integra fluidamente con tus herramientas y
+                    flujos de trabajo existentes.
                   </p>
                 </div>
               </CardContent>
@@ -217,11 +217,11 @@ export function Features8({ techStack }: Features8Props) {
                   </div>
                   <div className="space-y-2">
                     <h2 className="text-lg font-medium transition">
-                      Your Dedicated AI Team
+                      Tu Equipo de IA Dedicado
                     </h2>
                     <p className="text-muted-foreground">
-                      On-demand AI specialists to tackle challenges and scale
-                      with your business.
+                      Especialistas en IA bajo demanda para enfrentar desafíos y
+                      escalar con tu negocio.
                     </p>
                   </div>
                 </div>
@@ -229,7 +229,7 @@ export function Features8({ techStack }: Features8Props) {
                   <div className="relative flex h-full flex-col justify-center space-y-6 py-6">
                     <div className="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
                       <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
-                        Analyst AI
+                        IA Analista
                       </span>
                       <div className="ring-background size-7 ring-4">
                         <Image
@@ -252,12 +252,12 @@ export function Features8({ techStack }: Features8Props) {
                         />
                       </div>
                       <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
-                        Specialist AI
+                        IA Especialista
                       </span>
                     </div>
                     <div className="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
                       <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
-                        Support AI
+                        IA de Soporte
                       </span>
                       <div className="ring-background size-7 ring-4">
                         <Image
