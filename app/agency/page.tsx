@@ -10,8 +10,15 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Timeline } from "@/components/ui/timeline";
 import { constructMetadata } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
-import { AlertTriangle, FileText, Zap } from "lucide-react";
-import Image from "next/image";
+import {
+  AlertTriangle,
+  FileText,
+  Lightbulb,
+  Rocket,
+  Search,
+  Users,
+  Zap,
+} from "lucide-react";
 import React from "react";
 
 const featureSectionItemsData = [
@@ -47,25 +54,32 @@ const howWeWorkStepsRaw = [
 
 const timelineData = howWeWorkStepsRaw.map((step, index) => {
   let contentText = "";
+  let icon = <Search className="w-16 h-16 text-primary" />;
+
   switch (index) {
     case 0:
       contentText =
         "Analizamos tus procesos actuales para identificar cuellos de botella y oportunidades de automatización. Sin costo alguno.";
+      icon = <Search className="w-12 h-12 md:w-16 md:h-16 text-primary" />;
       break;
     case 1:
       contentText =
         "Desarrollamos una Prueba de Concepto (PoC) enfocada en un flujo crítico para demostrar el valor y la viabilidad rápidamente.";
+      icon = <Lightbulb className="w-12 h-12 md:w-16 md:h-16 text-primary" />;
       break;
     case 2:
       contentText =
         "Una vez validado el PoC, procedemos con la implementación completa, adaptando la solución a todas tus necesidades específicas.";
+      icon = <Rocket className="w-12 h-12 md:w-16 md:h-16 text-primary" />;
       break;
     case 3:
       contentText =
         "Ofrecemos soporte continuo y mantenimiento para asegurar que tus procesos automatizados sigan funcionando de manera óptima.";
+      icon = <Users className="w-12 h-12 md:w-16 md:h-16 text-primary" />;
       break;
     default:
       contentText = "Detalles del paso.";
+      icon = <Zap className="w-12 h-12 md:w-16 md:h-16 text-primary" />;
   }
   return {
     title: `Paso ${index + 1}: ${step.split(" (")[0]}`,
@@ -75,13 +89,9 @@ const timelineData = howWeWorkStepsRaw.map((step, index) => {
       </p>
     ),
     media: (
-      <Image
-        src="/path/to/your/image.jpg"
-        alt={`Visual for ${step.split(" (")[0]}`}
-        width={500}
-        height={300}
-        className="rounded-md object-cover"
-      />
+      <div className="flex items-center justify-center w-full h-full bg-muted dark:bg-neutral-800 rounded-md p-4 md:p-6 min-h-[150px] md:min-h-[200px]">
+        {icon}
+      </div>
     ),
   };
 });
