@@ -15,20 +15,23 @@ import React from "react";
 const featureSectionItemsData = [
   {
     icon: <FileText className="w-6 h-6 stroke-1" />,
-    title: "Flujos llenos de papel",
-    description: "Envíos SUNAT eficientes en solo 3 clics.",
+    title: "Automatización Rápida",
+    description:
+      "Clona clics y teclado en cualquier interfaz en ≤ 4 semanas sin necesidad de APIs, adaptándose automáticamente a los cambios de interfaz.",
     lgColSpan: 1,
   },
   {
     icon: <AlertTriangle className="w-6 h-6 stroke-1" />,
-    title: "Errores manuales costosos",
-    description: "Operación 100% digital, minimizando errores.",
+    title: "Ahorro Garantizado",
+    description:
+      "Ahorra del 40-60% de horas-hombre y elimina errores por completo, con una garantía de 30% de ahorro o devolución en 30 días.",
     lgColSpan: 1,
   },
   {
     icon: <Zap className="w-6 h-6 stroke-1" />,
-    title: "Procesos lentos y repetitivos",
-    description: "Automatización ágil implementada en 7 días.",
+    title: "ROI en Tiempo Real",
+    description:
+      "Panel de control con métricas de ROI en tiempo real que te permite visualizar el impacto directo en tu negocio desde el primer día.",
     lgColSpan: 1,
   },
 ];

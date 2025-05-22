@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import RotatingWords from "@/components/ui/RotatingWords";
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -41,7 +42,7 @@ function FeatureSectionWithBentoGrid({
             </div>
             <div className="flex gap-2 flex-col">
               <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-semibold text-left">
-                {mainTitle}
+                Transforma tu Operación <RotatingWords /> Sin Fricción
               </h2>
               <p className="text-lg max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-neutral-400 text-left">
                 {mainDescription}
