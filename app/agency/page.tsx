@@ -1,6 +1,7 @@
 // © 2025 JoeWork.co
 import { FaqSectionDemo } from "@/components/demos/FaqSectionDemo";
 import { Features8Demo } from "@/components/demos/Features8Demo";
+import AgencyQuoteSection from "@/components/sections/AgencyQuoteSection";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { FeatureSectionWithBentoGrid } from "@/components/ui/feature-section-with-bento-grid";
@@ -205,6 +206,8 @@ export default function AgencyPage() {
         mainDescription="Digitalizamos y optimizamos tus flujos clave con IA, permitiéndote enfocarte en crecer tu negocio."
         items={featureSectionItemsData}
       />
+
+      <AgencyQuoteSection />
 
       {/* How we work - REPLACED with Timeline */}
       <Timeline
