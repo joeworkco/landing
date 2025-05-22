@@ -12,23 +12,23 @@ const featuresData = [
     title: "Automatización Rápida",
     // description: t('feature1.description'),
     description:
-      "Implementa soluciones de IA en días, no meses, y ve resultados inmediatos en tu flujo de trabajo.",
+      "Clona clics y teclado en cualquier interfaz en ≤ 4 semanas sin necesidad de APIs, adaptándose automáticamente a los cambios de interfaz.",
   },
   {
     icon: BarChartBig,
     // title: t('feature2.title'),
-    title: "Optimización Continua",
+    title: "Ahorro Garantizado",
     // description: t('feature2.description'),
     description:
-      "Nuestros asistentes IA aprenden y se adaptan, mejorando la eficiencia de tus procesos constantemente.",
+      "Ahorra del 40-60% de horas-hombre y elimina errores por completo, con una garantía de 30% de ahorro o devolución en 30 días.",
   },
   {
     icon: Users,
     // title: t('feature3.title'),
-    title: "Soporte Dedicado en LATAM",
+    title: "ROI en Tiempo Real",
     // description: t('feature3.description'),
     description:
-      "Equipo local listo para ayudarte a integrar y maximizar el potencial de la IA en tu PyME.",
+      "Panel de control con métricas de ROI en tiempo real que te permite visualizar el impacto directo en tu negocio desde el primer día.",
   },
   // Add more features as needed
 ];
