@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Users } from "lucide-react";
-import Image from "next/image";
+import { BarChart2, LifeBuoy, Users, Wrench } from "lucide-react";
 
 interface Features8Props {
   techStack?: string[];
@@ -163,7 +162,7 @@ export function Features8({ techStack }: Features8Props) {
                     />
                     <path
                       className="text-primary-600 dark:text-primary-500"
-                      d="M3 121.077C3 121.077 15.3041 93.6691 36.0195 87.756C56.7349 81.8429 66.6632 80.9723 66.6632 80.9723C66.6632 80.9723 80.0327 80.9723 91.4656 80.9723C102.898 80.9723 100.415 64.2824 108.556 64.2824C116.696 64.2824 117.693 92.1332 125.226 92.1332C132.759 92.1332 142.07 78.5115 153.591 80.5508C165.113 83.0716 186.092 92.1332 193 92.1332C199.908 92.1332 205.274 64.2824 213.017 64.2824C220.76 64.2824 237.832 93.8946 243.39 92.1332C248.948 90.3718 257.923 60.5 265.284 60.5C271.145 60.5 283.204 87.7182 285.772 88.0957C294.762 88.2171 300.192 72.9284 305.423 72.9284C312.323 72.9284 323.377 65.2437 335.553 63.5348C347.729 61.8259 348.218 82.07 363.639 80.5508C367.875 80.1335 372.949 82.2017 376.437 87.1008C379.446 91.3274 381.054 97.4325 382.521 104.647C383.479 109.364 382.521 123 382.521 123"
+                      d="M3 121.077C3 121.077 15.3041 93.6691 36.0195 87.756C56.7349 81.8429 66.6632 80.9723 66.6632 80.9723C66.6632 80.9723 80.0327 80.9723 91.4656 80.9723C102.898 80.9723 100.415 64.2824 108.556 64.2824C116.696 64.2824 117.693 92.1332 125.226 92.1332C132.759 92.1332 142.07 78.5115 153.591 80.5508C165.113 83.0716 186.092 92.1332 193 92.1332C199.908 92.1332 205.274 64.2824 213.017 64.2824C220.76 64.2824 237.832 93.8946 243.39 92.1332C248.948 90.3718 257.923 60.5 265.284 60.5C271.145 60.5 283.204 88.057 286.678 88.0957C294.762 88.2171 300.192 72.9284 305.423 72.9284C312.323 72.9284 323.377 65.2437 335.553 63.5348C347.729 61.8259 348.218 82.07 363.639 80.5508C367.875 80.1335 372.949 82.2017 376.437 87.1008C379.446 91.3274 381.054 97.4325 382.521 104.647C383.479 109.364 382.521 123 382.521 123"
                       stroke="currentColor"
                       strokeWidth="3"
                     />
@@ -231,25 +230,13 @@ export function Features8({ techStack }: Features8Props) {
                       <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
                         IA Analista
                       </span>
-                      <div className="ring-background size-7 ring-4">
-                        <Image
-                          className="size-full rounded-full"
-                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=40&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt="AI Analyst Avatar"
-                          width={28}
-                          height={28}
-                        />
+                      <div className="ring-background size-7 ring-4 bg-muted rounded-full flex items-center justify-center">
+                        <BarChart2 className="size-4 text-muted-foreground" />
                       </div>
                     </div>
                     <div className="relative ml-[calc(50%-1rem)] flex items-center gap-2">
-                      <div className="ring-background size-8 ring-4">
-                        <Image
-                          className="size-full rounded-full"
-                          src="https://images.unsplash.com/photo-1494790108377-be9c29b29170?q=80&w=40&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt="AI Specialist Avatar"
-                          width={32}
-                          height={32}
-                        />
+                      <div className="ring-background size-8 ring-4 bg-muted rounded-full flex items-center justify-center">
+                        <Wrench className="size-5 text-muted-foreground" />
                       </div>
                       <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
                         IA Especialista
@@ -259,14 +246,8 @@ export function Features8({ techStack }: Features8Props) {
                       <span className="block h-fit rounded border px-2 py-1 text-xs shadow-sm">
                         IA de Soporte
                       </span>
-                      <div className="ring-background size-7 ring-4">
-                        <Image
-                          className="size-full rounded-full"
-                          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=40&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                          alt="AI Support Avatar"
-                          width={28}
-                          height={28}
-                        />
+                      <div className="ring-background size-7 ring-4 bg-muted rounded-full flex items-center justify-center">
+                        <LifeBuoy className="size-4 text-muted-foreground" />
                       </div>
                     </div>
                   </div>
