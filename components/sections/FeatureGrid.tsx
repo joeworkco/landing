@@ -1,5 +1,6 @@
 // © 2025 JoeWork.co
 import FeatureCard from "@/components/ui/FeatureCard";
+import RotatingWords from "@/components/ui/RotatingWords";
 import { BarChartBig, Users, Zap } from "lucide-react"; // Example icons
 
 // const t = useTranslations('Page.Home.Features'); // For i18n
@@ -39,7 +40,7 @@ const FeatureGrid = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             {/* {t('sectionTitle')} Example: */}
-            Transforma tu Operación con JoeWork.co
+            Transforma tu Operación <RotatingWords /> Sin Fricción
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             {/* {t('sectionSubtitle')} Example: */}
