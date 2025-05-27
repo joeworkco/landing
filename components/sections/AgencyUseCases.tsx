@@ -9,12 +9,19 @@ import {
 
 const useCasesData = [
   {
-    icon: <TrendingUp className="w-6 h-6 text-primary" />,
-    title: "Conciliación Bancaria",
+    icon: <MessageCircle className="w-6 h-6 text-primary" />,
+    title: "Atención de leads a ventas por WhatsApp",
     description:
-      "Automatización del proceso de conciliación bancaria que anteriormente requería 40 horas mensuales de trabajo manual y era propenso a errores.",
+      "Aumenta tus ventas con una atención humanizada por WhatsApp acompañado al interesado a hacer una compra sin salir a otra plataforma.",
+    result: "Resultado: Mejora un 40% tus conversiones de interesados a ventas",
+  },
+  {
+    icon: <Calculator className="w-6 h-6 text-primary" />,
+    title: "Creación de Cotizaciones y Seguimiento",
+    description:
+      "Mejora tu flujo de venta y no dejes a ningún prospecto sin atender hasta el cierre de la venta.",
     result:
-      "Resultado: Reducción del 100% en errores y ahorro de 38 horas mensuales",
+      "Resultado: Entrega del 100% de solicitudes de cotización y mejora de 20% de conversión de ventas",
   },
   {
     icon: <Users className="w-6 h-6 text-primary" />,
@@ -33,19 +40,12 @@ const useCasesData = [
       "Resultado: Ahorro de 60 horas mensuales y reducción del ciclo de cobro en 5 días",
   },
   {
-    icon: <Calculator className="w-6 h-6 text-primary" />,
-    title: "Creación de Cotizaciones y Seguimiento",
+    icon: <TrendingUp className="w-6 h-6 text-primary" />,
+    title: "Conciliación Bancaria",
     description:
-      "Mejora tu flujo de venta y no dejes a ningún prospecto sin atender hasta el cierre de la venta.",
+      "Automatización del proceso de conciliación bancaria que anteriormente requería 40 horas mensuales de trabajo manual y era propenso a errores.",
     result:
-      "Resultado: Entrega del 100% de solicitudes de cotización y mejora de 20% de conversión de ventas",
-  },
-  {
-    icon: <MessageCircle className="w-6 h-6 text-primary" />,
-    title: "Atención de leads a ventas por WhatsApp",
-    description:
-      "Aumenta tus ventas con una atención humanizada por WhatsApp acompañado al interesado a hacer una compra sin salir a otra plataforma.",
-    result: "Resultado: Mejora un 40% tus conversiones de interesados a ventas",
+      "Resultado: Reducción del 100% en errores y ahorro de 38 horas mensuales",
   },
 ];
 
