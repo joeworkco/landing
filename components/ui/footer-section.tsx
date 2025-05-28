@@ -100,9 +100,9 @@ function FooterSection() {
               Contáctanos
             </h3>
             <address className="space-y-2 text-sm not-italic text-neutral-600 dark:text-neutral-300">
-              <p>Calle Ficticia 123, Lima, Perú</p>
-              <p>Teléfono: (+51) 987 654 321</p>
-              <p>Email: hola@joework.co</p>
+              <p>Av. Angamos Oeste 1613, Lima, Perú</p>
+              <p>Teléfono: (+51) 972 961 524</p>
+              <p>Email: me@joework.co</p>
             </address>
           </div>
           <div className="relative">

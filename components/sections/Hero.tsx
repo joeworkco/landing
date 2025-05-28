@@ -27,7 +27,7 @@ const Hero = () => {
             Consultoría Gratuita
           </Link>
           <Link
-            href="#use-cases-section"
+            href="/use-cases"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-base font-medium text-accent-foreground shadow-sm hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 dark:focus:ring-offset-background"
           >
             {/* {t('secondaryButton')} Example: */}

@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const pricingTiers = [
   {
     name: "Freelancer",
-    priceMonthly: "49",
+    priceMonthly: "500",
     priceSuffix: "USD/mes",
     description: "Ideal para profesionales independientes y tareas puntuales.",
     features: [
@@ -34,7 +34,7 @@ const pricingTiers = [
   },
   {
     name: "PyME",
-    priceMonthly: "199",
+    priceMonthly: "1500",
     priceSuffix: "USD/mes",
     description:
       "Perfecto para equipos pequeños y medianos con flujos de trabajo regulares.",
@@ -84,7 +84,9 @@ export default async function PricingPage() {
         {pricingTiers.map((tier) => (
           <div
             key={tier.name}
-            className={`relative flex flex-col rounded-2xl border ${tier.popular ? "border-primary shadow-2xl" : "border-border"} p-8 bg-card text-card-foreground`}
+            className={`relative flex flex-col rounded-2xl border ${
+              tier.popular ? "border-primary shadow-2xl" : "border-border"
+            } p-8 bg-card text-card-foreground`}
           >
             {tier.popular && (
               <div className="absolute top-0 -translate-y-1/2 rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-primary-foreground">
@@ -127,7 +129,11 @@ export default async function PricingPage() {
             </ul>
             <Link
               href={tier.ctaLink}
-              className={`mt-10 block rounded-md px-3 py-2 text-center text-base font-semibold leading-6 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${tier.popular ? "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:outline-primary" : "bg-muted text-muted-foreground hover:bg-accent focus-visible:outline-muted"}`}
+              className={`mt-10 block rounded-md px-3 py-2 text-center text-base font-semibold leading-6 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
+                tier.popular
+                  ? "bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:outline-primary"
+                  : "bg-muted text-muted-foreground hover:bg-accent focus-visible:outline-muted"
+              }`}
             >
               {tier.cta}
             </Link>

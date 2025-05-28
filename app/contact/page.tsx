@@ -13,18 +13,20 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 // Placeholder values - replace with actual links
-const CALENDLY_URL = "https://calendly.com/your-link/demo"; // REPLACE THIS
-const WHATSAPP_NUMBER = "51999888777"; // REPLACE THIS with international format number (e.g., Peru)
-const WHATSAPP_MESSAGE = "Hola! Quisiera agendar una demo de JoeWork.co";
+const CALENDLY_URL =
+  "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3s8zM9S_5FSCobJFVfQjijKHzCKivWKEK-Etuqoc-sXNRfMJobq4dygOb7uafwEAnw-Ts26ibo?gv=true"; // REPLACE THIS
+// const WHATSAPP_NUMBER = "51999888777"; // REPLACE THIS with international format number (e.g., Peru)
+// const WHATSAPP_MESSAGE = "Hola! Quisiera agendar una demo de JoeWork.co";
 
 export default async function ContactPage() {
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  // const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  const whatsappLink = `https://wa.link/dfj0rl`;
 
   return (
     <div className="container mx-auto px-4 md:px-6 py-12 md:py-20">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          Hablemos de Automatización
+          Hablemos de Automatización Inteligente
         </h1>
         <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
           Agenda una demostración personalizada o contáctanos directamente para
@@ -72,7 +74,7 @@ export default async function ContactPage() {
                 href="mailto:hello@joework.co"
                 className="text-primary hover:underline"
               >
-                hello@joework.co
+                me@joework.co
               </a>
             </p>
             {/* Add Address or other info if needed */}
