@@ -8,6 +8,12 @@ import LogoWall from "@/components/sections/LogoWall";
 import QuoteSection from "@/components/sections/QuoteSection";
 // import { useTranslations } from "next-intl"; // Uncomment if using translations
 
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return [{ locale: "en" }];
+}
+
 export default function LocaleHomePage() {
   // const t = useTranslations("Page.Home"); // Uncomment if using translations
 

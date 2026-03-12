@@ -7,6 +7,12 @@ import { Metadata } from "next";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import path from "path";
 
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return [{ locale: "en" }];
+}
+
 export async function generateMetadata(): Promise<Metadata> {
   return constructMetadata({
     title: "Privacy Policy - JoeWork.co",
