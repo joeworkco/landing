@@ -19,8 +19,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_BASE_PATH: /landing
-      NEXT_PUBLIC_SITE_URL: https://joeworkco.github.io/landing
+      NEXT_PUBLIC_SITE_URL: https://joework.co
     steps:
       - name: Checkout
         uses: actions/checkout@v4
