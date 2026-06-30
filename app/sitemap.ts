@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/casos-de-uso",
     "/recursos",
     "/recursos/calculadora-roi",
+    "/recursos/como-crear-company-brain",
     "/blog",
     "/privacy-policy",
     "/terms-of-service",

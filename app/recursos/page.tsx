@@ -26,7 +26,8 @@ const resources = [
   {
     title: "Cómo crear un Company Brain",
     description: "Guía para ordenar fuentes, permisos, recuperación y feedback.",
-    status: "Próximamente",
+    href: "/recursos/como-crear-company-brain",
+    status: "Disponible",
     icon: FileText,
   },
   {
