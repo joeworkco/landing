@@ -1,24 +1,30 @@
 // © 2025 JoeWork.co
 
-import CtaSection from "@/components/sections/CtaSection";
-import Differentiators from "@/components/sections/Differentiators";
-import Faq from "@/components/sections/Faq";
-import FeatureGrid from "@/components/sections/FeatureGrid";
-import Hero from "@/components/sections/Hero";
-import LogoWall from "@/components/sections/LogoWall";
+import HomeContent from "@/components/marketing/home";
+import { faqs } from "@/config/marketing";
+import { constructMetadata } from "@/lib/metadata";
 
-// Note: Removed metadata generation from page, handled by root layout now.
+export const metadata = constructMetadata({
+  description:
+    "Trabajadores IA, Company Brain y consultoría para vender más, operar mejor y escalar sin aumentar la carga operativa.",
+  path: "/",
+});
 
 export default function HomePage() {
-  // Removed async and params
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
   return (
-    <div className="w-full flex flex-col items-center">
-      <Hero />
-      <FeatureGrid />
-      <Differentiators />
-      <LogoWall />
-      <Faq />
-      <CtaSection />
-    </div>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <HomeContent />
+    </>
   );
 }

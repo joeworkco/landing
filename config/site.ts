@@ -13,9 +13,9 @@ const EMAIL_URL = "mailto:hello@joework.co";
 
 export const siteConfig: SiteConfig = {
   name: "JoeWork",
-  tagLine: "AI staff, ready on‑screen",
+  tagLine: "Trabajadores IA para empresas",
   description:
-    "Record any web task once – our bilingual AI assistant repeats it 24/7, saving teams 5 hrs/week.",
+    "Trabajadores IA, Company Brain y consultoría para vender más, operar mejor y construir una organización que aprende.",
   url: BASE_URL,
   authors: [
     {
@@ -31,10 +31,10 @@ export const siteConfig: SiteConfig = {
     github: GITHUB_URL,
   },
   themeColors: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: "(prefers-color-scheme: light)", color: "#FAFAF6" },
+    { media: "(prefers-color-scheme: dark)", color: "#FAFAF6" },
   ],
-  defaultNextTheme: "system", // next-theme option: system | dark | light
+  defaultNextTheme: "light",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/logo.png",

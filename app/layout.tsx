@@ -1,20 +1,35 @@
 // © 2025 JoeWork.co
-// import Footer from "@/components/layout/Footer"; // Removed Footer import
-import { FooterDemo } from "@/components/demos/FooterDemo"; // Added FooterDemo import
+import { FooterDemo } from "@/components/demos/FooterDemo";
 import Nav from "@/components/layout/Nav";
 import { siteConfig } from "@/config/site";
 import { constructMetadata } from "@/lib/metadata";
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
+import { JetBrains_Mono, Newsreader, Work_Sans } from "next/font/google";
 import { ReactNode } from "react";
 
-// Regenerate metadata directly here, without locale
+const workSans = Work_Sans({
+  subsets: ["latin"],
+  variable: "--font-work-sans",
+  display: "swap",
+});
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  style: ["italic"],
+  variable: "--font-newsreader",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
 export function generateMetadata(): Metadata {
   return constructMetadata({
-    title: siteConfig.name, // Use base name
     description: siteConfig.description,
-    // No locale needed here anymore
   });
 }
 
@@ -23,26 +38,27 @@ type Props = {
 };
 
 export default function RootLayout({ children }: Props) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "JoeWork",
+    url: siteConfig.url,
+    email: "hello@joework.co",
+    description: siteConfig.description,
+  };
+
   return (
-    // Defaulting lang to 'en' for now
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body className="min-h-screen bg-white dark:bg-black font-sans antialiased flex flex-col">
-        {/* Removed NextIntlClientProvider */}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme={siteConfig.defaultNextTheme || "system"}
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Nav />
-          <main className="flex-grow flex flex-col items-center w-full">
-            {children}
-          </main>
-          {/* <Footer /> */}
-          {/* Removed Footer component */}
-          <FooterDemo /> {/* Added new FooterDemo component here */}
-        </ThemeProvider>
+    <html lang="es">
+      <body
+        className={`${workSans.variable} ${newsreader.variable} ${jetbrainsMono.variable} flex min-h-screen flex-col bg-background text-foreground antialiased`}
+      >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <Nav />
+        <main className="flex-grow">{children}</main>
+        <FooterDemo />
       </body>
     </html>
   );

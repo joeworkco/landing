@@ -1,43 +1,28 @@
-// © 2025 JoeWork.co
-
+import { useCases } from "@/config/marketing";
 import { siteConfig } from "@/config/site";
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
-const siteUrl = siteConfig.url;
-
-type ChangeFrequency =
-  | "always"
-  | "hourly"
-  | "daily"
-  | "weekly"
-  | "monthly"
-  | "yearly"
-  | "never"
-  | undefined;
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Static pages
-  const staticPages = [
+export default function sitemap(): MetadataRoute.Sitemap {
+  const staticPaths = [
     "",
-    "/thanks",
-    "/use-cases",
-    "/use-cases/sunat",
-    "/use-cases/ecommerce",
-    "/pricing",
-    "/contact",
-    "/docs",
+    "/trabajadores-ia",
+    "/company-brain",
+    "/consultoria-ia",
+    "/casos-de-uso",
+    "/recursos",
+    "/recursos/calculadora-roi",
     "/blog",
+    "/privacy-policy",
+    "/terms-of-service",
   ];
+  const casePaths = useCases.map(({ slug }) => `/casos-de-uso/${slug}`);
 
-  // Generate pages
-  const pages = staticPages.map((page) => ({
-    url: `${siteUrl}${page}`,
+  return [...staticPaths, ...casePaths].map((path) => ({
+    url: `${siteConfig.url}${path}`,
     lastModified: new Date(),
-    changeFrequency: "weekly" as ChangeFrequency,
-    priority: page === "" ? 1.0 : 0.8,
+    changeFrequency: path === "" ? "weekly" : "monthly",
+    priority: path === "" ? 1 : path.startsWith("/casos-de-uso/") ? 0.7 : 0.8,
   }));
-
-  return pages;
 }

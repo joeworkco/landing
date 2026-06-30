@@ -1,46 +1,5 @@
-// © 2025 JoeWork.co
-import CaseHero from "@/components/sections/CaseHero";
-import { constructMetadata } from "@/lib/metadata";
-import { ShoppingCart } from "lucide-react";
-import { Metadata } from "next";
+import LegacyBridge from "@/components/marketing/legacy-bridge";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return constructMetadata({
-    title: "Automatización Ecommerce - JoeWork.co",
-    description:
-      "Gestiona tu tienda online eficientemente con la IA de JoeWork.co.",
-    path: "/use-cases/ecommerce",
-  });
-}
-
-export default async function EcommerceUseCasePage() {
-  return (
-    <div className="w-full">
-      <CaseHero
-        icon={ShoppingCart}
-        title="Automatización para Ecommerce"
-        subtitle="Desde la gestión de inventario hasta el procesamiento de pedidos y devoluciones, optimiza tu operación en MercadoLibre, Shopify, WooCommerce y más."
-      />
-
-      <div className="container mx-auto px-4 md:px-6 py-12 md:py-16">
-        <div className="prose dark:prose-invert max-w-none">
-          <h2>Optimización de Procesos</h2>
-          <p>
-            Placeholder content explaining the ecommerce automation process...
-          </p>
-          <ul>
-            <li>Actualización automática de stock entre plataformas.</li>
-            <li>Procesamiento rápido y sin errores de pedidos.</li>
-            <li>Gestión eficiente de devoluciones y reembolsos.</li>
-            <li>Generación de reportes de ventas personalizados.</li>
-          </ul>
-
-          <h2>Plataformas Soportadas</h2>
-          <p>Placeholder listing supported platforms...</p>
-
-          {/* Add more sections: Case studies, technical details, CTA etc. */}
-        </div>
-      </div>
-    </div>
-  );
+export default function EcommerceBridgePage() {
+  return <LegacyBridge title="Ecommerce ahora es un flujo completo." copy="Conecta WhatsApp, Shopify, pagos, seguimiento y postventa con trabajadores IA especializados." destination="/casos-de-uso/ecommerce-shopify" destinationLabel="Ver Ecommerce + Shopify" />;
 }
