@@ -1,148 +1,47 @@
-🌍 *[English](README.md) ∙ [简体中文](README_zh.md) ∙ [日本語](README_ja.md)*
+# JoeWork Landing
 
-# Next Forge - Multilingual Next.js 15 Starter
+Public marketing site for [JoeWork](https://joework.co), built as a statically exported Next.js application and deployed to GitHub Pages.
 
-A feature-rich Next.js 15 multilingual starter template to help you quickly build globally-ready websites.
+## Local setup
 
-- [👉 Source Code](https://github.com/weijunext/nextjs-15-starter)
-- [👉 Live Demo](https://nextforge.dev/)
+Requirements:
 
-🚀 Looking for a full-featured SaaS Starter Kit? [Check out the complete version](https://nexty.dev)
+- Node.js 22
+- npm 10
 
-## ✨ Features
-
-- 🌐 Built-in i18n support (English, Chinese, Japanese)
-- 🎨 Modern UI design with Tailwind CSS
-- 🌙 Dark/Light theme toggle
-- 📱 Responsive layout
-- 📝 MDX blog system 
-- 🔍 SEO optimization
-- 📊 Integrated analytics tools
-  - Google Analytics
-  - Baidu Analytics
-  - Google Adsense
-  - Vercel Analytics
-
-## 🚀 Quick Start
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/weijunext/nextjs-15-starter.git
-```
-
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn
-# or
-pnpm install
-```
-
-3. Copy environment variables:
-```bash
-cp .env.example .env
-```
-
-4. Start the development server:
-```bash
+npm ci
+cp .env.example .env.local
 npm run dev
 ```
 
-Visit http://localhost:3000 to view your application.
+Open `http://localhost:3000`.
 
-## ⚙️ Configuration
+## Commands
 
-1. Basic Setup
-   - Edit `config/site.ts` for website information
-   - Update icons and logo in `public/`
-   - Configure `app/sitemap.ts` for sitemap
-   - Update `app/robots.ts` for robots.txt
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run lint` | Run ESLint with zero warnings allowed |
+| `npm run typecheck` | Run TypeScript without emitting files |
+| `npm run build` | Generate the static site in `out/` |
+| `npm run check` | Run all release checks |
 
-2. i18n Setup
-   - Add/modify language files in `i18n/messages/`
-   - Configure supported languages in `i18n/routing.ts`
-   - Set up i18n routing in `middleware.ts`
-   - Create pages under `app/[locale]/`
-   - Use the `Link` component from `i18n/routing.ts` instead of Next.js default
+## Project map
 
-## 📝 Content Management
+- `app/`: routes, layouts, metadata, sitemap, and robots
+- `components/sections/`: JoeWork page sections
+- `components/ui/`: reusable UI primitives
+- `config/site.ts`: canonical site metadata and links
+- `content/`: MDX content for legal and informational pages
+- `public/`: static assets
+- `docs/`: product, architecture, and execution context
+- `AGENTS.md`: short operating guide for coding agents
 
-### Blog Posts
-Create MDX files in `blogs/[locale]` with the following format:
+Read [docs/README.md](docs/README.md) before making structural or product changes.
 
-```markdown
----
-title: Post Title
-description: Post Description
-image: /image.png
-slug: /url-path
-tags: tag1,tag2
-date: 2025-02-20
-visible: published
-pin: true
----
+## Deployment
 
-Post content...
-```
+Pushes to `main` trigger `.github/workflows/deploy-pages.yml`. The workflow installs with `npm ci`, builds a static export, and deploys `out/` to GitHub Pages.
 
-Reference `types/blog.ts` for supported fields.
-
-### Static Pages
-Manage static page content in `content/[page]/[locale].mdx`.
-
-## 🔍 SEO Optimization
-
-Built-in comprehensive SEO features:
-   - Server-side rendering and static generation
-   - Automatic sitemap.xml generation
-   - robots.txt configuration
-   - Optimized metadata
-   - Open Graph support
-   - Multilingual SEO support
-
-## 📊 Analytics
-
-Enable analytics by adding IDs in `.env`:
-```
-NEXT_PUBLIC_GOOGLE_ANALYTICS=
-NEXT_PUBLIC_BAIDU_TONGJI=
-NEXT_PUBLIC_GOOGLE_ADSENSE=
-```
-
-## 🛠️ Tech Stack
-
-- Next.js 15
-- TypeScript
-- Tailwind CSS
-- Shadcn/ui
-- next-intl
-- MDX
-- Zustand
-- Vercel
-
-## One-Click Deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/weijunext/nextjs-15-starter&project-name=&repository-name=nextjs-15-starter&demo-title=Nextjs15Starter&demo-description=Nextjs%2015%20starter.&demo-url=https://nextforge.dev&demo-image=https://nextforge.dev/og.png)
-
-## 📄 License
-
-MIT
-
-## 🤝 Contributing
-
-Issues and Pull Requests are welcome!
-
-## About the Author
-
-Next.js full-stack specialist providing expert services in project development, performance optimization, and SEO improvement.
-
-For consulting and training opportunities, reach out at weijunext@gmail.com
-
-- [Github](https://github.com/weijunext)
-- [Bento](https://bento.me/weijunext)
-- [Twitter/X](https://twitter.com/judewei_dev)
-
-<a href="https://www.buymeacoffee.com/weijunext" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/G2G6TWWMG)
+Do not commit `.env`, `.env.local`, build output, logs, or credentials. Keep `.env.example` limited to safe placeholders.
