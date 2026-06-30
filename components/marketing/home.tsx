@@ -147,7 +147,7 @@ export default function HomeContent() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[hsl(var(--joe-green-dark))]">El problema no es la ambición</p>
             <h2 className="mt-5 text-4xl font-extrabold leading-[1.06] md:text-5xl">
-              Tu equipo está ocupado. No siempre está avanzando.
+              Un equipo &quot;ocupado&quot; no avanza y le cuesta crear valor.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-7 text-muted-foreground">
               Muchas empresas pierden ventas, tiempo y dinero porque sus procesos dependen de tareas manuales.
