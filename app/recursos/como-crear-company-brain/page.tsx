@@ -437,7 +437,7 @@ export default function CompanyBrainGuidePage() {
                 </p>
               </div>
 
-              <div className="grid content-start gap-px bg-white/10 sm:grid-cols-2">
+              <div className="grid self-start gap-px bg-white/10 sm:grid-cols-2">
                 {[
                   { label: "Entrada", value: "Señal del cliente", icon: MessagesSquare },
                   { label: "Contexto", value: "Company Brain recupera reglas y datos", icon: BrainCircuit },
