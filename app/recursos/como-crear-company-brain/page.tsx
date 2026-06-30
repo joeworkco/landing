@@ -10,9 +10,12 @@ import {
   BookOpenCheck,
   BrainCircuit,
   Check,
+  CircleCheckBig,
+  Clock3,
   DatabaseZap,
   FileText,
   KeyRound,
+  Layers3,
   MessagesSquare,
   Network,
   RefreshCcw,
@@ -179,6 +182,16 @@ export default function CompanyBrainGuidePage() {
                 <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
                   Ordena fuentes, permisos, recuperación y feedback para que humanos y agentes IA operen con el mismo contexto confiable.
                 </p>
+                <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] font-semibold uppercase tracking-[.12em] text-white/40">
+                  <span className="inline-flex items-center gap-2">
+                    <Clock3 className="h-4 w-4 text-primary" />
+                    Lectura de 6 minutos
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <Layers3 className="h-4 w-4 text-primary" />
+                    6 capas de arquitectura
+                  </span>
+                </div>
                 <div className="mt-9 flex flex-wrap gap-3">
                   <Button asChild size="lg">
                     <a href="#arquitectura">
@@ -245,28 +258,91 @@ export default function CompanyBrainGuidePage() {
           </div>
         </header>
 
-        <section className="border-b border-border">
-          <div className="site-container grid gap-10 py-16 md:py-24 lg:grid-cols-[.7fr_1.3fr]">
-            <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-[.16em] text-[hsl(var(--joe-green-dark))]">
-                01 · Cerebro único
-              </p>
-              <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-5xl">
-                De herramientas aisladas a inteligencia conectada.
-              </h2>
+        <nav
+          aria-label="Contenido de la guía"
+          className="border-b border-border bg-white/95 md:sticky md:top-[68px] md:z-30"
+        >
+          <div className="site-container overflow-x-auto">
+            <div className="flex min-w-max items-center gap-1 py-3">
+              <span className="mr-4 hidden font-mono text-[9px] font-semibold uppercase tracking-[.14em] text-muted-foreground md:inline">
+                En esta guía
+              </span>
+              {[
+                ["Principios", "#principios"],
+                ["6 capas", "#arquitectura"],
+                ["Compounding", "#compounding"],
+                ["Coordinación", "#coordinacion"],
+                ["Implementación", "#implementacion"],
+              ].map(([label, href], index) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="inline-flex min-h-10 items-center gap-2 px-3 text-xs font-bold transition-colors hover:bg-[hsl(var(--joe-green-soft))] hover:text-[hsl(var(--joe-green-dark))]"
+                >
+                  <span className="font-mono text-[9px] text-[hsl(var(--joe-green-dark))]">0{index + 1}</span>
+                  {label}
+                </a>
+              ))}
             </div>
-            <div className="max-w-3xl lg:pt-8">
-              <p className="text-xl leading-9 text-foreground">
-                Una empresa nativa de IA no acumula copilotos y agentes independientes. Construye un sistema central que conecta conversaciones, CRM, documentos, código y decisiones para alimentar resultados coherentes.
-              </p>
-              <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                El valor no está en almacenar más información. Está en hacer que el contexto correcto aparezca durante una tarea y permita actuar con criterio, permisos y trazabilidad.
-              </p>
+          </div>
+        </nav>
+
+        <section id="principios" className="scroll-mt-36 border-b border-border">
+          <div className="site-container py-16 md:py-24">
+            <div className="grid gap-10 lg:grid-cols-[.7fr_1.3fr]">
+              <div>
+                <p className="font-mono text-xs font-semibold uppercase tracking-[.16em] text-[hsl(var(--joe-green-dark))]">
+                  01 · Cerebro único
+                </p>
+                <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-5xl">
+                  De herramientas aisladas a inteligencia conectada.
+                </h2>
+              </div>
+              <div className="max-w-3xl lg:pt-8">
+                <p className="text-xl leading-9 text-foreground">
+                  Una empresa nativa de IA no acumula copilotos y agentes independientes. Construye un sistema central que conecta conversaciones, CRM, documentos, código y decisiones para alimentar resultados coherentes.
+                </p>
+                <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                  El valor no está en almacenar más información. Está en hacer que el contexto correcto aparezca durante una tarea y permita actuar con criterio, permisos y trazabilidad.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-14 grid gap-px border border-border bg-border md:grid-cols-3">
+              {[
+                {
+                  number: "01",
+                  title: "Centraliza",
+                  copy: "Conecta fuentes y herramientas alrededor de un contexto compartido.",
+                  icon: BrainCircuit,
+                },
+                {
+                  number: "02",
+                  title: "Capitaliza",
+                  copy: "Convierte cada interacción y corrección en conocimiento reutilizable.",
+                  icon: Sparkles,
+                },
+                {
+                  number: "03",
+                  title: "Coordina",
+                  copy: "Entrega contexto a humanos y agentes según tarea, permisos y riesgo.",
+                  icon: Network,
+                },
+              ].map(({ number, title, copy, icon: Icon }) => (
+                <div key={number} className="bg-white p-6 md:p-8">
+                  <div className="flex items-center justify-between">
+                    <Icon className="h-6 w-6 text-[hsl(var(--joe-green-dark))]" />
+                    <span className="font-mono text-xs font-bold text-muted-foreground">{number}</span>
+                  </div>
+                  <h3 className="mt-10 text-2xl font-extrabold">{title}</h3>
+                  <p className="mt-3 max-w-sm leading-7 text-muted-foreground">{copy}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section id="arquitectura" className="section-space scroll-mt-24 bg-white">
+        <section id="arquitectura" className="section-space scroll-mt-36 bg-white">
           <div className="site-container">
             <div className="grid gap-8 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
               <div>
@@ -303,7 +379,7 @@ export default function CompanyBrainGuidePage() {
           </div>
         </section>
 
-        <section className="section-space bg-[hsl(var(--joe-paper))]">
+        <section id="compounding" className="section-space scroll-mt-36 bg-[hsl(var(--joe-paper))]">
           <div className="site-container">
             <div className="grid gap-12 lg:grid-cols-[.86fr_1.14fr] lg:items-center">
               <div>
@@ -346,7 +422,7 @@ export default function CompanyBrainGuidePage() {
           </div>
         </section>
 
-        <section className="section-space bg-[hsl(var(--joe-console))] text-white">
+        <section id="coordinacion" className="section-space scroll-mt-36 bg-[hsl(var(--joe-console))] text-white">
           <div className="site-container">
             <div className="grid gap-12 lg:grid-cols-[.72fr_1.28fr]">
               <div>
@@ -379,7 +455,7 @@ export default function CompanyBrainGuidePage() {
           </div>
         </section>
 
-        <section className="section-space">
+        <section id="implementacion" className="section-space scroll-mt-36">
           <div className="site-container grid gap-12 lg:grid-cols-[.75fr_1.25fr]">
             <div>
               <p className="font-mono text-xs font-semibold uppercase tracking-[.16em] text-[hsl(var(--joe-green-dark))]">
@@ -393,7 +469,12 @@ export default function CompanyBrainGuidePage() {
               </p>
             </div>
 
-            <ol className="border-t border-border">
+            <div>
+              <div className="mb-5 flex items-center gap-3 bg-[hsl(var(--joe-green-soft))] p-4 text-sm font-semibold">
+                <CircleCheckBig className="h-5 w-5 text-[hsl(var(--joe-green-dark))]" />
+                Resultado: un primer flujo medible, gobernado y listo para mejorar.
+              </div>
+              <ol className="border-t border-border">
               {checklist.map((item, index) => (
                 <li key={item} className="grid grid-cols-[36px_1fr] gap-4 border-b border-border py-5 md:py-6">
                   <span className="grid h-7 w-7 place-items-center rounded-full bg-[hsl(var(--joe-green-soft))] text-[hsl(var(--joe-green-dark))]">
@@ -405,7 +486,8 @@ export default function CompanyBrainGuidePage() {
                   </div>
                 </li>
               ))}
-            </ol>
+              </ol>
+            </div>
           </div>
         </section>
 
