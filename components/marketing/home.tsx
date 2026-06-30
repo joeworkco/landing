@@ -103,7 +103,7 @@ export default function HomeContent() {
               <span className="block">Sin más carga operativa.</span>
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-muted-foreground md:text-xl">
-              Diseñamos, implementamos y operamos trabajadores IA para que tu empresa venda más, opere mejor y aprenda con cada interacción.
+              Implementamos Agentes IA para que tu empresa vendas más, sea más eficaz y mejore constantemente con tus empleados y clientes.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
