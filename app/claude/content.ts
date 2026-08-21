@@ -20,7 +20,10 @@ export const CLAUDE_GUIDE_START_URL =
   "https://joework.co/claude/guia/inicio.md";
 
 export const CLAUDE_GUIDE_DOWNLOAD_URL =
-  "/claude/descargas/claude-en-marcha.zip";
+  "https://joework.co/claude/descargas/claude-en-marcha.zip";
+
+export const CLAUDE_SKILL_PROMPT =
+  "Usa el skill Claude en Marcha y ponme en marcha.";
 
 export const CLAUDE_GUIDE_MASTER_PROMPT =
   `Lee ${CLAUDE_GUIDE_START_URL} y ponme en marcha.`;

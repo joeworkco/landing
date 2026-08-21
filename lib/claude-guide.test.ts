@@ -11,11 +11,35 @@ import {
   CLAUDE_GUIDE_DOWNLOAD_URL,
   CLAUDE_GUIDE_MASTER_PROMPT,
   CLAUDE_GUIDE_START_URL,
+  CLAUDE_SKILL_PROMPT,
   claudeCheckpointPrompts,
   claudeGuideSessions,
 } from "../app/claude/content.ts";
 
 describe("Claude guide progress", () => {
+  it("publica el contrato canónico completo bajo /claude/guia", () => {
+    const guideFiles = [
+      "inicio",
+      "00-diagnostico",
+      "01-entregable",
+      "02-perfil",
+      "03-conectores",
+      "04-proyecto",
+      "05-entrevista",
+      "06-reporte",
+      "07-destino",
+      "08-horario",
+      "09-cierre",
+      "coach",
+      "estado",
+    ];
+
+    for (const file of guideFiles) {
+      assert.ok(existsSync(`public/claude/guia/${file}.md`), file);
+    }
+    assert.ok(existsSync("public/claude/descargas/claude-en-marcha.zip"));
+  });
+
   it("normaliza pasos duplicados, desordenados o fuera de rango", () => {
     assert.deepEqual(
       normalizeCompletedClaudeSteps([10, 2, 2, 0, 11, 4.5, 1]),
@@ -39,7 +63,7 @@ describe("Claude guide progress", () => {
     );
   });
 
-  it("expone exactamente once prompts copiables, incluidos los checkpoints", () => {
+  it("expone doce prompts copiables, incluidos checkpoints y skill", () => {
     const stepPrompts = claudeGuideSessions.flatMap((session) =>
       session.steps.filter((step) => Boolean(step.prompt)),
     );
@@ -48,7 +72,11 @@ describe("Claude guide progress", () => {
     assert.ok(CLAUDE_GUIDE_MASTER_PROMPT.length > 0);
     assert.equal(stepPrompts.length, 8);
     assert.equal(checkpointPrompts.length, 2);
-    assert.equal(1 + stepPrompts.length + checkpointPrompts.length, 11);
+    const skillPromptCount = CLAUDE_SKILL_PROMPT ? 1 : 0;
+    assert.equal(
+      1 + stepPrompts.length + checkpointPrompts.length + skillPromptCount,
+      12,
+    );
   });
 
   it("sirve la guía y el ZIP desde el único repositorio de joework.co", () => {
@@ -58,13 +86,12 @@ describe("Claude guide progress", () => {
     );
     assert.equal(
       CLAUDE_GUIDE_DOWNLOAD_URL,
-      "/claude/descargas/claude-en-marcha.zip",
+      "https://joework.co/claude/descargas/claude-en-marcha.zip",
     );
     assert.ok(CLAUDE_GUIDE_MASTER_PROMPT.includes(CLAUDE_GUIDE_START_URL));
     assert.doesNotMatch(CLAUDE_GUIDE_MASTER_PROMPT, /github\.com/i);
     assert.ok(existsSync("public/claude/guia/inicio.md"));
     assert.ok(existsSync("public/claude/descargas/claude-en-marcha.zip"));
-    assert.ok(existsSync("public/claude/skill/claude-en-marcha/SKILL.md"));
   });
 
   it("refleja únicamente los pasos probados en la tarjeta de estado", () => {
