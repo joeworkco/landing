@@ -250,6 +250,7 @@ export const navigation = [
   { href: "/consultoria-ia", label: "Consultoría IA" },
   { href: "/casos-de-uso", label: "Casos de uso" },
   { href: "/recursos", label: "Recursos" },
+  { href: "/claude", label: "Claude" },
 ];
 
 export const integrations = ["WhatsApp", "Shopify", "CRM", "Sheets", "Email", "Sistemas internos"];
