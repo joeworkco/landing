@@ -172,7 +172,19 @@ export function ClaudeGuide() {
                       <div className="pb-8 pl-0 md:pl-16">
                         <p className="max-w-2xl text-lg font-semibold leading-8">{step.objective}</p>
 
-                        <ol className="mt-6 border-t border-border">
+                        <div className="mt-6 max-w-3xl border-l-2 border-primary bg-[hsl(var(--joe-paper))] p-5 md:p-6" data-step-why>
+                          <p className="font-mono text-[10px] font-bold uppercase tracking-[.14em] text-[hsl(var(--joe-green-dark))]">
+                            Por qué importa
+                          </p>
+                          <p className="mt-3 text-sm leading-7 text-muted-foreground md:text-base">
+                            {step.why}
+                          </p>
+                        </div>
+
+                        <p className="mt-7 font-mono text-[10px] font-bold uppercase tracking-[.14em] text-muted-foreground">
+                          Qué vas a hacer
+                        </p>
+                        <ol className="mt-3 border-t border-border">
                           {step.actions.map((action, index) => (
                             <li key={action} className="grid grid-cols-[28px_1fr] gap-3 border-b border-border py-4 text-sm leading-6 md:text-base">
                               <span className="font-mono text-xs font-bold text-[hsl(var(--joe-green-dark))]">
@@ -201,6 +213,14 @@ export function ClaudeGuide() {
                                 {step.note}
                               </p>
                             )}
+                            <div className="mt-5 max-w-2xl border border-primary/30 bg-[hsl(var(--joe-green-soft))] p-4" data-step-payoff>
+                              <p className="font-mono text-[10px] font-bold uppercase tracking-[.14em] text-[hsl(var(--joe-green-dark))]">
+                                Lo que te queda
+                              </p>
+                              <p className="mt-2 text-sm font-semibold leading-6 text-foreground">
+                                {step.payoff}
+                              </p>
+                            </div>
                             <p className="mt-5 text-sm leading-6 text-muted-foreground" data-stuck>
                               ¿No funcionó? Escríbele <strong className="border border-amber-700/25 bg-amber-50 px-2 py-1 font-mono text-xs font-medium text-amber-800">estoy trabado</strong> a Claude y cambia a <a className="font-semibold underline decoration-primary/50 underline-offset-4 hover:text-foreground" href="#rescate">modo rescate</a>.
                             </p>

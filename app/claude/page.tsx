@@ -4,11 +4,12 @@ import { constructMetadata } from "@/lib/metadata";
 import { ClaudeGuide } from "./claude-guide";
 import { ClaudeHero } from "./claude-hero";
 import { GuideTransparency, SkillInstall } from "./guide-footer-sections";
+import { GuidePrimer } from "./guide-primer";
 
 export const metadata = constructMetadata({
   title: "Claude en Marcha",
   description:
-    "Configura Claude Desktop en 90 minutos: contexto, conectores, proyecto y un reporte útil en horario. Guía gratuita de JoeWork.",
+    "De la pantalla en blanco a un Claude que te conoce, trabaja con tu contexto y entrega algo útil cada mañana. Guía gratuita de JoeWork.",
   path: "/claude",
 });
 
@@ -55,13 +56,15 @@ export default function ClaudePage() {
 
       <ClaudeHero />
 
+      <GuidePrimer />
+
       <ClaudeGuide />
 
       <SkillInstall />
 
       <FinalCta
-        title="Empieza por una prueba real."
-        copy="Configura tu Claude personal hoy. Cuando quieras agentificar un proceso completo, hablamos."
+        title="Esto era la parte que puedes hacer solo."
+        copy="Ahora tienes un Claude que te conoce y entrega algo útil. Lo siguiente son procesos completos que corren con acceso, reglas y control. Eso es lo que implementamos en JoeWork."
       />
 
       <GuideTransparency />

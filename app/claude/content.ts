@@ -3,6 +3,8 @@ export type ClaudeGuideStep = {
   title: string;
   duration: string;
   objective: string;
+  why: string;
+  payoff: string;
   actions: string[];
   proof: string;
   prompt?: string;
@@ -39,13 +41,15 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
   {
     number: 1,
     title: "El primer resultado",
-    outcome: "Sales con un archivo útil y un Claude que ya entiende cómo trabajas.",
+    outcome: "Antes de configurar nada, vas a ver a Claude construir algo real con información tuya. Al final ya tienes un archivo descargado y un Claude que te conoce.",
     steps: [
       {
         number: 1,
         title: "Diagnóstico",
         duration: "5 min",
-        objective: "Saber desde dónde empiezas sin repetir trabajo ni asumir cómo está tu cuenta.",
+        objective: "Saber desde dónde arrancas, para no repetir lo que ya tienes hecho.",
+        why: "Claude no puede ver la configuración de tu cuenta. No sabe qué plan tienes, qué conectaste ni qué escribiste en tu perfil. Si arrancas sin aclararlo, puede darte instrucciones para una función que no tienes o asumir que algo funciona cuando nunca se probó.",
+        payoff: "Un punto de partida verificable: plan, dispositivo y conexiones reales resumidos en una sola frase.",
         actions: [
           "Identifica tu plan: Gratis, Pro, Max, Team o Enterprise.",
           "Confirma si estás en la app de escritorio, navegador o teléfono.",
@@ -60,7 +64,9 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
         number: 2,
         title: "Primer entregable real",
         duration: "15 min",
-        objective: "Ver salir un archivo completo con información de tu negocio antes de configurar nada.",
+        objective: "Un archivo de verdad, con datos tuyos, en menos de quince minutos.",
+        why: "La mayoría abandona Claude porque nunca ve salir nada más que texto en una ventana. Este paso rompe esa percepción antes de pedirte que configures nada: demuestra que puede construir un Excel con fórmulas, un documento o una presentación que funciona fuera del chat.",
+        payoff: "Un archivo útil descargado y abierto en tu computador: la primera prueba de que Claude puede producir, no solo conversar.",
         actions: [
           "Pega como texto una lista de clientes, los gastos del mes o un proceso que repites.",
           "Pide entre dos y cuatro preguntas antes de construir.",
@@ -72,9 +78,11 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
       },
       {
         number: 3,
-        title: "Perfil permanente",
+        title: "Tu perfil permanente",
         duration: "10 min",
-        objective: "Evitar que tengas que explicar tu contexto y formato preferido en cada chat.",
+        objective: "Que todos tus chats futuros sepan quién eres, sin que lo expliques otra vez.",
+        why: "Decir “soy una persona directa” no cambia casi nada. Claude necesita comportamientos observables, el motivo detrás de cada regla y un ejemplo de tu voz. Si el perfil queda en adjetivos, seguirás corrigiendo el mismo tono y repitiendo el mismo contexto en cada conversación.",
+        payoff: "Un perfil permanente que aplica tu contexto, vocabulario y forma de trabajar desde el primer mensaje de cada chat.",
         actions: [
           "Describe cómo trabajas, el vocabulario de tu negocio y las situaciones que se repiten.",
           "Escribe comportamientos concretos, en positivo, con el porqué y un ejemplo real.",
@@ -90,13 +98,15 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
   {
     number: 2,
     title: "Que conozca tu negocio",
-    outcome: "Claude trabaja con tu calendario, tus archivos y reglas propias del negocio.",
+    outcome: "Hasta aquí Claude es capaz, pero trabaja a ciegas. En esta sesión lo conectas a tu calendario y archivos para dejar de explicarle tu negocio desde cero.",
     steps: [
       {
         number: 4,
-        title: "Conecta tu trabajo real",
+        title: "Conectar tu trabajo real",
         duration: "10 min",
-        objective: "Dejar de trabajar a ciegas, empezando por la fuente con menor fricción.",
+        objective: "Calendario, correo y archivos, para que deje de trabajar a ciegas.",
+        why: "Sin una fuente conectada, Claude solo conoce lo que alcanzaste a escribir en el prompt. Puede sonar convincente y aun así responder en generalidades. Conectar primero el calendario le da una prueba rápida y poco invasiva: o menciona tus reuniones reales o sabes que está improvisando.",
+        payoff: "Claude puede leer una parte real de tu operación y señalar reuniones, cargas y prioridades con nombres concretos.",
         actions: [
           "En la app: botón + → Conectores → Administrar conectores → +.",
           "Conecta primero el calendario. Correo y archivos pueden esperar.",
@@ -111,7 +121,9 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
         number: 5,
         title: "Dale casa al trabajo",
         duration: "5 min",
-        objective: "Crear un Proyecto para que el trabajo recurrente no empiece de cero.",
+        objective: "Un Proyecto donde lo recurrente no empieza de cero cada vez.",
+        why: "Un chat suelto empieza casi desde cero. Un Proyecto conserva las reglas y los archivos que deben estar presentes en cada conversación de un mismo tipo de trabajo. Sin esa casa, terminas rearmando el contexto y obtienes respuestas distintas para el mismo proceso.",
+        payoff: "Un espacio de trabajo reutilizable que ya conoce tus precios, referencias y reglas antes de recibir el siguiente encargo.",
         actions: [
           "Ve a Proyectos en la barra lateral y crea uno solo.",
           "Nómbralo por el trabajo: Propuestas comerciales, Contenido, Operación o Estrategia.",
@@ -124,7 +136,9 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
         number: 6,
         title: "La entrevista",
         duration: "15 min",
-        objective: "Convertir lo que sabes de tu negocio en instrucciones útiles para el Proyecto.",
+        objective: "Claude te entrevista y convierte lo que sabes en instrucciones del Proyecto.",
+        why: "Casi nadie sabe explicar su negocio completo en un párrafo, pero sí puede responder una buena pregunta. La entrevista invierte el esfuerzo: Claude parte de lo que observó, detecta respuestas vagas y extrae reglas que un formulario genérico nunca encontraría.",
+        payoff: "Instrucciones específicas para tu negocio, construidas desde evidencia y respuestas tuyas, no desde una plantilla genérica.",
         actions: [
           "Pide una entrevista de máximo quince preguntas, una por una.",
           "Empieza por algo observado en calendario, archivos o el entregable del paso 2.",
@@ -140,13 +154,15 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
   {
     number: 3,
     title: "Que funcione sin ti",
-    outcome: "Terminas con un reporte aprobado, un destino claro y un horario o disparo manual.",
+    outcome: "Todo lo anterior todavía exige que abras Claude y pidas algo. Esta sesión lo convierte en una entrega útil que aparece en un lugar y un horario definidos, incluso sin ti.",
     steps: [
       {
         number: 7,
         title: "Diseña tu reporte",
         duration: "10 min",
-        objective: "Definir exactamente qué necesitas leer antes de abrir cualquier otra cosa.",
+        objective: "Lo que quieres leer cada mañana antes de abrir cualquier otra cosa.",
+        why: "Pedir “un resumen diario” y aceptar el primero que salga produce otro bloque de texto que dejarás de leer. El reporte útil aparece al comparar versiones, quitar lo que sobra y decidir qué merece tu atención cuando el día ya está lleno.",
+        payoff: "Un reporte aprobado con tus datos reales y suficiente criterio para decirte qué mirar primero y qué puedes ignorar.",
         actions: [
           "Pide tres reportes completos: operativo, comercial y de foco.",
           "Usa datos reales de conectores, archivos e entrevista.",
@@ -158,9 +174,11 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
       },
       {
         number: 8,
-        title: "Elige dónde aterriza",
+        title: "Dónde aterriza",
         duration: "5 min",
-        objective: "Hacer que el reporte aparezca donde ya miras cada mañana.",
+        objective: "Un reporte que llega donde no miras es un reporte que no existe.",
+        why: "Un buen reporte pierde todo su valor si queda enterrado en un chat que debes recordar abrir. El destino correcto no es el más sofisticado: es el lugar que ya forma parte de tu rutina y donde la entrega puede acumular historial sin añadir otra bandeja.",
+        payoff: "Una entrega completa fuera del chat, en Claude, Drive o tu correo según el lugar que realmente revisas cada mañana.",
         actions: [
           "Claude: rápido, pero exige que recuerdes abrirlo.",
           "Google Drive: útil si quieres histórico y tendencias.",
@@ -174,7 +192,9 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
         number: 9,
         title: "Ponlo en horario",
         duration: "10 min",
-        objective: "Pasar de usar una herramienta a tener un sistema que trabaja con horario.",
+        objective: "Aquí deja de ser una herramienta que usas y pasa a ser algo que trabaja.",
+        why: "Mientras el reporte dependa de que recuerdes pedirlo, sigue siendo una tarea tuya. Ponerlo en horario elimina ese punto de fallo y obliga a comprobar algo importante: que la versión automática puede consultar las mismas fuentes y conservar la calidad que aprobaste manualmente.",
+        payoff: "Una primera entrega que llegó sola y una frecuencia definida; en plan gratuito, el mismo sistema queda listo con un disparo manual corto.",
         actions: [
           "Con Pro o superior: entra a Cowork y escribe /schedule dentro de la tarea.",
           "Elige frecuencia diaria, hábil, semanal o por hora.",
@@ -189,7 +209,9 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
         number: 10,
         title: "Cierre",
         duration: "5 min",
-        objective: "Dejar claro qué existe, qué sigue pendiente y cómo usarlo desde mañana.",
+        objective: "Qué construiste, qué frases te quedan y qué sigue.",
+        why: "Sin un cierre, dentro de tres meses no recordarás qué estaba conectado, qué se probó ni por qué una regla existe. Documentar el sistema ahora evita reconstruirlo por memoria y deja visibles las partes que todavía dependen de permisos, pruebas o una acción manual.",
+        payoff: "El manual de tu propia configuración: capacidades, conexiones, frecuencia, frases útiles, límites y pendientes en un solo lugar.",
         actions: [
           "Resume qué sabe Claude, a qué está conectado y qué corre con qué frecuencia.",
           "Crea cinco frases de trabajo específicas para tu negocio.",

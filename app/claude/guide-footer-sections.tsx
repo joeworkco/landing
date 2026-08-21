@@ -58,7 +58,7 @@ export function SkillInstall() {
 
 export function GuideTransparency() {
   return (
-    <section className="border-t border-border bg-white dark:bg-[hsl(220_12%_11%)]">
+    <section id="transparencia" className="scroll-mt-28 border-t border-border bg-white dark:bg-[hsl(220_12%_11%)]">
       <div className="site-container py-14 md:py-16">
         <div className="max-w-3xl">
           <p className="font-mono text-xs font-bold uppercase tracking-[.16em] text-[hsl(var(--joe-green-dark))]">
