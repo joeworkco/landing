@@ -1,5 +1,18 @@
 export const CLAUDE_GUIDE_STEP_COUNT = 10;
 
+const CLAUDE_GUIDE_STEP_MINUTES: Record<number, number> = {
+  1: 5,
+  2: 15,
+  3: 10,
+  4: 10,
+  5: 5,
+  6: 15,
+  7: 10,
+  8: 5,
+  9: 10,
+  10: 5,
+};
+
 const CLAUDE_GUIDE_STEP_LABELS = [
   "Diagnóstico",
   "Primer entregable",
@@ -31,6 +44,27 @@ export function normalizeCompletedClaudeSteps(value: unknown): number[] {
 export function calculateClaudeProgress(completedSteps: unknown): number {
   const completed = normalizeCompletedClaudeSteps(completedSteps);
   return Math.round((completed.length / CLAUDE_GUIDE_STEP_COUNT) * 100);
+}
+
+export function formatClaudeProgressLabel(completedSteps: unknown): string {
+  const completed = normalizeCompletedClaudeSteps(completedSteps);
+
+  if (completed.length === 0) {
+    return "10 pasos · unos 90 min";
+  }
+
+  if (completed.length === CLAUDE_GUIDE_STEP_COUNT) {
+    return "10 de 10 · listo";
+  }
+
+  const completedSet = new Set(completed);
+  const remainingMinutes = Object.entries(CLAUDE_GUIDE_STEP_MINUTES).reduce(
+    (total, [step, minutes]) =>
+      completedSet.has(Number(step)) ? total : total + minutes,
+    0,
+  );
+
+  return `${completed.length} de 10 · quedan ~${remainingMinutes} min`;
 }
 
 export function buildClaudeStatusCard(completedSteps: unknown): string {
