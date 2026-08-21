@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { describe, it } from "node:test";
 import {
   buildClaudeStatusCard,
@@ -7,7 +8,9 @@ import {
   normalizeCompletedClaudeSteps,
 } from "./claude-guide.ts";
 import {
+  CLAUDE_GUIDE_DOWNLOAD_URL,
   CLAUDE_GUIDE_MASTER_PROMPT,
+  CLAUDE_GUIDE_START_URL,
   claudeCheckpointPrompts,
   claudeGuideSessions,
 } from "../app/claude/content.ts";
@@ -46,6 +49,22 @@ describe("Claude guide progress", () => {
     assert.equal(stepPrompts.length, 8);
     assert.equal(checkpointPrompts.length, 2);
     assert.equal(1 + stepPrompts.length + checkpointPrompts.length, 11);
+  });
+
+  it("sirve la guía y el ZIP desde el único repositorio de joework.co", () => {
+    assert.equal(
+      CLAUDE_GUIDE_START_URL,
+      "https://joework.co/claude/guia/inicio.md",
+    );
+    assert.equal(
+      CLAUDE_GUIDE_DOWNLOAD_URL,
+      "/claude/descargas/claude-en-marcha.zip",
+    );
+    assert.ok(CLAUDE_GUIDE_MASTER_PROMPT.includes(CLAUDE_GUIDE_START_URL));
+    assert.doesNotMatch(CLAUDE_GUIDE_MASTER_PROMPT, /github\.com/i);
+    assert.ok(existsSync("public/claude/guia/inicio.md"));
+    assert.ok(existsSync("public/claude/descargas/claude-en-marcha.zip"));
+    assert.ok(existsSync("public/claude/skill/claude-en-marcha/SKILL.md"));
   });
 
   it("refleja únicamente los pasos probados en la tarjeta de estado", () => {

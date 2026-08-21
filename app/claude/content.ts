@@ -16,13 +16,19 @@ export type ClaudeGuideSession = {
   steps: ClaudeGuideStep[];
 };
 
+export const CLAUDE_GUIDE_START_URL =
+  "https://joework.co/claude/guia/inicio.md";
+
+export const CLAUDE_GUIDE_DOWNLOAD_URL =
+  "/claude/descargas/claude-en-marcha.zip";
+
 export const CLAUDE_GUIDE_MASTER_PROMPT =
-  "Lee https://raw.githubusercontent.com/joework/claude-en-marcha/main/setup/inicio.md y ponme en marcha.";
+  `Lee ${CLAUDE_GUIDE_START_URL} y ponme en marcha.`;
 
 export const claudeCheckpointPrompts = {
-  session1: `Lee https://raw.githubusercontent.com/joework/claude-en-marcha/main/setup/inicio.md y continúa desde el paso 4.
+  session1: `Lee ${CLAUDE_GUIDE_START_URL} y continúa desde el paso 4.
 Ya tengo hechos el diagnóstico, el primer entregable y mi perfil.`,
-  session2: `Lee https://raw.githubusercontent.com/joework/claude-en-marcha/main/setup/inicio.md y continúa desde el paso 7.
+  session2: `Lee ${CLAUDE_GUIDE_START_URL} y continúa desde el paso 7.
 Ya tengo conectores, proyecto e instrucciones del proyecto.`,
 } as const;
 

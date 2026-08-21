@@ -42,7 +42,7 @@ La guía actual funciona, pero no explica cómo separar instrucciones permanente
 
 ## Riesgos y recuperación
 
-- El repositorio solicitado `joework/claude-en-marcha` devuelve 404. La web no se publicará con enlaces rotos; el owner debe confirmarse antes del merge.
+- La guía, sus archivos conductores y el ZIP se publican desde el único repositorio `joeworkco/landing`, bajo `/claude/`. No existe una dependencia de otro repositorio.
 - Clipboard API puede fallar: conservar fallback con `document.execCommand`.
 - Datos corruptos en `localStorage`: normalizar y continuar desde cero.
 - Rollback: revertir el merge de este cambio y volver a desplegar GitHub Pages.
@@ -68,4 +68,4 @@ La guía actual funciona, pero no explica cómo separar instrucciones permanente
 - [x] Verificar UI e interacciones.
 - [ ] Publicar guía v1.1.0 y web.
 
-Publicación bloqueada: la cuenta autenticada no tiene acceso al usuario `Joework`, y `Joework/claude-en-marcha` todavía no existe públicamente.
+La publicación usa el workflow existente de GitHub Pages del repositorio de la web.
