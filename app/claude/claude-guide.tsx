@@ -81,7 +81,6 @@ export function ClaudeGuide() {
           <div className="min-w-0 flex-1">
             <div className="flex items-center justify-between gap-4 text-xs font-semibold">
               <span aria-live="polite" data-progress-label>{progressLabel}</span>
-              <span aria-live="polite">{progress}%</span>
             </div>
             <div
               className="mt-2 h-1.5 overflow-hidden bg-[hsl(var(--joe-sunk))]"
@@ -190,11 +189,7 @@ export function ClaudeGuide() {
                           <CopyPrompt label={`Prompt del paso ${step.number}`} value={step.prompt} />
                         )}
 
-                        <p className="mt-5 text-sm leading-6 text-muted-foreground">
-                          ¿No funcionó? Escríbele <strong className="border border-amber-700/25 bg-amber-50 px-2 py-1 font-mono text-xs font-medium text-amber-800">estoy trabado</strong> a Claude y cambia a modo rescate.
-                        </p>
-
-                        <div className="mt-6 grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
+                        <div className="mt-6 grid gap-4 md:grid-cols-[1fr_auto] md:items-end">
                           <div>
                             <p className="flex items-center gap-2 text-sm font-extrabold">
                               <CheckCircle2 className="h-5 w-5 text-[hsl(var(--joe-green-dark))]" />
@@ -206,6 +201,9 @@ export function ClaudeGuide() {
                                 {step.note}
                               </p>
                             )}
+                            <p className="mt-5 text-sm leading-6 text-muted-foreground" data-stuck>
+                              ¿No funcionó? Escríbele <strong className="border border-amber-700/25 bg-amber-50 px-2 py-1 font-mono text-xs font-medium text-amber-800">estoy trabado</strong> a Claude y cambia a <a className="font-semibold underline decoration-primary/50 underline-offset-4 hover:text-foreground" href="#rescate">modo rescate</a>.
+                            </p>
                           </div>
                           <Button
                             type="button"

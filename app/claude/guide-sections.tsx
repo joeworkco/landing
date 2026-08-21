@@ -160,13 +160,13 @@ export function SessionCheckpoint({ session }: SessionCheckpointProps) {
     1: {
       tag: "Punto de guardado",
       title: "Sesión 1 completa",
-      copy: "Puedes parar aquí. Lo que montaste ya funciona y no se pierde si cierras el chat.",
+      copy: "Puedes parar aquí. En serio. Lo que montaste ya funciona y no se pierde si cierras el chat.",
       items: [
         "Un archivo real, hecho por Claude con datos tuyos",
-        "Un perfil que aplica a todos tus chats",
+        "Un perfil que aplica a todos tus chats, para siempre",
         "El criterio para saber dónde va cada instrucción",
       ],
-      next: "Quedan siete pasos, unos sesenta minutos. La sesión 2 conecta Claude a tu calendario y a tus archivos.",
+      next: "Quedan siete pasos, unos sesenta minutos. La sesión 2 conecta Claude a tu calendario y a tus archivos, que es donde deja de ser un juguete.",
       prompt: claudeCheckpointPrompts.session1,
     },
     2: {
@@ -175,10 +175,10 @@ export function SessionCheckpoint({ session }: SessionCheckpointProps) {
       copy: "Segundo alto. Ya tienes la parte que la mayoría nunca llega a montar.",
       items: [
         "Claude conectado a tu trabajo real",
-        "Un proyecto con tus archivos de referencia",
-        "Instrucciones que salieron de una entrevista",
+        "Un proyecto con tus archivos de referencia adentro",
+        "Instrucciones que salieron de una entrevista, no de un formulario",
       ],
-      next: "Quedan cuatro pasos, unos treinta minutos. La sesión 3 hace que todo funcione sin que tú estés.",
+      next: "Quedan cuatro pasos, unos treinta minutos. La sesión 3 es la que hace que todo esto funcione sin que tú estés.",
       prompt: claudeCheckpointPrompts.session2,
     },
     3: {
@@ -187,7 +187,7 @@ export function SessionCheckpoint({ session }: SessionCheckpointProps) {
       copy: "Noventa minutos bien invertidos. Esto es lo que tienes ahora y que hace una hora no existía.",
       items: [
         "Claude sabe quién eres, en todos tus chats",
-        "Está conectado a tu calendario, correo o archivos",
+        "Está conectado a tu calendario, tu correo y tus archivos",
         "Tiene un proyecto con tu contexto y tus reglas",
         "Te entrega algo útil sin que se lo pidas",
       ],

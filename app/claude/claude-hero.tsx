@@ -29,13 +29,13 @@ function ExampleReport() {
         </div>
         <div className="p-5 md:p-7">
           <p className="text-lg font-extrabold">Tu día · martes 12 de agosto</p>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <div className="mt-6 grid gap-6">
             <div>
               <p className="font-mono text-[10px] font-bold uppercase tracking-[.14em] text-[hsl(var(--joe-green-dark))] dark:text-primary">
                 Lo único que importa hoy
               </p>
               <p className="mt-2 text-sm leading-6 text-muted-foreground dark:text-white/65">
-                La propuesta de <strong className="text-foreground dark:text-white">Andina Logística</strong> lleva nueve días sin respuesta. Es la más grande del trimestre.
+                La propuesta de <strong className="text-foreground dark:text-white">Andina Logística</strong> lleva nueve días sin respuesta. Es la más grande del trimestre. Hoy es el último día antes de que se enfríe.
               </p>
             </div>
             <div>
@@ -43,10 +43,13 @@ function ExampleReport() {
                 Tu calendario
               </p>
               <p className="mt-2 text-sm leading-6 text-muted-foreground dark:text-white/65">
-                <strong className="text-foreground dark:text-white">09:00</strong> Demo con Grupo Sierra. No has abierto el brief.
+                <strong className="text-foreground dark:text-white">09:00</strong> Demo con Grupo Sierra, 45 min. No has abierto el brief que te mandaron.
               </p>
               <p className="mt-1 text-sm leading-6 text-muted-foreground dark:text-white/65">
-                <strong className="text-foreground dark:text-white">16:00</strong> Tu único bloque libre de dos horas esta semana.
+                <strong className="text-foreground dark:text-white">11:30</strong> Comité interno, 1 hora. Tercera semana seguida sin agenda.
+              </p>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground dark:text-white/65">
+                <strong className="text-foreground dark:text-white">16:00</strong> Libre. Tu único bloque de dos horas de toda la semana.
               </p>
             </div>
             <div>
@@ -54,7 +57,10 @@ function ExampleReport() {
                 Correo que no puede esperar
               </p>
               <p className="mt-2 text-sm leading-6 text-muted-foreground dark:text-white/65">
-                Carolina preguntó por los plazos el viernes. Sigue sin respuesta. La factura de Meridiano rebotó por segunda vez.
+                Carolina, de Andina, preguntó por los plazos el viernes. Sigue sin responder.
+              </p>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground dark:text-white/65">
+                La factura de Meridiano rebotó. Segundo intento.
               </p>
             </div>
             <div>
@@ -86,7 +92,7 @@ export function ClaudeHero() {
               Guía gratuita por JoeWork · actualizada agosto 2026
             </p>
             <h1 className="mt-6 max-w-4xl break-words text-[clamp(2.9rem,7vw,6.8rem)] font-extrabold leading-[.88] tracking-[-.065em]">
-              Claude en marcha.
+              Claude en marcha
             </h1>
             <p className="mt-5 max-w-xl text-sm leading-6 text-white/50 md:text-base">
               Escrita por <a className="underline decoration-white/30 underline-offset-4 hover:text-primary" href="https://joework.co">JoeWork</a>, que implementa agentes IA en empresas de Latinoamérica y Estados Unidos.

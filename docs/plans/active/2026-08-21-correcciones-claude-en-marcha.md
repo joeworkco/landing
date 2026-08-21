@@ -54,7 +54,7 @@ Founders que configuran Claude en tres sesiones, ya sea mediante un conductor co
 - [x] C1 y preview de Markdown: 14 archivos 200 como `text/markdown`; ZIP y `/claude/` 200 sin colisión.
 - [x] C2-C4: contrato nuevo en prompts, caminos con copy exacto, transparencia y skill antes del CTA.
 - [x] C5-C6: bloques pedagógicos integrados con el CSS adjunto literal y el markup completo de referencia.
-- [ ] C7-C13.
+- [x] C7-C13: reporte completo, rescate por paso, checkpoints, jerarquía, minutos, autoría y H1 corregidos.
 - [ ] Quince verificaciones.
 - [ ] PR abierto, sin fusionar a `main`.
 
