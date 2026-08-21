@@ -2,7 +2,7 @@
 
 ## Problema y resultado
 
-Actualizar `/claude` sin reemplazar la implementación React publicada. El camino guiado debe usar el contrato estable `https://joework.co/claude/setup/`, los archivos y el skill deben vivir en este repositorio, y la experiencia debe incorporar las trece correcciones auditadas.
+Actualizar `/claude` sin reemplazar la implementación React publicada. El camino guiado debe usar el contrato estable `https://joework.co/claude/guia/`, los archivos y el skill deben vivir en este repositorio, y la experiencia debe incorporar las trece correcciones auditadas.
 
 ## Usuario y trabajo a realizar
 
@@ -10,7 +10,7 @@ Founders que configuran Claude en tres sesiones, ya sea mediante un conductor co
 
 ## Comportamiento esperado
 
-- Los archivos del ZIP se publican verbatim bajo `public/claude/setup/` y `public/claude/claude-en-marcha.zip`.
+- Los trece archivos canónicos se sirven bajo `public/claude/guia/` y el skill bajo `public/claude/descargas/claude-en-marcha.zip`.
 - El hero conserva su estructura JoeWork y usa el copy exacto del camino guiado/manual y del reporte de referencia.
 - Transparencia y skill aparecen antes del CTA final.
 - Los bloques pedagógicos usan el markup y CSS autocontenido adjunto sin modificar su CSS.
@@ -21,7 +21,7 @@ Founders que configuran Claude en tres sesiones, ya sea mediante un conductor co
 
 - Las quince verificaciones de `correcciones-codex.md` pasan contra el preview.
 - Los trece Markdown contractuales responden 200 como texto y `README.md` también se publica.
-- No hay colisión entre `/claude/index.html` y `/claude/setup/`.
+- No hay colisión entre `/claude/index.html` y `/claude/guia/`.
 - No se agregan dependencias ni analítica, formularios o captura de correo.
 - `npm run check`, `npm test` y `npm audit --audit-level=high` pasan.
 
@@ -35,11 +35,11 @@ Founders que configuran Claude en tres sesiones, ya sea mediante un conductor co
 
 ## Riesgos y recuperación
 
-- Colisión de exportación: comprobar `out/claude/index.html` y `out/claude/setup/*.md`.
+- Colisión de exportación: comprobar `out/claude/index.html` y `out/claude/guia/*.md`.
 - Content-Type de Markdown: reportar si descarga, pero no bloquear si Claude puede leerlo.
 - CSS prefijado: mantenerlo literal y verificar que no se filtre.
 - Rollback: revertir los commits del PR; no hay migraciones ni estado de servidor.
-- Los assets anteriores `/claude/guia/` se mantienen como compatibilidad, pero la página solo anunciará el contrato nuevo.
+- Los aliases `/claude/setup/` y `/claude/claude-en-marcha.zip` se mantienen como compatibilidad, pero la página solo anuncia `/claude/guia/` y `/claude/descargas/`.
 
 ## Pruebas
 
@@ -60,5 +60,5 @@ Founders que configuran Claude en tres sesiones, ya sea mediante un conductor co
 
 ## Decisiones
 
-- Se publican los 14 Markdown presentes en el ZIP. La auditoría habla de 13, pero también exige `README.md`; los 13 de su comando más README suman 14.
+- Las URLs canónicas son `/claude/guia/inicio.md` y `/claude/descargas/claude-en-marcha.zip`; no deben moverse sin conservar compatibilidad.
 - Se conservan los paths antiguos solo como compatibilidad; no se enlazan desde la experiencia nueva.

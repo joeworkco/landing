@@ -17,8 +17,8 @@ import {
 } from "../app/claude/content.ts";
 
 describe("Claude guide progress", () => {
-  it("publica el contrato estático completo bajo /claude/setup", () => {
-    const setupFiles = [
+  it("publica el contrato canónico completo bajo /claude/guia", () => {
+    const guideFiles = [
       "inicio",
       "00-diagnostico",
       "01-entregable",
@@ -32,13 +32,12 @@ describe("Claude guide progress", () => {
       "09-cierre",
       "coach",
       "estado",
-      "README",
     ];
 
-    for (const file of setupFiles) {
-      assert.ok(existsSync(`public/claude/setup/${file}.md`), file);
+    for (const file of guideFiles) {
+      assert.ok(existsSync(`public/claude/guia/${file}.md`), file);
     }
-    assert.ok(existsSync("public/claude/claude-en-marcha.zip"));
+    assert.ok(existsSync("public/claude/descargas/claude-en-marcha.zip"));
   });
 
   it("normaliza pasos duplicados, desordenados o fuera de rango", () => {
@@ -83,16 +82,16 @@ describe("Claude guide progress", () => {
   it("sirve la guía y el ZIP desde el único repositorio de joework.co", () => {
     assert.equal(
       CLAUDE_GUIDE_START_URL,
-      "https://joework.co/claude/setup/inicio.md",
+      "https://joework.co/claude/guia/inicio.md",
     );
     assert.equal(
       CLAUDE_GUIDE_DOWNLOAD_URL,
-      "https://joework.co/claude/claude-en-marcha.zip",
+      "https://joework.co/claude/descargas/claude-en-marcha.zip",
     );
     assert.ok(CLAUDE_GUIDE_MASTER_PROMPT.includes(CLAUDE_GUIDE_START_URL));
     assert.doesNotMatch(CLAUDE_GUIDE_MASTER_PROMPT, /github\.com/i);
-    assert.ok(existsSync("public/claude/setup/inicio.md"));
-    assert.ok(existsSync("public/claude/claude-en-marcha.zip"));
+    assert.ok(existsSync("public/claude/guia/inicio.md"));
+    assert.ok(existsSync("public/claude/descargas/claude-en-marcha.zip"));
   });
 
   it("refleja únicamente los pasos probados en la tarjeta de estado", () => {

@@ -17,10 +17,10 @@ export type ClaudeGuideSession = {
 };
 
 export const CLAUDE_GUIDE_START_URL =
-  "https://joework.co/claude/setup/inicio.md";
+  "https://joework.co/claude/guia/inicio.md";
 
 export const CLAUDE_GUIDE_DOWNLOAD_URL =
-  "https://joework.co/claude/claude-en-marcha.zip";
+  "https://joework.co/claude/descargas/claude-en-marcha.zip";
 
 export const CLAUDE_SKILL_PROMPT =
   "Usa el skill Claude en Marcha y ponme en marcha.";

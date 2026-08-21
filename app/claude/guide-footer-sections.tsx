@@ -73,7 +73,7 @@ export function GuideTransparency() {
           <p className="mt-4 font-semibold">Sin registro, sin correo, sin formulario.</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Button asChild variant="outline">
-              <a href="https://github.com/joeworkco/landing/tree/main/public/claude/setup">
+              <a href="https://github.com/joeworkco/landing/tree/main/public/claude/guia">
                 Ver los archivos
                 <ExternalLink className="ml-2 h-4 w-4" />
               </a>
