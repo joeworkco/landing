@@ -3,8 +3,14 @@ import { describe, it } from "node:test";
 import {
   buildClaudeStatusCard,
   calculateClaudeProgress,
+  formatClaudeProgressLabel,
   normalizeCompletedClaudeSteps,
 } from "./claude-guide.ts";
+import {
+  CLAUDE_GUIDE_MASTER_PROMPT,
+  claudeCheckpointPrompts,
+  claudeGuideSessions,
+} from "../app/claude/content.ts";
 
 describe("Claude guide progress", () => {
   it("normaliza pasos duplicados, desordenados o fuera de rango", () => {
@@ -18,6 +24,28 @@ describe("Claude guide progress", () => {
     assert.equal(calculateClaudeProgress([1, 2, 3]), 30);
     assert.equal(calculateClaudeProgress([]), 0);
     assert.equal(calculateClaudeProgress([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]), 100);
+  });
+
+  it("calcula los minutos pendientes según el peso de cada paso", () => {
+    assert.equal(formatClaudeProgressLabel([]), "10 pasos · unos 90 min");
+    assert.equal(formatClaudeProgressLabel([1]), "1 de 10 · quedan ~85 min");
+    assert.equal(formatClaudeProgressLabel([1, 2, 3]), "3 de 10 · quedan ~60 min");
+    assert.equal(
+      formatClaudeProgressLabel([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]),
+      "10 de 10 · listo",
+    );
+  });
+
+  it("expone exactamente once prompts copiables, incluidos los checkpoints", () => {
+    const stepPrompts = claudeGuideSessions.flatMap((session) =>
+      session.steps.filter((step) => Boolean(step.prompt)),
+    );
+    const checkpointPrompts = Object.values(claudeCheckpointPrompts);
+
+    assert.ok(CLAUDE_GUIDE_MASTER_PROMPT.length > 0);
+    assert.equal(stepPrompts.length, 8);
+    assert.equal(checkpointPrompts.length, 2);
+    assert.equal(1 + stepPrompts.length + checkpointPrompts.length, 11);
   });
 
   it("refleja únicamente los pasos probados en la tarjeta de estado", () => {

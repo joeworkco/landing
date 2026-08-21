@@ -16,6 +16,16 @@ export type ClaudeGuideSession = {
   steps: ClaudeGuideStep[];
 };
 
+export const CLAUDE_GUIDE_MASTER_PROMPT =
+  "Lee https://raw.githubusercontent.com/joework/claude-en-marcha/main/setup/inicio.md y ponme en marcha.";
+
+export const claudeCheckpointPrompts = {
+  session1: `Lee https://raw.githubusercontent.com/joework/claude-en-marcha/main/setup/inicio.md y continúa desde el paso 4.
+Ya tengo hechos el diagnóstico, el primer entregable y mi perfil.`,
+  session2: `Lee https://raw.githubusercontent.com/joework/claude-en-marcha/main/setup/inicio.md y continúa desde el paso 7.
+Ya tengo conectores, proyecto e instrucciones del proyecto.`,
+} as const;
+
 export const claudeGuideSessions: ClaudeGuideSession[] = [
   {
     number: 1,
@@ -100,7 +110,6 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
           "Abre un chat dentro del Proyecto y pide algo sin repetir el contexto.",
         ],
         proof: "La respuesta usa un dato que solo existe en los archivos cargados.",
-        prompt: `Estoy creando un Proyecto para el trabajo que más repito. Ayúdame a elegir un nombre basado en la salida, no en la herramienta, y dime cuáles son los dos a cinco archivos reales que más contexto aportarían. Después dame una prueba concreta para comprobar que los está usando.`,
       },
       {
         number: 6,
