@@ -13,12 +13,11 @@ import {
   ChevronDown,
   Clipboard,
   Clock3,
-  Download,
   LifeBuoy,
 } from "lucide-react";
 import { Fragment, useEffect, useState } from "react";
 import { copyText } from "./clipboard";
-import { CLAUDE_GUIDE_DOWNLOAD_URL, claudeGuideSessions } from "./content";
+import { claudeGuideSessions } from "./content";
 import { CopyPrompt } from "./copy-prompt";
 import { InstructionLevels, SessionCheckpoint, SixMonthRule } from "./guide-sections";
 
@@ -284,56 +283,6 @@ export function ClaudeGuide() {
         </div>
       </section>
 
-      <section id="skill" className="scroll-mt-28 border-b border-border bg-[hsl(var(--joe-paper))]">
-        <div className="site-container grid gap-10 py-16 md:py-20 lg:grid-cols-[.62fr_1.38fr]">
-          <div>
-            <p className="font-mono text-xs font-bold uppercase tracking-[.16em] text-[hsl(var(--joe-green-dark))]">
-              Para avanzados
-            </p>
-            <h2 className="mt-4 text-3xl font-extrabold leading-tight md:text-4xl">
-              La versión skill.
-            </h2>
-            <p className="mt-4 max-w-sm leading-7 text-muted-foreground">
-              Se instala una vez, queda en tu cuenta y puedes invocarla por nombre sin depender de esta página.
-            </p>
-            <Button asChild size="lg" className="mt-7">
-              <a href={CLAUDE_GUIDE_DOWNLOAD_URL} download>
-                <Download className="mr-2 h-4 w-4" />
-                Descargar el skill
-              </a>
-            </Button>
-          </div>
-
-          <div className="border border-border bg-white p-5 md:p-8">
-            <h3 className="text-xl font-extrabold">Cómo se instala</h3>
-            <ol className="mt-5 border-t border-border">
-              {[
-                "Descarga claude-en-marcha.zip desde este botón.",
-                "En Claude, entra a Configuración → Personalizar → Skills.",
-                "Pulsa + → Crear skill → Subir un skill.",
-                "Sube el ZIP y actívalo desde su interruptor.",
-                "Activa también la ejecución de código en esa misma sección.",
-              ].map((item, index) => (
-                <li key={item} className="grid grid-cols-[28px_1fr] gap-3 border-b border-border py-4 text-sm leading-6 md:text-base">
-                  <span className="font-mono text-xs font-bold text-[hsl(var(--joe-green-dark))]">{index + 1}</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ol>
-            <div className="mt-6 border-l-2 border-primary bg-[hsl(var(--joe-sunk))] p-5">
-              <p className="font-mono text-[10px] font-bold uppercase tracking-[.14em] text-[hsl(var(--joe-green-dark))]">
-                Después de instalarlo
-              </p>
-              <code className="mt-3 block whitespace-pre-wrap text-sm font-semibold leading-6">
-                Usa el skill Claude en Marcha y ponme en marcha.
-              </code>
-            </div>
-            <p className="mt-5 text-sm leading-6 text-muted-foreground">
-              Funciona también en el plan gratuito. El contenido fuente está incluido en este mismo repositorio y el skill queda privado dentro de tu cuenta.
-            </p>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

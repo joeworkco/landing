@@ -142,7 +142,7 @@ export function ClaudeHero() {
             <p className="font-mono text-[10px] font-bold uppercase tracking-[.14em] text-primary">Recomendado</p>
             <h2 className="mt-3 text-2xl font-extrabold">Camino guiado</h2>
             <p className="mt-3 max-w-xl text-sm leading-6 text-white/60 md:text-base">
-              Claude conduce. Hace una pregunta a la vez y no avanza hasta que cada paso funcione de verdad.
+              Claude conduce. Te hace una pregunta a la vez y no avanza hasta que cada paso funcione de verdad. Noventa minutos, en tres sesiones que puedes separar.
             </p>
             <CopyPrompt label="Pega esto en un chat nuevo" value={CLAUDE_GUIDE_MASTER_PROMPT} />
           </article>
@@ -151,7 +151,7 @@ export function ClaudeHero() {
             <p className="font-mono text-[10px] font-bold uppercase tracking-[.14em] text-white/40">Alternativa</p>
             <h2 className="mt-3 text-2xl font-extrabold">Camino manual</h2>
             <p className="mt-3 max-w-xl text-sm leading-6 text-white/60 md:text-base">
-              Lees y ejecutas a tu ritmo. Cada paso trae una acción concreta y una prueba antes de avanzar.
+              Lees y ejecutas tú, a tu ritmo, en el orden que quieras. Cada paso trae su prompt listo para copiar y una forma concreta de comprobar que funcionó. Sirve si prefieres entender antes de hacer.
             </p>
             <Button asChild size="lg" className="mt-8 self-start">
               <a href="#paso-1" data-manual-start>

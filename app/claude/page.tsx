@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { constructMetadata } from "@/lib/metadata";
 import { ClaudeGuide } from "./claude-guide";
 import { ClaudeHero } from "./claude-hero";
+import { GuideTransparency, SkillInstall } from "./guide-footer-sections";
 
 export const metadata = constructMetadata({
   title: "Claude en Marcha",
@@ -56,10 +57,14 @@ export default function ClaudePage() {
 
       <ClaudeGuide />
 
+      <SkillInstall />
+
       <FinalCta
         title="Empieza por una prueba real."
         copy="Configura tu Claude personal hoy. Cuando quieras agentificar un proceso completo, hablamos."
       />
+
+      <GuideTransparency />
     </>
   );
 }
