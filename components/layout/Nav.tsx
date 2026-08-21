@@ -6,18 +6,17 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Nav() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => setOpen(false), [pathname]);
+  const [openPath, setOpenPath] = useState<string | null>(null);
+  const open = openPath === pathname;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md">
       <div className="site-container flex h-[68px] items-center gap-7">
-        <Link href="/" aria-label="JoeWork, inicio" className="shrink-0">
+        <Link href="/" aria-label="JoeWork, inicio" className="shrink-0" onClick={() => setOpenPath(null)}>
           <Image
             src="/brand/joework-lockup.png"
             alt="JoeWork"
@@ -62,7 +61,7 @@ export default function Nav() {
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={open}
           aria-controls="mobile-navigation"
-          onClick={() => setOpen((value) => !value)}
+          onClick={() => setOpenPath(open ? null : pathname)}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -76,12 +75,13 @@ export default function Nav() {
                 key={item.href}
                 href={item.href}
                 className="border-b border-border py-3 text-base font-semibold last:border-0"
+                onClick={() => setOpenPath(null)}
               >
                 {item.label}
               </Link>
             ))}
             <Button asChild className="mt-4">
-              <a href={APPOINTMENT_URL} target="_blank" rel="noreferrer">
+              <a href={APPOINTMENT_URL} target="_blank" rel="noreferrer" onClick={() => setOpenPath(null)}>
                 Agenda diagnóstico
                 <ArrowUpRight className="ml-2 h-4 w-4" />
               </a>
