@@ -48,12 +48,16 @@ export function ClaudeGuide() {
   const [copied, setCopied] = useState<string | null>(null);
 
   useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      setCompleted(normalizeCompletedClaudeSteps(saved ? JSON.parse(saved) : []));
-    } catch {
-      setCompleted([]);
-    }
+    const frame = window.requestAnimationFrame(() => {
+      try {
+        const saved = window.localStorage.getItem(STORAGE_KEY);
+        setCompleted(normalizeCompletedClaudeSteps(saved ? JSON.parse(saved) : []));
+      } catch {
+        setCompleted([]);
+      }
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   const progress = calculateClaudeProgress(completed);
