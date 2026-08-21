@@ -16,6 +16,30 @@ import {
 } from "../app/claude/content.ts";
 
 describe("Claude guide progress", () => {
+  it("publica el contrato estático completo bajo /claude/setup", () => {
+    const setupFiles = [
+      "inicio",
+      "00-diagnostico",
+      "01-entregable",
+      "02-perfil",
+      "03-conectores",
+      "04-proyecto",
+      "05-entrevista",
+      "06-reporte",
+      "07-destino",
+      "08-horario",
+      "09-cierre",
+      "coach",
+      "estado",
+      "README",
+    ];
+
+    for (const file of setupFiles) {
+      assert.ok(existsSync(`public/claude/setup/${file}.md`), file);
+    }
+    assert.ok(existsSync("public/claude/claude-en-marcha.zip"));
+  });
+
   it("normaliza pasos duplicados, desordenados o fuera de rango", () => {
     assert.deepEqual(
       normalizeCompletedClaudeSteps([10, 2, 2, 0, 11, 4.5, 1]),
