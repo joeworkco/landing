@@ -66,6 +66,6 @@ La guía actual funciona, pero no explica cómo separar instrucciones permanente
 - [x] Comparar la referencia con la página publicada.
 - [x] Implementar lógica y contenido.
 - [x] Verificar UI e interacciones.
-- [ ] Publicar guía v1.1.0 y web.
+- [x] Publicar guía v1.1.0 y web desde el único repositorio `joeworkco/landing`.
 
 La publicación usa el workflow existente de GitHub Pages del repositorio de la web.
