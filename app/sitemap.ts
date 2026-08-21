@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/recursos",
     "/recursos/calculadora-roi",
     "/recursos/como-crear-company-brain",
+    "/claude",
     "/blog",
     "/privacy-policy",
     "/terms-of-service",

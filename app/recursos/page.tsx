@@ -5,6 +5,7 @@ import {
   ArrowDown,
   ArrowRight,
   BookOpenCheck,
+  Bot,
   BrainCircuit,
   Calculator,
   Check,
@@ -200,6 +201,48 @@ export default function ResourcesPage() {
                   <div className="mt-6 flex items-center justify-between font-bold">
                     Leer la guía
                     <ArrowRight className="h-5 w-5 text-primary transition-transform group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </Link>
+
+              <Link
+                href="/claude"
+                className="group flex min-h-[300px] flex-col border border-border bg-white p-6 lg:col-span-2 md:p-9"
+              >
+                <div className="grid gap-10 md:grid-cols-[1fr_.82fr] md:items-end">
+                  <div>
+                    <div className="flex items-start justify-between">
+                      <div className="grid h-12 w-12 place-items-center bg-[hsl(var(--joe-green-soft))] text-[hsl(var(--joe-green-dark))]">
+                        <Bot className="h-6 w-6" />
+                      </div>
+                      <span className="font-mono text-[10px] font-bold uppercase tracking-[.14em] text-[hsl(var(--joe-green-dark))]">
+                        Guía · 90 minutos
+                      </span>
+                    </div>
+                    <h3 className="mt-8 max-w-xl text-4xl font-extrabold leading-[1.02] md:text-5xl">
+                      Claude en Marcha
+                    </h3>
+                    <p className="mt-4 max-w-xl text-lg leading-8 text-muted-foreground">
+                      Configura Claude Desktop en 90 minutos. 10 pasos, prompts listos, sin registro.
+                    </p>
+                  </div>
+                  <div>
+                    <div className="grid grid-cols-3 gap-px bg-border">
+                      {[
+                        ["01", "Contexto"],
+                        ["02", "Conexión"],
+                        ["03", "Horario"],
+                      ].map(([number, label]) => (
+                        <div key={number} className="bg-[hsl(var(--joe-paper))] p-4">
+                          <p className="font-mono text-xs font-bold text-[hsl(var(--joe-green-dark))]">{number}</p>
+                          <p className="mt-5 text-sm font-bold">{label}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-6 flex items-center justify-between font-bold">
+                      Abrir la guía
+                      <ArrowRight className="h-5 w-5 text-[hsl(var(--joe-green-dark))] transition-transform group-hover:translate-x-1" />
+                    </div>
                   </div>
                 </div>
               </Link>
