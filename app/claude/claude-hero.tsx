@@ -98,11 +98,11 @@ export function ClaudeHero() {
               Escrita por <a className="underline decoration-white/30 underline-offset-4 hover:text-primary" href="https://joework.co">JoeWork</a>, que implementa agentes IA en empresas de Latinoamérica y Estados Unidos.
             </p>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
-              En tres sesiones cortas, Claude aprende cómo trabajas, se conecta a tu negocio y deja un reporte útil funcionando en horario.
+              Abriste Claude Desktop, te quedaste mirando la pantalla en blanco y lo cerraste. Esta guía te lleva de ahí a un Claude que sabe quién eres, está conectado a tu trabajo real y te entrega algo útil cada mañana sin que se lo pidas.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 font-mono text-[10px] font-semibold uppercase tracking-[.12em] text-white/45">
               <span className="inline-flex items-center gap-2"><Clock3 className="h-4 w-4 text-primary" />90 minutos</span>
-              <span className="inline-flex items-center gap-2"><Laptop className="h-4 w-4 text-primary" />Mac o Windows</span>
+              <span className="inline-flex items-center gap-2"><Laptop className="h-4 w-4 text-primary" />3 sesiones</span>
               <span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-primary" />10 pasos</span>
               <span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-primary" />9 de 10 gratis</span>
               <span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-primary" />Sin registro</span>
@@ -119,9 +119,9 @@ export function ClaudeHero() {
             </div>
             <div className="divide-y divide-white/10">
               {[
-                ["01", "Claude sabe quién eres", "Contexto y forma de trabajar", FileCheck2],
-                ["02", "Está conectado a tu trabajo", "Calendario, correo o archivos", CalendarCheck2],
-                ["03", "Algo útil pasa en horario", "Reporte automático o disparo manual", Clock3],
+                ["01", "Claude sabe quién eres", "Y qué estás tratando de lograr", FileCheck2],
+                ["02", "Está conectado a tu trabajo", "Calendario, correo y archivos", CalendarCheck2],
+                ["03", "Algo útil pasa solo", "En un horario, sin que tú lo pidas", Clock3],
               ].map(([number, title, copy, Icon]) => (
                 <div key={String(number)} className="grid grid-cols-[42px_1fr_28px] items-center gap-4 py-6">
                   <span className="font-mono text-sm font-bold text-primary">{String(number)}</span>

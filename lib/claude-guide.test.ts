@@ -79,6 +79,17 @@ describe("Claude guide progress", () => {
     );
   });
 
+  it("explica el dolor y el valor entregado en los diez pasos", () => {
+    const steps = claudeGuideSessions.flatMap((session) => session.steps);
+
+    assert.equal(steps.length, 10);
+    for (const step of steps) {
+      assert.ok(step.why.length >= 80, `Falta contexto de valor en el paso ${step.number}`);
+      assert.ok(step.payoff.length >= 40, `Falta resultado concreto en el paso ${step.number}`);
+      assert.notEqual(step.objective, step.payoff);
+    }
+  });
+
   it("sirve la guía y el ZIP desde el único repositorio de joework.co", () => {
     assert.equal(
       CLAUDE_GUIDE_START_URL,
