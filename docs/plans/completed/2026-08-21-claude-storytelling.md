@@ -40,4 +40,4 @@ La guía explica qué hacer, pero el valor se entiende tarde. El lector necesita
 
 - [x] Storytelling y contenido.
 - [x] Validación local y navegador.
-- [ ] PR, merge y despliegue.
+- [x] PR, merge y despliegue.
