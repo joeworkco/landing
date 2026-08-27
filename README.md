@@ -50,8 +50,8 @@ npm run check
 npm test
 ```
 
-`public/claude/guia/inicio.md` es generado y no se edita a mano.
-Después de modificar un paso, ejecuta `npm run build:claude-guide` para regenerarlo.
+`public/claude/guia/inicio.md` es generado por el script y NO se edita a mano.
+Después de modificar un paso, ejecuta `npm run build:claude-guide` y aumenta `?v=` en la página, `estado.md` y `public/claude/guia/README.md`.
 
 ## Arquitectura
 

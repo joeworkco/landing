@@ -11,6 +11,7 @@ descarga y adentro está todo.
 Uso:  python3 build-inicio.py [--check]
 Lee:  _conductor.md y los .md de la carpeta de la guía
 Escribe: inicio.md
+Comprueba: que la página, estado.md y README.md usan el mismo ?v=
 """
 import re, os, sys
 
@@ -29,6 +30,34 @@ PASOS = [
 ]
 APOYO = [('MODO RESCATE', 'coach.md'), ('TARJETA DE ESTADO', 'estado.md')]
 SIGUIENTE = {f: PASOS[i+1][0] for i, (_, f) in enumerate(PASOS[:-1])}
+RUTA_REPO = os.path.abspath(os.path.join(AQUI, '..', '..'))
+ARCHIVOS_VERSIONADOS = {
+    'pagina': os.path.join(RUTA_REPO, 'app', 'claude', 'content.ts'),
+    'estado.md': os.path.join(GUIA, 'estado.md'),
+    'README.md': os.path.join(GUIA, 'README.md'),
+}
+URL_INICIO = re.compile(
+    r'https://joework\.co/claude/guia/inicio\.md(?:\?v=(\d+))?'
+)
+
+def comprobar_version():
+    versiones = {}
+    for etiqueta, ruta in ARCHIVOS_VERSIONADOS.items():
+        with open(ruta, encoding='utf-8') as fh:
+            coincidencias = URL_INICIO.findall(fh.read())
+        if not coincidencias:
+            raise AssertionError(f'falta la URL versionada de inicio.md en {etiqueta}')
+        if any(not version for version in coincidencias):
+            raise AssertionError(f'hay una URL de inicio.md sin ?v= en {etiqueta}')
+        versiones[etiqueta] = set(coincidencias)
+
+    version_unica = set().union(*versiones.values())
+    if len(version_unica) != 1 or any(len(valor) != 1 for valor in versiones.values()):
+        detalle = ', '.join(
+            f'{etiqueta}={sorted(valor)}' for etiqueta, valor in versiones.items()
+        )
+        raise AssertionError(f'las versiones de inicio.md no coinciden: {detalle}')
+    return version_unica.pop()
 
 def limpiar(texto, archivo):
     # las URLs remotas se vuelven referencias internas
@@ -38,7 +67,11 @@ def limpiar(texto, archivo):
                    'Si algo falla dos veces o dicen "estoy trabado": ve a MODO RESCATE, al final de este archivo.', texto)
     texto = re.sub(r'[Dd]escarga https://joework\.co/claude/guia/estado\.md',
                    'Usa la sección TARJETA DE ESTADO de este archivo', texto)
-    texto = re.sub(r'https://joework\.co/claude/guia/[0-9a-z-]+\.md', 'la sección correspondiente de este archivo', texto)
+    texto = re.sub(
+        r'https://joework\.co/claude/guia/(?!inicio\.md(?:\?v=\d+)?)[0-9a-z-]+\.md',
+        'la sección correspondiente de este archivo',
+        texto,
+    )
     # jerarquía: el H1 del archivo baja a H2, y sus H2 internos bajan a H3
     texto = re.sub(r'^## ', '### ', texto, flags=re.M)
     texto = re.sub(r'^# ',  '## ',  texto, count=1, flags=re.M)
@@ -58,6 +91,7 @@ for etiqueta, archivo in PASOS + APOYO:
 
 salida = "\n".join(partes).rstrip() + "\n"
 destino = os.path.join(GUIA, 'inicio.md')
+version = comprobar_version()
 
 if '--check' in sys.argv:
     with open(destino, encoding='utf-8') as fh:
@@ -71,6 +105,7 @@ else:
 
 accion = 'verificado' if '--check' in sys.argv else 'generado'
 print(f"inicio.md {accion}: {len(salida)} caracteres, ~{len(salida)//4} tokens aprox")
+print(f"version del conductor verificada: v={version}")
 for etiqueta, _ in PASOS + APOYO:
     assert f"<!-- {etiqueta} -->" in salida, f"falta {etiqueta}"
 assert 'joework.co/claude/guia/0' not in salida, "quedaron URLs de paso sin limpiar"

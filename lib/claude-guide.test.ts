@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 import {
   buildClaudeStatusCard,
@@ -93,7 +93,7 @@ describe("Claude guide progress", () => {
   it("sirve la guía y el ZIP desde el único repositorio de joework.co", () => {
     assert.equal(
       CLAUDE_GUIDE_START_URL,
-      "https://joework.co/claude/guia/inicio.md",
+      "https://joework.co/claude/guia/inicio.md?v=2",
     );
     assert.equal(
       CLAUDE_GUIDE_DOWNLOAD_URL,
@@ -103,6 +103,22 @@ describe("Claude guide progress", () => {
     assert.doesNotMatch(CLAUDE_GUIDE_MASTER_PROMPT, /github\.com/i);
     assert.ok(existsSync("public/claude/guia/inicio.md"));
     assert.ok(existsSync("public/claude/descargas/claude-en-marcha.zip"));
+  });
+
+  it("mantiene sincronizada la versión del conductor en todos los prompts de entrada", () => {
+    const expectedUrl = "https://joework.co/claude/guia/inicio.md?v=2";
+    const statusGuide = readFileSync("public/claude/guia/estado.md", "utf8");
+    const publicReadme = readFileSync("public/claude/guia/README.md", "utf8");
+    const generatedGuide = readFileSync("public/claude/guia/inicio.md", "utf8");
+
+    assert.ok(CLAUDE_GUIDE_MASTER_PROMPT.includes(expectedUrl));
+    for (const prompt of Object.values(claudeCheckpointPrompts)) {
+      assert.ok(prompt.includes(expectedUrl));
+    }
+    assert.ok(statusGuide.includes(expectedUrl));
+    assert.ok(publicReadme.includes(expectedUrl));
+    assert.ok(generatedGuide.includes(expectedUrl));
+    assert.doesNotMatch(generatedGuide, /archivo\?v=/);
   });
 
   it("refleja únicamente los pasos probados en la tarjeta de estado", () => {
