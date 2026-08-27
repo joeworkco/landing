@@ -19,7 +19,7 @@ export type ClaudeGuideSession = {
 };
 
 export const CLAUDE_GUIDE_START_URL =
-  "https://joework.co/claude/guia/inicio.md";
+  "https://joework.co/claude/guia/inicio.md?v=2";
 
 export const CLAUDE_GUIDE_DOWNLOAD_URL =
   "https://joework.co/claude/descargas/claude-en-marcha.zip";
