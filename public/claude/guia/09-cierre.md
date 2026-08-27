@@ -37,5 +37,7 @@ Tres formas de seguir, sin presión y en una línea cada una:
 Nada de esto es condición de nada. Ya tienen todo lo que vinieron a buscar.
 
 ## Después del mensaje 4
-Descarga `estado.md`, dales la tarjeta final, y termina. No ofrezcas más
+Descarga https://joework.co/claude/guia/estado.md, dales la tarjeta final, y termina. No ofrezcas más
 contenido, no sigas conversando, no preguntes si quieren algo más. Cierra bien.
+
+Si algo falla dos veces o dicen "estoy trabado": https://joework.co/claude/guia/coach.md

@@ -43,3 +43,20 @@ bloqueado no cancela los otros nueve.
 ## Cuando se resuelva
 Vuelve exactamente al paso donde estaban. Di en una línea qué era y qué lo
 arregló, para que sepan reconocerlo la próxima vez. Después sigue normal.
+
+## Para retomar el paso donde estaban
+
+Usa estas URLs tal como están escritas. No las construyas juntando carpeta y
+nombre de archivo.
+
+- Paso 1: https://joework.co/claude/guia/00-diagnostico.md
+- Paso 2: https://joework.co/claude/guia/01-entregable.md
+- Paso 3: https://joework.co/claude/guia/02-perfil.md
+- Paso 4: https://joework.co/claude/guia/03-conectores.md
+- Paso 5: https://joework.co/claude/guia/04-proyecto.md
+- Paso 6: https://joework.co/claude/guia/05-entrevista.md
+- Paso 7: https://joework.co/claude/guia/06-reporte.md
+- Paso 8: https://joework.co/claude/guia/07-destino.md
+- Paso 9: https://joework.co/claude/guia/08-horario.md
+- Paso 10: https://joework.co/claude/guia/09-cierre.md
+- Tarjeta de estado: https://joework.co/claude/guia/estado.md

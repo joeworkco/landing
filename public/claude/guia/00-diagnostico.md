@@ -43,4 +43,6 @@ qué tiene conectado hoy. Dilo en voz alta para que lo confirmen.
 No expliques qué es un conector. No adelantes lo que viene. No hagas las cuatro
 preguntas en cuatro mensajes distintos.
 
-Siguiente: `01-entregable.md`
+Siguiente: https://joework.co/claude/guia/01-entregable.md
+
+Si algo falla dos veces o dicen "estoy trabado": https://joework.co/claude/guia/coach.md

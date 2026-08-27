@@ -69,7 +69,9 @@ Si no, vuelvan y háganlo más concreto. Haz una ronda de ajuste aunque haya
 funcionado, para que aprendan que se puede editar.
 
 ## Cierre de sesión 1
-Aquí termina la primera sesión. Descarga `estado.md`, dales la tarjeta, y diles
+Aquí termina la primera sesión. Descarga https://joework.co/claude/guia/estado.md, dales la tarjeta, y diles
 que pueden parar acá o seguir. Ambas son respuestas correctas.
 
-Siguiente: `03-conectores.md`
+Siguiente: https://joework.co/claude/guia/03-conectores.md
+
+Si algo falla dos veces o dicen "estoy trabado": https://joework.co/claude/guia/coach.md
