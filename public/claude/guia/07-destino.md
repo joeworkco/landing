@@ -29,4 +29,6 @@ destino elegido.
 Corrieron el reporte y apareció en el destino elegido, no en el chat. Que lo vayan
 a ver y te confirmen que está ahí.
 
-Siguiente: `08-horario.md`
+Siguiente: https://joework.co/claude/guia/08-horario.md
+
+Si algo falla dos veces o dicen "estoy trabado": https://joework.co/claude/guia/coach.md

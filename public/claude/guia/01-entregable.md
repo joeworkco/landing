@@ -40,4 +40,6 @@ abran y te digan qué ven.
 Perfecto, eso es información. Pregunta qué le sobra y qué le falta, y córrelo
 otra vez completo. La segunda versión casi siempre es la buena.
 
-Siguiente: `02-perfil.md`
+Siguiente: https://joework.co/claude/guia/02-perfil.md
+
+Si algo falla dos veces o dicen "estoy trabado": https://joework.co/claude/guia/coach.md

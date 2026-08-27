@@ -51,6 +51,8 @@ dedujiste de sus archivos, su calendario o la forma en que respondieron. Si solo
 repiten lo que escribieron, la entrevista fue superficial. Vuelve e insiste más.
 
 ## Cierre de sesión 2
-Aquí termina la segunda sesión. Descarga `estado.md` y dales la tarjeta.
+Aquí termina la segunda sesión. Descarga https://joework.co/claude/guia/estado.md y dales la tarjeta.
 
-Siguiente: `06-reporte.md`
+Siguiente: https://joework.co/claude/guia/06-reporte.md
+
+Si algo falla dos veces o dicen "estoy trabado": https://joework.co/claude/guia/coach.md

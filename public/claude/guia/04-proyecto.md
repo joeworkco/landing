@@ -62,4 +62,6 @@ Que abran un chat dentro del proyecto y pidan algo sin dar contexto. Tiene que
 usar un dato que salió de los archivos que subieron. Si no lo usa, o los archivos
 no cargaron o son demasiado genéricos.
 
-Siguiente: `05-entrevista.md`
+Siguiente: https://joework.co/claude/guia/05-entrevista.md
+
+Si algo falla dos veces o dicen "estoy trabado": https://joework.co/claude/guia/coach.md

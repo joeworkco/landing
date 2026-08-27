@@ -40,4 +40,6 @@ sistemas. Diles qué pedir, en una frase, y sigue por la ruta de entrevista.
 Claude menciona el nombre de una reunión real suya. Si responde en general, sin
 nombres propios, no está conectado y está improvisando. No lo dejes pasar.
 
-Siguiente: `04-proyecto.md`
+Siguiente: https://joework.co/claude/guia/04-proyecto.md
+
+Si algo falla dos veces o dicen "estoy trabado": https://joework.co/claude/guia/coach.md

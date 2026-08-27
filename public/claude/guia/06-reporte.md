@@ -36,4 +36,6 @@ Leyeron el reporte completo, de arriba a abajo, y le quitaron al menos una
 sección. Si no quitaron nada, no lo leyeron con atención. Pregúntales qué parte se
 saltarían un martes ocupado y quítala.
 
-Siguiente: `07-destino.md`
+Siguiente: https://joework.co/claude/guia/07-destino.md
+
+Si algo falla dos veces o dicen "estoy trabado": https://joework.co/claude/guia/coach.md
