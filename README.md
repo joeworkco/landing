@@ -50,6 +50,9 @@ npm run check
 npm test
 ```
 
+`public/claude/guia/inicio.md` es generado y no se edita a mano.
+Después de modificar un paso, ejecuta `npm run build:claude-guide` para regenerarlo.
+
 ## Arquitectura
 
 - `app/`: rutas, layouts, metadata, sitemap y datos estructurados
