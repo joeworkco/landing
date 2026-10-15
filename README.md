@@ -40,6 +40,8 @@ Abrir [http://localhost:3000](http://localhost:3000).
 | `npm run lint` | Ejecuta ESLint sin warnings permitidos |
 | `npm run typecheck` | Valida TypeScript sin emitir archivos |
 | `npm test` | Prueba la lógica de la calculadora ROI |
+| `npm run audit:prod` | Bloquea vulnerabilidades high o critical de producción, sin excepciones |
+| `npm run audit:full` | Bloquea el audit completo salvo excepciones exactas, fechadas y documentadas |
 | `npm run build` | Genera el sitio estático en `out/` |
 | `npm run check` | Ejecuta lint, typecheck y build |
 
@@ -75,8 +77,11 @@ El sistema visual usa Joe Green `#54CC0C`, Ink `#181818`, Paper `#FAFAF6`, super
 Cada push a `main` activa [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml), que:
 
 1. Instala dependencias con `npm ci`.
-2. Ejecuta `npm run check`.
-3. publica `out/` en GitHub Pages.
+2. Ejecuta los audits de producción y completo.
+3. Ejecuta `npm run check`.
+4. Publica `out/` en GitHub Pages.
+
+Las excepciones temporales del audit completo se registran en [`docs/security-audit-exceptions.md`](docs/security-audit-exceptions.md).
 
 El dominio de producción es [https://www.joework.co](https://www.joework.co). Si un release falla, se puede revertir el commit en `main` y GitHub Pages publicará nuevamente la última versión estable.
 
