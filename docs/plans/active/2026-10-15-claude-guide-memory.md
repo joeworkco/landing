@@ -19,8 +19,8 @@ el usuario la revise sin alterar las rutas ni la arquitectura de la guía.
 
 - El conductor, los pasos 3, 5 y 6, el modo rescate y la tarjeta de estado
   explican los cuatro niveles con numeración consistente.
-- El paso 6 guía una revisión observable de la memoria sin afirmar que Claude
-  puede verla.
+- El paso 6 distingue la memoria parcial que puede llegar en el contexto de la
+  lista completa, que solo se comprueba en la pantalla de configuración.
 - La página `/claude` añade una cuarta tarjeta con el mismo patrón visual.
 - Todos los puntos de entrada usan `inicio.md?v=4`.
 - El skill empaquetado conserva referencias locales y contiene 13 Markdown.

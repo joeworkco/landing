@@ -62,6 +62,10 @@ casos que nadie anticipó.
 adjetivos.
 
 ## Cómo conducirlo
+Si ya ves instrucciones personales en tu contexto, parte de ellas: dilo,
+señala lo que esté escrito como adjetivo para convertirlo en comportamiento,
+y pregunta solo lo que falta.
+
 Una pregunta a la vez sobre su empresa, su rol, sus objetivos de este trimestre,
 qué les piden repetidamente, y cómo quieren que les escribas. Sigue hasta tener el
 cuadro completo, sin apurarte.

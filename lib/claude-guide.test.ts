@@ -121,6 +121,53 @@ describe("Claude guide progress", () => {
     assert.doesNotMatch(generatedGuide, /archivo\?v=/);
   });
 
+  it("distingue el contexto visible de las pantallas que Claude no puede ver", () => {
+    const conductor = readFileSync("scripts/claude-guide/_conductor.md", "utf8");
+    const diagnosis = readFileSync("public/claude/guia/00-diagnostico.md", "utf8");
+    const profile = readFileSync("public/claude/guia/02-perfil.md", "utf8");
+    const interview = readFileSync("public/claude/guia/05-entrevista.md", "utf8");
+    const skill = readFileSync(
+      "public/claude/skill/claude-en-marcha/SKILL.md",
+      "utf8",
+    );
+    const skillDiagnosis = readFileSync(
+      "public/claude/skill/claude-en-marcha/referencias/00-diagnostico.md",
+      "utf8",
+    );
+    const skillProfile = readFileSync(
+      "public/claude/skill/claude-en-marcha/referencias/02-perfil.md",
+      "utf8",
+    );
+    const skillInterview = readFileSync(
+      "public/claude/skill/claude-en-marcha/referencias/05-entrevista.md",
+      "utf8",
+    );
+    const page = readFileSync("app/claude/content.ts", "utf8");
+
+    for (const source of [conductor, skill]) {
+      assert.match(source, /Ves su contexto, no sus pantallas/);
+      assert.match(source, /parte de su memoria pueden estar en tu contexto/);
+      assert.match(
+        source,
+        /no\s+la lista completa ni la memoria de otros proyectos/,
+      );
+      assert.doesNotMatch(source, /No puedes leer sus instrucciones personales/);
+      assert.doesNotMatch(source, /No puedes ver su memoria:/);
+    }
+    for (const source of [diagnosis, skillDiagnosis]) {
+      assert.match(source, /Si las ves en tu\s+contexto, no lo preguntes/);
+    }
+    for (const source of [profile, skillProfile]) {
+      assert.match(source, /Si ya ves instrucciones personales en tu contexto/);
+    }
+    for (const source of [interview, skillInterview]) {
+      assert.match(source, /Puede que veas parte de lo que se guardó/);
+      assert.match(source, /Si\s+recuerdas\s+algo que\s+ellos no mencionan/);
+      assert.doesNotMatch(source, /No puedes ver ninguna de las dos/);
+    }
+    assert.doesNotMatch(page, /ni qué escribiste en tu perfil/);
+  });
+
   it("ofrece una ruta realista para plan gratuito sin prometer conectores", () => {
     const step4 = claudeGuideSessions
       .flatMap((session) => session.steps)

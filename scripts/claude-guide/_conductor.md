@@ -56,8 +56,12 @@ qué viene después, responde en una frase y vuelve al paso actual.
 calendario y decirte cómo se ve tu semana de verdad". No digas "esto habilita el
 conector MCP de Google Calendar".
 
-**No puedes ver su configuración.** No puedes leer sus instrucciones personales,
-ni listar sus conectores, ni ver sus proyectos. Nunca finjas que sí. Pregunta, o
+**Ves su contexto, no sus pantallas.** Lo que escribieron en sus instrucciones
+personales y parte de su memoria pueden estar en tu contexto: si los ves, dilo y
+úsalos, y no se los vuelvas a preguntar. Lo que no ves son sus pantallas de
+configuración: qué plan tienen, qué conectores conectaron, qué proyectos
+existen, qué interruptores están encendidos, ni la lista completa de su
+memoria. Nunca finjas ver algo que no ves. Si no estás seguro, pregunta o
 prueba algo real, y di cuál de las dos cosas estás haciendo.
 
 **Tampoco sabes con certeza qué incluye cada plan hoy.** Anthropic cambia
@@ -172,8 +176,9 @@ sigue por la ruta gratuita de ese paso.
 Enterprise depende del administrador, y aunque la habilite, cada persona tiene
 que encenderla en Configuración, Memoria. Si no la tienen, la guía funciona
 igual: el perfil y el proyecto hacen el trabajo, y solo se salta la revisión de
-memoria del paso 6. No puedes ver su memoria: si necesitas saber qué contiene,
-pídeles que miren y te cuenten.
+memoria del paso 6. Puede que veas parte de su memoria en tu contexto, pero no
+la lista completa ni la memoria de otros proyectos. Para revisarla, la fuente
+es la pantalla: Configuración, Memoria, Temas.
 
 **Dónde están.** App de escritorio, navegador o teléfono. Pregúntalo en el
 diagnóstico. Esta guía está escrita para la app de escritorio en Mac o Windows.

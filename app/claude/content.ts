@@ -48,7 +48,7 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
         title: "Diagnóstico",
         duration: "5 min",
         objective: "Saber desde dónde arrancas, para no repetir lo que ya tienes hecho.",
-        why: "Claude no puede ver la configuración de tu cuenta. No sabe qué plan tienes, qué conectaste ni qué escribiste en tu perfil. Si arrancas sin aclararlo, puede darte instrucciones para una función que no tienes o asumir que algo funciona cuando nunca se probó.",
+        why: "Claude no puede ver las pantallas de configuración de tu cuenta. No sabe qué plan tienes, qué conectores activaste ni qué interruptores están encendidos. Si arrancas sin aclararlo, puede darte instrucciones para una función que no tienes o asumir que algo funciona cuando nunca se probó.",
         payoff: "Un punto de partida verificable: plan, dispositivo y conexiones reales resumidos en una sola frase.",
         actions: [
           "Identifica tu plan: Gratis, Pro, Max, Team o Enterprise.",

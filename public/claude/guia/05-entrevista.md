@@ -63,7 +63,9 @@ es el momento en que la gente entiende de verdad qué sabe Claude de ella.
 Pídeles que abran **Configuración**, luego **Memoria**, y miren la lista de
 **Temas** (Topics). Como la entrevista fue dentro del proyecto, lo nuevo también
 puede estar en la memoria del proyecto, en la sección Memoria de la página del
-proyecto. No puedes ver ninguna de las dos: pregúntales qué aparece y adapta.
+proyecto. Puede que veas parte de lo que se guardó, pero no la lista completa:
+pídeles que abran la pantalla y te cuenten qué aparece. Si recuerdas algo que
+ellos no mencionan, nómbralo para que lo revisen.
 
 Con lo que vean, tres cosas:
 
