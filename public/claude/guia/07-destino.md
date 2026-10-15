@@ -1,5 +1,6 @@
 # PASO 8: DÓNDE ATERRIZA
-Tiempo: 5 minutos. Funciona en todos los planes, con matices.
+Tiempo: 5 minutos. El destino en Claude funciona en todos los planes. Drive y
+correo necesitan los conectores del paso 4.
 
 ## Objetivo
 Que el reporte llegue donde ya miran. Un reporte que aterriza donde no miran es un
@@ -16,9 +17,14 @@ histórico y revisar tendencias mes a mes.
 mirando a las siete de la mañana, sin abrir nada nuevo.
 
 ## El matiz que define la decisión
-Con cuentas de Google, Claude crea el borrador pero no lo envía. Para un reporte
-personal eso da igual, el borrador está ahí y lo leen. Con cuentas de Microsoft sí
-puede enviar, que importa solo si el reporte va también para alguien más.
+Si en el paso 4 probaron el envío de correo, ya saben qué pasa: o Claude lo
+envía con su aprobación, o deja un borrador. Para un reporte personal da igual,
+el borrador está en la bandeja y lo leen. Solo importa si el reporte también va
+para otra persona: en ese caso necesitan que el envío funcione, y si no
+funciona, el destino correcto es un borrador que ellos reenvían.
+
+Si no conectaron el correo o están en plan gratis, el destino es Claude.
+Funciona, siempre que abran Claude todas las mañanas.
 
 ## Cómo conducirlo
 Una sola pregunta: ¿qué es lo primero que abres al despertar? Que elijan por eso,

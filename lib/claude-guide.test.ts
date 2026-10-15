@@ -93,7 +93,7 @@ describe("Claude guide progress", () => {
   it("sirve la guía y el ZIP desde el único repositorio de joework.co", () => {
     assert.equal(
       CLAUDE_GUIDE_START_URL,
-      "https://joework.co/claude/guia/inicio.md?v=2",
+      "https://joework.co/claude/guia/inicio.md?v=3",
     );
     assert.equal(
       CLAUDE_GUIDE_DOWNLOAD_URL,
@@ -106,7 +106,7 @@ describe("Claude guide progress", () => {
   });
 
   it("mantiene sincronizada la versión del conductor en todos los prompts de entrada", () => {
-    const expectedUrl = "https://joework.co/claude/guia/inicio.md?v=2";
+    const expectedUrl = "https://joework.co/claude/guia/inicio.md?v=3";
     const statusGuide = readFileSync("public/claude/guia/estado.md", "utf8");
     const publicReadme = readFileSync("public/claude/guia/README.md", "utf8");
     const generatedGuide = readFileSync("public/claude/guia/inicio.md", "utf8");
@@ -119,6 +119,37 @@ describe("Claude guide progress", () => {
     assert.ok(publicReadme.includes(expectedUrl));
     assert.ok(generatedGuide.includes(expectedUrl));
     assert.doesNotMatch(generatedGuide, /archivo\?v=/);
+  });
+
+  it("ofrece una ruta realista para plan gratuito sin prometer conectores", () => {
+    const step4 = claudeGuideSessions
+      .flatMap((session) => session.steps)
+      .find((step) => step.number === 4);
+
+    assert.ok(step4);
+    assert.match(step4.duration, /Pro o superior/);
+    assert.ok(
+      step4.actions.some((action) =>
+        action.includes("Personalizar → Conectores → Descubrir → Conectar con Claude"),
+      ),
+    );
+    assert.ok(step4.actions.some((action) => action.includes("¿Plan gratis?")));
+    assert.match(step4.note ?? "", /no es consistente/);
+    assert.doesNotMatch(step4.note ?? "", /Google puede leer|no puede enviar/i);
+  });
+
+  it("elimina claims y rutas obsoletas del copy de la página", () => {
+    const sources = [
+      "app/claude/content.ts",
+      "app/claude/claude-hero.tsx",
+      "app/claude/guide-footer-sections.tsx",
+    ].map((file) => readFileSync(file, "utf8")).join("\n");
+
+    assert.doesNotMatch(sources, /9 de 10|\/schedule|inicio\.md\?v=2/);
+    assert.doesNotMatch(sources, /Google puede leer correo y crear borradores, pero no enviar/i);
+    assert.match(sources, /actualizada octubre 2026/);
+    assert.match(sources, /Personalizar \(en la barra lateral\) → Skills → \+ → Crear skill → Subir un skill/);
+    assert.match(sources, /¿Lo instalaste antes del 5 de octubre de 2026\?/);
   });
 
   it("refleja únicamente los pasos probados en la tarjeta de estado", () => {

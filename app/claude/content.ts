@@ -19,7 +19,7 @@ export type ClaudeGuideSession = {
 };
 
 export const CLAUDE_GUIDE_START_URL =
-  "https://joework.co/claude/guia/inicio.md?v=2";
+  "https://joework.co/claude/guia/inicio.md?v=3";
 
 export const CLAUDE_GUIDE_DOWNLOAD_URL =
   "https://joework.co/claude/descargas/claude-en-marcha.zip";
@@ -98,24 +98,25 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
   {
     number: 2,
     title: "Que conozca tu negocio",
-    outcome: "Hasta aquí Claude es capaz, pero trabaja a ciegas. En esta sesión lo conectas a tu calendario y archivos para dejar de explicarle tu negocio desde cero.",
+    outcome: "Hasta aquí Claude es capaz, pero trabaja a ciegas. Los conectores de Google necesitan plan pago. Hay ruta gratuita si tu cuenta no permite conectarlos.",
     steps: [
       {
         number: 4,
         title: "Conectar tu trabajo real",
-        duration: "10 min",
+        duration: "10 min · Pro o superior",
         objective: "Calendario, correo y archivos, para que deje de trabajar a ciegas.",
         why: "Sin una fuente conectada, Claude solo conoce lo que alcanzaste a escribir en el prompt. Puede sonar convincente y aun así responder en generalidades. Conectar primero el calendario le da una prueba rápida y poco invasiva: o menciona tus reuniones reales o sabes que está improvisando.",
         payoff: "Claude puede leer una parte real de tu operación y señalar reuniones, cargas y prioridades con nombres concretos.",
         actions: [
-          "En la app: botón + → Conectores → Administrar conectores → +.",
+          "En la app: Personalizar → Conectores → Descubrir → Conectar con Claude.",
           "Conecta primero el calendario. Correo y archivos pueden esperar.",
           "Activa el conector en la conversación desde el mismo botón +.",
           "Pide una lectura de tu semana y verifica que mencione reuniones reales.",
+          "¿Plan gratis? Inténtalo igual. Si no te deja conectar, Claude te pregunta cómo es tu semana y sigue con eso.",
         ],
         proof: "Claude menciona por nombre una reunión real. Una respuesta general no cuenta.",
         prompt: `Mira mi calendario de esta semana y dime, sin diplomacia, en qué se me está yendo el tiempo, qué reunión no debería existir y qué bloque me falta para avanzar en lo importante.`,
-        note: "Con Google puede leer correo y crear borradores, pero no enviar. Con Microsoft sí puede enviar. Si no quieres conectar correo, sigue solo con calendario.",
+        note: "La documentación de Anthropic no es consistente sobre si Claude puede enviar correo desde Google. Pruébalo: pídele que te envíe un correo de prueba a ti mismo. Si puede, te pedirá aprobación. Si no, te dejará un borrador. Las dos sirven para el reporte.",
       },
       {
         number: 5,
@@ -186,7 +187,7 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
           "Corre una entrega completa hacia el destino elegido.",
         ],
         proof: "El reporte aparece en el destino elegido, fuera del chat.",
-        note: "Con Google queda como borrador. Con Microsoft puede enviarse, algo relevante si también lo recibirá otra persona.",
+        note: "Si en el paso 4 comprobaste que Claude puede enviar, el reporte puede llegar como correo. Si solo deja borradores, un borrador en tu bandeja es suficiente para un reporte personal.",
       },
       {
         number: 9,
@@ -196,9 +197,10 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
         why: "Mientras el reporte dependa de que recuerdes pedirlo, sigue siendo una tarea tuya. Ponerlo en horario elimina ese punto de fallo y obliga a comprobar algo importante: que la versión automática puede consultar las mismas fuentes y conservar la calidad que aprobaste manualmente.",
         payoff: "Una primera entrega que llegó sola y una frecuencia definida; en plan gratuito, el mismo sistema queda listo con un disparo manual corto.",
         actions: [
-          "Con Pro o superior: entra a Cowork y escribe /schedule dentro de la tarea.",
+          "En la versión nueva de la app no hay botón Cowork: pide la tarea en cualquier conversación y toca Programar. En cualquier versión: barra lateral → Programadas → Nueva tarea → Crear con Claude.",
           "Elige frecuencia diaria, hábil, semanal o por hora.",
-          "Sube al Proyecto o Drive cualquier archivo local que el reporte necesite.",
+          "Si la tarea usa una carpeta de tu computador, solo corre con el computador encendido. Para un reporte de las 7 de la mañana, mejor sube el archivo al proyecto o a Drive.",
+          "Las tareas que Claude programa se aprueban solas por defecto. Si prefieres revisar cada acción, dilo al programarla.",
           "Compara la primera entrega automática con la versión aprobada.",
         ],
         proof: "Llegó una vez sin pedirlo y se parece al reporte aprobado. Este paso queda abierto hasta esa primera entrega.",
