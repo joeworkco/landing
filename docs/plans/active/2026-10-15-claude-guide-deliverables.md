@@ -70,4 +70,4 @@ personales.
 - [x] Parches PC1 a PC6 aplicados.
 - [x] Skill reempacado.
 - [x] Verificaciones locales completadas.
-- [ ] PR abierto sin mergear.
+- [x] PR abierto sin mergear.
