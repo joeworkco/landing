@@ -1,6 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@config "../tailwind.config.ts";
+@import "tailwindcss";
+@custom-variant hover (&:hover);
+
+@theme {
+  --default-ring-width: 3px;
+  --default-ring-color: var(--color-blue-500);
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-gray-400);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 :root {
   --joe-green: 99 89% 42%;
@@ -229,6 +254,88 @@ html {
   .group:hover .flower-delight {
     transform: rotate(45deg) scale(1.08);
   }
+}
+
+@layer utilities {
+  .shadow-sm {
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    box-shadow:
+      var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow),
+      var(--tw-ring-shadow), var(--tw-shadow);
+  }
+
+  .rounded-sm {
+    border-radius: 0.125rem;
+  }
+
+  .outline-none,
+  .focus\:outline-none:focus,
+  .focus-visible\:outline-none:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  @media (min-width: 40rem) {
+    .sm\:text-xl:not([class*="sm:leading-"]) {
+      line-height: 1.75rem;
+    }
+
+    .sm\:text-3xl:not([class*="sm:leading-"]) {
+      line-height: 2.25rem;
+    }
+
+    .sm\:text-4xl:not([class*="sm:leading-"]) {
+      line-height: 2.5rem;
+    }
+
+    .sm\:text-5xl:not([class*="sm:leading-"]),
+    .sm\:text-6xl:not([class*="sm:leading-"]),
+    .sm\:text-7xl:not([class*="sm:leading-"]) {
+      line-height: 1;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .section-title {
+      line-height: 1;
+    }
+
+    .md\:text-sm:not([class*="md:leading-"]) {
+      line-height: 1.25rem;
+    }
+
+    .md\:text-base:not([class*="md:leading-"]) {
+      line-height: 1.5rem;
+    }
+
+    .md\:text-lg:not([class*="md:leading-"]),
+    .md\:text-xl:not([class*="md:leading-"]) {
+      line-height: 1.75rem;
+    }
+
+    .md\:text-2xl:not([class*="md:leading-"]) {
+      line-height: 2rem;
+    }
+
+    .md\:text-3xl:not([class*="md:leading-"]) {
+      line-height: 2.25rem;
+    }
+
+    .md\:text-4xl:not([class*="md:leading-"]) {
+      line-height: 2.5rem;
+    }
+
+    .md\:text-5xl:not([class*="md:leading-"]),
+    .md\:text-6xl:not([class*="md:leading-"]),
+    .md\:text-7xl:not([class*="md:leading-"]),
+    .md\:text-8xl:not([class*="md:leading-"]) {
+      line-height: 1;
+    }
+  }
+}
+
+.text-xs > .text-\[10px\] {
+  line-height: 1rem;
 }
 
 @keyframes hero-copy-in {

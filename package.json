@@ -11,9 +11,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "node --experimental-strip-types --test lib/*.test.ts",
+    "test": "node --experimental-strip-types --test lib/*.test.ts scripts/*.test.mjs",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
+    "audit:prod": "npm audit --omit=dev --audit-level=high",
+    "audit:full": "node scripts/audit-with-exceptions.mjs",
+    "audit": "npm run audit:prod && npm run audit:full",
     "build:claude-guide": "python3 scripts/claude-guide/build-inicio.py",
     "check:claude-guide": "python3 scripts/claude-guide/build-inicio.py --check",
     "check": "npm run lint && npm run typecheck && npm run check:claude-guide && npm run build"
@@ -40,7 +43,7 @@
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.468.0",
     "motion": "^12.12.1",
-    "next": "16.3.2",
+    "next": "16.3.8",
     "next-mdx-remote-client": "2",
     "next-themes": "^0.4.4",
     "react": "^19.0.0",
@@ -57,14 +60,14 @@
     "zustand": "^5.0.3"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.19",
     "eslint": "^9",
-    "eslint-config-next": "16.3.2",
+    "eslint-config-next": "16.3.8",
     "postcss": "8.5.26",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "4.3.3",
     "typescript": "^5"
   }
 }
