@@ -59,4 +59,4 @@ versión de la app, y ofrecer una alternativa útil cuando una función no exist
 - [x] P1 a P9 aplicados.
 - [x] Verificaciones locales y revisión final completas.
 - [ ] E2E público después de desplegar la rama; GitHub Pages solo publica `main`.
-- [ ] PR abierto con matriz de cumplimiento.
+- [x] PR #11 abierto con matriz de cumplimiento.
