@@ -5,25 +5,37 @@ Tiempo: 10 minutos. Funciona en todos los planes.
 Que la calidad que acaban de ver no dependa de que expliquen su contexto cada vez.
 Las instrucciones personales aplican a todos sus chats, para siempre.
 
-## Antes de escribir nada: los tres niveles
+## Antes de escribir nada: los cuatro niveles
 
-Claude recibe instrucciones en tres niveles distintos y casi nadie sabe cuál usar.
-Explícaselo ahora, porque el error de meter todo en el perfil es el más común y el
-más molesto de deshacer.
+Claude trabaja con cuatro niveles de contexto y casi nadie sabe cuál usar.
+Explícaselo ahora, porque el error de meter todo en el perfil es el más común y
+el más molesto de deshacer.
 
-**Nivel 1, tu perfil.** Aplica a todos tus chats, siempre, para siempre. Va aquí
-lo que es verdad sin importar en qué estés trabajando: quién eres, qué hace tu
-empresa, cómo quieres que te escriban.
+**Nivel 1, tu perfil.** Lo escriben ellos. Aplica a todos sus chats, siempre. Va
+aquí cómo quieren que Claude trabaje: quiénes son, qué hace su empresa, cómo
+quieren que les escriban.
 
-**Nivel 2, el proyecto.** Aplica solo dentro de ese proyecto. Va aquí lo que es
-verdad para un tipo de trabajo específico: el formato de tus propuestas, tu lista
-de precios, las reglas de tu contenido. Eso lo montamos en el paso 5.
+**Nivel 2, la memoria.** La escribe Claude solo, a medida que conversan. Guarda
+datos sobre ellos: sus clientes, sus proyectos en curso, decisiones que ya
+tomaron. Se guarda donde ocurre la conversación: en un chat suelto va a la
+memoria de la cuenta, y dentro de un proyecto va a la memoria de ese proyecto.
 
-**Nivel 3, el chat.** Aplica solo a esta conversación. Va aquí lo de hoy: este
+**Nivel 3, el proyecto.** Lo escriben ellos. Aplica solo dentro de ese proyecto:
+el formato de sus propuestas, su lista de precios, las reglas de su contenido.
+Eso lo montamos en el paso 5.
+
+**Nivel 4, el chat.** Lo pegan ellos. Aplica solo a esta conversación: este
 cliente, estos números, este encargo.
 
-La regla para decidir: si aplica a todo lo que haces, va al perfil. Si aplica solo
-a un tipo de trabajo, va al proyecto. Si aplica solo hoy, va al chat.
+Perfil y memoria se parecen y no son lo mismo. El perfil son reglas: cómo
+quieren que trabajes. La memoria son datos: lo que sabes de ellos. Una regla no
+debería vivir solo en la memoria, porque la memoria la actualiza Claude y puede
+cambiarla sin avisar.
+
+La regla para decidir dónde va lo que escriben ellos: si aplica a todo lo que
+hacen, va al perfil. Si aplica solo a un tipo de trabajo, va al proyecto. Si
+aplica solo hoy, va al chat. La memoria no se decide, se revisa, y eso lo
+hacemos en el paso 6.
 
 En este paso trabajamos únicamente el nivel 1. Si te dictan algo que en realidad
 es de un tipo de trabajo específico, anótalo aparte y dilo: eso va en el paso 5.
@@ -61,6 +73,13 @@ permite editarlas solos en tres meses.
 ## Dónde se pegan
 Configuración, luego Perfil, luego instrucciones personales. Diles la ruta, no la
 describas en abstracto.
+
+Ya que están en Configuración, que entren también a **Memoria** y confirmen que
+**Generar memoria a partir de los chats** (Generate memory from chats) esté
+activado. En Free, Pro y Max viene activado. En cuentas de empresa puede estar
+apagado aunque el administrador lo haya habilitado, porque cada persona lo
+enciende por su cuenta. No toquen nada más ahí todavía: la revisión es en el
+paso 6.
 
 ## La prueba
 Que abran un chat completamente nuevo, sin contexto, y pidan algo cualquiera de su

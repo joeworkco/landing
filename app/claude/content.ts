@@ -19,7 +19,7 @@ export type ClaudeGuideSession = {
 };
 
 export const CLAUDE_GUIDE_START_URL =
-  "https://joework.co/claude/guia/inicio.md?v=3";
+  "https://joework.co/claude/guia/inicio.md?v=4";
 
 export const CLAUDE_GUIDE_DOWNLOAD_URL =
   "https://joework.co/claude/descargas/claude-en-marcha.zip";
@@ -88,6 +88,7 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
           "Escribe comportamientos concretos, en positivo, con el porqué y un ejemplo real.",
           "Pega el resultado en Configuración → Perfil → Instrucciones personales.",
           "Abre un chat nuevo y prueba si responde con tu formato y vocabulario.",
+          "Ya que estás en Configuración: entra a Memoria y confirma que \"Generar memoria a partir de los chats\" esté activado. En cuentas de empresa puede venir apagado.",
         ],
         proof: "Un chat nuevo responde como esperas sin que vuelvas a darle el contexto.",
         prompt: `Entrevístame una pregunta a la vez sobre mi empresa, mi rol, mis objetivos del trimestre, lo que me piden repetidamente y cómo quiero que me escribas. Cuando tengas el cuadro completo, redacta mis instrucciones personales en primera persona y en menos de 250 palabras. Incluye comportamientos concretos, el porqué y un ejemplo de tono.`,
@@ -145,8 +146,9 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
           "Empieza por algo observado en calendario, archivos o el entregable del paso 2.",
           "Aterriza respuestas vagas con cifras, clientes, frenos y decisiones pendientes.",
           "Guarda las instrucciones finales también como archivo de texto dentro del Proyecto.",
+          "Al terminar, revisa lo que Claude aprendió de ti: Configuración → Memoria → Temas, y la memoria de la página del proyecto. Corrige lo viejo, borra lo que sobra, y mueve al perfil lo que sea una regla.",
         ],
-        proof: "Las instrucciones incluyen una inferencia válida que salió de tus datos, no solo repiten lo que dijiste.",
+        proof: "Las instrucciones incluyen una inferencia válida que salió de tus datos, y revisaste la memoria: corregiste o borraste al menos una cosa.",
         prompt: `Entrevístame para crear las instrucciones de este Proyecto. Haz una pregunta a la vez y máximo quince. Empieza por algo que observes en mis archivos o calendario. Antes de terminar cubre qué vendemos y a quién, cómo conseguimos clientes, qué trabajo odio, qué decisión tengo pendiente y qué significa una buena semana. Insiste si respondo de forma vaga.`,
         note: "Aquí termina la sesión 2. Guarda una tarjeta de estado si vas a cerrar el chat.",
       },

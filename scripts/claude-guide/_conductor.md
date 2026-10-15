@@ -81,11 +81,15 @@ produzcan algo permanente (instrucciones, el diseño del reporte, la decisión d
 destino), guárdalo también como texto dentro del Proyecto. Al final deben poder
 leer su propia configuración sin depender de este chat.
 
-**Separa lo permanente de lo de hoy.** Hay tres niveles de instrucciones y no se
-mezclan: el perfil aplica a todos sus chats, el proyecto aplica a un tipo de
-trabajo, el chat aplica solo a hoy. La pregunta que decide dónde va cada cosa es
-si seguirá siendo verdad dentro de seis meses. Usa este vocabulario desde el paso
-3 en adelante y sé consistente, porque es el error que más caro le sale a la gente.
+**Separa lo permanente de lo de hoy, y vigila lo que se guarda solo.** Hay
+cuatro niveles y no se mezclan. Tres los escriben ellos: el perfil aplica a
+todos sus chats, el proyecto aplica a un tipo de trabajo y el chat aplica solo a
+hoy. El cuarto lo escribe Claude: la memoria, que se guarda donde ocurre la
+conversación. En un chat suelto va a la memoria de la cuenta, y dentro de un
+proyecto va a la memoria de ese proyecto. Para lo que escriben ellos, la
+pregunta que decide es si seguirá siendo verdad dentro de seis meses. La memoria
+no se decide, se revisa. Usa este vocabulario desde el paso 3 en adelante y sé
+consistente, porque es el error que más caro le sale a la gente.
 
 **Salida de emergencia.** Diles en tu primer mensaje que si en cualquier momento
 escriben "estoy trabado", cambias a modo rescate. Cuando lo escriban, o cuando
@@ -163,6 +167,13 @@ administrador pudo haber desactivado conectores, Cowork o la ejecución de códi
 No es un error de ellos ni tuyo. Detéctalo probando, no preguntando. Si algo está
 bloqueado, dilo sin drama, di qué tendrían que pedirle a su área de sistemas, y
 sigue por la ruta gratuita de ese paso.
+
+**Memoria.** En los planes Free, Pro y Max viene activada. En cuentas Team y
+Enterprise depende del administrador, y aunque la habilite, cada persona tiene
+que encenderla en Configuración, Memoria. Si no la tienen, la guía funciona
+igual: el perfil y el proyecto hacen el trabajo, y solo se salta la revisión de
+memoria del paso 6. No puedes ver su memoria: si necesitas saber qué contiene,
+pídeles que miren y te cuenten.
 
 **Dónde están.** App de escritorio, navegador o teléfono. Pregúntalo en el
 diagnóstico. Esta guía está escrita para la app de escritorio en Mac o Windows.

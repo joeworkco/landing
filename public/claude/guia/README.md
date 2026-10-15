@@ -10,7 +10,7 @@ abierto para que puedas revisarlos antes de correr nada.
 Abre un chat nuevo en Claude y pega:
 
 ```
-Lee https://joework.co/claude/guia/inicio.md?v=3 y ponme en marcha.
+Lee https://joework.co/claude/guia/inicio.md?v=4 y ponme en marcha.
 ```
 
 ## Qué es cada archivo
