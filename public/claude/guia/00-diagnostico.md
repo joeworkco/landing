@@ -11,7 +11,8 @@ No puedes ver su cuenta. Así que pregunta, en UN solo mensaje, cuatro cosas:
 1. Qué plan de Claude tienen. Gratis, Pro, Max, Team o Enterprise. Si no saben,
    está en Configuración, y "no sé" es una respuesta perfectamente válida.
 2. Dónde están ahora mismo. App de escritorio, navegador o teléfono.
-3. Si ya escribieron algo en sus instrucciones personales de perfil.
+3. Si ya escribieron instrucciones personales de perfil. Si las ves en tu
+   contexto, no lo preguntes: dilo en una línea y resume qué dicen.
 4. Si ya conectaron alguna herramienta o crearon algún proyecto.
 
 Si responden "no estoy seguro" a tres o cuatro, es una buena respuesta. Trátalo

@@ -68,8 +68,8 @@ export function InstructionLevels() {
       <style>{INSTRUCTION_LEVELS_CSS}</style>
       <div className="col max-w-3xl">
         <p className="eyebrow font-mono text-xs font-bold uppercase tracking-[.16em] text-[hsl(var(--joe-green-dark))]">Cómo piensa Claude</p>
-        <h2 className="mt-4 text-3xl font-extrabold md:text-4xl">Los tres niveles</h2>
-        <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">Antes de seguir, dos minutos que te van a ahorrar meses. Claude recibe instrucciones en tres niveles distintos, y meter algo en el nivel equivocado es el error más común y el más molesto de deshacer.</p>
+        <h2 className="mt-4 text-3xl font-extrabold md:text-4xl">Los cuatro niveles</h2>
+        <p className="mt-4 text-base leading-7 text-muted-foreground md:text-lg">Antes de seguir, dos minutos que te van a ahorrar meses. Claude trabaja con cuatro niveles de contexto. Tres los escribes tú. El cuarto lo escribe Claude solo, y es el que casi nadie revisa.</p>
       </div>
 
       <div className="jw-niv-stack">
@@ -77,7 +77,7 @@ export function InstructionLevels() {
           <div className="jw-niv-n">NIVEL 1</div>
           <div>
             <p className="jw-niv-t">Tu perfil</p>
-            <p className="jw-niv-d">Aplica a todos tus chats, siempre. Lo que es verdad sin importar en qué estés trabajando.</p>
+            <p className="jw-niv-d">Lo escribes tú. Aplica a todos tus chats, siempre. Lo que es verdad sin importar en qué estés trabajando.</p>
             <p className="jw-niv-eg">quién eres · qué hace tu empresa · cómo quieres que te escriban</p>
           </div>
           <div className="jw-niv-w">Paso 3</div>
@@ -86,28 +86,41 @@ export function InstructionLevels() {
         <div className="jw-niv-row" data-n="2">
           <div className="jw-niv-n">NIVEL 2</div>
           <div>
-            <p className="jw-niv-t">El proyecto</p>
-            <p className="jw-niv-d">Aplica solo dentro de ese proyecto. Lo que es verdad para un tipo de trabajo específico.</p>
-            <p className="jw-niv-eg">tu lista de precios · el formato de tus propuestas · tu propuesta ganada</p>
+            <p className="jw-niv-t">La memoria</p>
+            <p className="jw-niv-d">La escribe Claude solo, mientras conversan. Se guarda donde hablas: en un chat suelto, en tu cuenta; dentro de un proyecto, en ese proyecto.</p>
+            <p className="jw-niv-eg">tus clientes · tus proyectos en curso · decisiones que ya tomaste</p>
           </div>
-          <div className="jw-niv-w">Pasos 5 y 6</div>
+          <div className="jw-niv-w">Revísala en el paso 6</div>
         </div>
 
         <div className="jw-niv-row" data-n="3">
           <div className="jw-niv-n">NIVEL 3</div>
           <div>
+            <p className="jw-niv-t">El proyecto</p>
+            <p className="jw-niv-d">Lo escribes tú. Aplica solo dentro de ese proyecto. Lo que es verdad para un tipo de trabajo específico.</p>
+            <p className="jw-niv-eg">tu lista de precios · el formato de tus propuestas · tu propuesta ganada</p>
+          </div>
+          <div className="jw-niv-w">Pasos 5 y 6</div>
+        </div>
+
+        <div className="jw-niv-row" data-n="4">
+          <div className="jw-niv-n">NIVEL 4</div>
+          <div>
             <p className="jw-niv-t">El chat</p>
-            <p className="jw-niv-d">Aplica solo a esta conversación. Lo de hoy, lo que cambia cada vez.</p>
+            <p className="jw-niv-d">Lo pegas tú. Aplica solo a esta conversación. Lo de hoy, lo que cambia cada vez.</p>
             <p className="jw-niv-eg">este cliente · los números de este mes · este encargo</p>
           </div>
           <div className="jw-niv-w">Cada día</div>
         </div>
       </div>
 
+      <p className="mt-5 text-sm leading-6 text-muted-foreground md:text-base">El perfil son reglas: cómo quieres que trabaje. La memoria son datos: lo que sabe de ti.</p>
+
       <div className="jw-niv-rule">
         <b>La pregunta que decide</b>
         <p>¿Esto va a seguir siendo verdad dentro de seis meses?</p>
         <span>Si sí, va en el perfil o en el proyecto. Si no, va pegado en el chat.</span>
+        <span>La memoria no se decide: se revisa. Y si algo no quieres que quede guardado, usa un chat incógnito.</span>
       </div>
     </section>
   );

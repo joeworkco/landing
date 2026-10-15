@@ -28,7 +28,7 @@ nadie. Diles en una frase qué pedirle a sistemas y sigue por la ruta alterna.
 
 ## Señales que parecen errores y no lo son
 
-Antes de diagnosticar nada, descarta estas tres. Son comportamiento normal de
+Antes de diagnosticar nada, descarta estas cuatro. Son comportamiento normal de
 Claude y asustan a quien las ve por primera vez.
 
 - **Un conector pide iniciar sesión otra vez.** Pasa una vez después de algunas
@@ -38,6 +38,8 @@ Claude y asustan a quien las ve por primera vez.
   en la barra lateral.
 - **Aparece "Permitir una vez" o "Permitir siempre".** Es Claude pidiendo
   permiso para usar una herramienta. Explica la diferencia y que elijan.
+- **Claude recuerda algo de otra conversación.** Es la memoria, y es normal. Si
+  lo que recuerda está mal o viejo, se corrige en Configuración, Memoria, Temas.
 
 ## Reglas del modo rescate
 Una sola cosa a la vez. Mensajes todavía más cortos de lo normal.

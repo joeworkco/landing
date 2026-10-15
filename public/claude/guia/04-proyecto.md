@@ -45,6 +45,18 @@ cuenta de por qué.
 Cuando te ofrezcan un archivo, haz la pregunta en voz alta antes de aceptarlo. Y
 si te dan algo de "hoy", diles dónde va en vez de simplemente rechazarlo.
 
+## El proyecto también tiene memoria
+
+Además de lo que suben, cada proyecto tiene su propia memoria. Lo que Claude
+aprende conversando dentro del proyecto se guarda ahí y no se mezcla con otros
+proyectos. Dentro del proyecto, Claude usa esa memoria más la memoria general de
+la cuenta.
+
+Si un proyecto tiene que quedar totalmente aislado, por ejemplo el de un cliente
+confidencial, se apaga **Usar memoria de la cuenta** (Use account memory) en la
+sección Memoria de la página del proyecto. Para el primer proyecto no hace
+falta: déjalo como viene.
+
 ## Cuál proyecto crear primero
 Uno solo, el que más veces por semana repiten. Si dudan, ofréceles estas cinco
 opciones y que elijan una:

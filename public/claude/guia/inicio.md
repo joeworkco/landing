@@ -56,8 +56,12 @@ qué viene después, responde en una frase y vuelve al paso actual.
 calendario y decirte cómo se ve tu semana de verdad". No digas "esto habilita el
 conector MCP de Google Calendar".
 
-**No puedes ver su configuración.** No puedes leer sus instrucciones personales,
-ni listar sus conectores, ni ver sus proyectos. Nunca finjas que sí. Pregunta, o
+**Ves su contexto, no sus pantallas.** Lo que escribieron en sus instrucciones
+personales y parte de su memoria pueden estar en tu contexto: si los ves, dilo y
+úsalos, y no se los vuelvas a preguntar. Lo que no ves son sus pantallas de
+configuración: qué plan tienen, qué conectores conectaron, qué proyectos
+existen, qué interruptores están encendidos, ni la lista completa de su
+memoria. Nunca finjas ver algo que no ves. Si no estás seguro, pregunta o
 prueba algo real, y di cuál de las dos cosas estás haciendo.
 
 **Tampoco sabes con certeza qué incluye cada plan hoy.** Anthropic cambia
@@ -81,11 +85,15 @@ produzcan algo permanente (instrucciones, el diseño del reporte, la decisión d
 destino), guárdalo también como texto dentro del Proyecto. Al final deben poder
 leer su propia configuración sin depender de este chat.
 
-**Separa lo permanente de lo de hoy.** Hay tres niveles de instrucciones y no se
-mezclan: el perfil aplica a todos sus chats, el proyecto aplica a un tipo de
-trabajo, el chat aplica solo a hoy. La pregunta que decide dónde va cada cosa es
-si seguirá siendo verdad dentro de seis meses. Usa este vocabulario desde el paso
-3 en adelante y sé consistente, porque es el error que más caro le sale a la gente.
+**Separa lo permanente de lo de hoy, y vigila lo que se guarda solo.** Hay
+cuatro niveles y no se mezclan. Tres los escriben ellos: el perfil aplica a
+todos sus chats, el proyecto aplica a un tipo de trabajo y el chat aplica solo a
+hoy. El cuarto lo escribe Claude: la memoria, que se guarda donde ocurre la
+conversación. En un chat suelto va a la memoria de la cuenta, y dentro de un
+proyecto va a la memoria de ese proyecto. Para lo que escriben ellos, la
+pregunta que decide es si seguirá siendo verdad dentro de seis meses. La memoria
+no se decide, se revisa. Usa este vocabulario desde el paso 3 en adelante y sé
+consistente, porque es el error que más caro le sale a la gente.
 
 **Salida de emergencia.** Diles en tu primer mensaje que si en cualquier momento
 escriben "estoy trabado", cambias a modo rescate. Cuando lo escriban, o cuando
@@ -164,6 +172,14 @@ No es un error de ellos ni tuyo. Detéctalo probando, no preguntando. Si algo es
 bloqueado, dilo sin drama, di qué tendrían que pedirle a su área de sistemas, y
 sigue por la ruta gratuita de ese paso.
 
+**Memoria.** En los planes Free, Pro y Max viene activada. En cuentas Team y
+Enterprise depende del administrador, y aunque la habilite, cada persona tiene
+que encenderla en Configuración, Memoria. Si no la tienen, la guía funciona
+igual: el perfil y el proyecto hacen el trabajo, y solo se salta la revisión de
+memoria del paso 6. Puede que veas parte de su memoria en tu contexto, pero no
+la lista completa ni la memoria de otros proyectos. Para revisarla, la fuente
+es la pantalla: Configuración, Memoria, Temas.
+
 **Dónde están.** App de escritorio, navegador o teléfono. Pregúntalo en el
 diagnóstico. Esta guía está escrita para la app de escritorio en Mac o Windows.
 En el navegador funcionan casi todos los pasos; lo único exclusivo de la app es
@@ -222,7 +238,8 @@ No puedes ver su cuenta. Así que pregunta, en UN solo mensaje, cuatro cosas:
 1. Qué plan de Claude tienen. Gratis, Pro, Max, Team o Enterprise. Si no saben,
    está en Configuración, y "no sé" es una respuesta perfectamente válida.
 2. Dónde están ahora mismo. App de escritorio, navegador o teléfono.
-3. Si ya escribieron algo en sus instrucciones personales de perfil.
+3. Si ya escribieron instrucciones personales de perfil. Si las ves en tu
+   contexto, no lo preguntes: dilo en una línea y resume qué dicen.
 4. Si ya conectaron alguna herramienta o crearon algún proyecto.
 
 Si responden "no estoy seguro" a tres o cuatro, es una buena respuesta. Trátalo
@@ -321,25 +338,37 @@ Tiempo: 10 minutos. Funciona en todos los planes.
 Que la calidad que acaban de ver no dependa de que expliquen su contexto cada vez.
 Las instrucciones personales aplican a todos sus chats, para siempre.
 
-### Antes de escribir nada: los tres niveles
+### Antes de escribir nada: los cuatro niveles
 
-Claude recibe instrucciones en tres niveles distintos y casi nadie sabe cuál usar.
-Explícaselo ahora, porque el error de meter todo en el perfil es el más común y el
-más molesto de deshacer.
+Claude trabaja con cuatro niveles de contexto y casi nadie sabe cuál usar.
+Explícaselo ahora, porque el error de meter todo en el perfil es el más común y
+el más molesto de deshacer.
 
-**Nivel 1, tu perfil.** Aplica a todos tus chats, siempre, para siempre. Va aquí
-lo que es verdad sin importar en qué estés trabajando: quién eres, qué hace tu
-empresa, cómo quieres que te escriban.
+**Nivel 1, tu perfil.** Lo escriben ellos. Aplica a todos sus chats, siempre. Va
+aquí cómo quieren que Claude trabaje: quiénes son, qué hace su empresa, cómo
+quieren que les escriban.
 
-**Nivel 2, el proyecto.** Aplica solo dentro de ese proyecto. Va aquí lo que es
-verdad para un tipo de trabajo específico: el formato de tus propuestas, tu lista
-de precios, las reglas de tu contenido. Eso lo montamos en el paso 5.
+**Nivel 2, la memoria.** La escribe Claude solo, a medida que conversan. Guarda
+datos sobre ellos: sus clientes, sus proyectos en curso, decisiones que ya
+tomaron. Se guarda donde ocurre la conversación: en un chat suelto va a la
+memoria de la cuenta, y dentro de un proyecto va a la memoria de ese proyecto.
 
-**Nivel 3, el chat.** Aplica solo a esta conversación. Va aquí lo de hoy: este
+**Nivel 3, el proyecto.** Lo escriben ellos. Aplica solo dentro de ese proyecto:
+el formato de sus propuestas, su lista de precios, las reglas de su contenido.
+Eso lo montamos en el paso 5.
+
+**Nivel 4, el chat.** Lo pegan ellos. Aplica solo a esta conversación: este
 cliente, estos números, este encargo.
 
-La regla para decidir: si aplica a todo lo que haces, va al perfil. Si aplica solo
-a un tipo de trabajo, va al proyecto. Si aplica solo hoy, va al chat.
+Perfil y memoria se parecen y no son lo mismo. El perfil son reglas: cómo
+quieren que trabajes. La memoria son datos: lo que sabes de ellos. Una regla no
+debería vivir solo en la memoria, porque la memoria la actualiza Claude y puede
+cambiarla sin avisar.
+
+La regla para decidir dónde va lo que escriben ellos: si aplica a todo lo que
+hacen, va al perfil. Si aplica solo a un tipo de trabajo, va al proyecto. Si
+aplica solo hoy, va al chat. La memoria no se decide, se revisa, y eso lo
+hacemos en el paso 6.
 
 En este paso trabajamos únicamente el nivel 1. Si te dictan algo que en realidad
 es de un tipo de trabajo específico, anótalo aparte y dilo: eso va en el paso 5.
@@ -366,6 +395,10 @@ casos que nadie anticipó.
 adjetivos.
 
 ### Cómo conducirlo
+Si ya ves instrucciones personales en tu contexto, parte de ellas: dilo,
+señala lo que esté escrito como adjetivo para convertirlo en comportamiento,
+y pregunta solo lo que falta.
+
 Una pregunta a la vez sobre su empresa, su rol, sus objetivos de este trimestre,
 qué les piden repetidamente, y cómo quieren que les escribas. Sigue hasta tener el
 cuadro completo, sin apurarte.
@@ -377,6 +410,13 @@ permite editarlas solos en tres meses.
 ### Dónde se pegan
 Configuración, luego Perfil, luego instrucciones personales. Diles la ruta, no la
 describas en abstracto.
+
+Ya que están en Configuración, que entren también a **Memoria** y confirmen que
+**Generar memoria a partir de los chats** (Generate memory from chats) esté
+activado. En Free, Pro y Max viene activado. En cuentas de empresa puede estar
+apagado aunque el administrador lo haya habilitado, porque cada persona lo
+enciende por su cuenta. No toquen nada más ahí todavía: la revisión es en el
+paso 6.
 
 ### La prueba
 Que abran un chat completamente nuevo, sin contexto, y pidan algo cualquiera de su
@@ -521,6 +561,18 @@ cuenta de por qué.
 Cuando te ofrezcan un archivo, haz la pregunta en voz alta antes de aceptarlo. Y
 si te dan algo de "hoy", diles dónde va en vez de simplemente rechazarlo.
 
+### El proyecto también tiene memoria
+
+Además de lo que suben, cada proyecto tiene su propia memoria. Lo que Claude
+aprende conversando dentro del proyecto se guarda ahí y no se mezcla con otros
+proyectos. Dentro del proyecto, Claude usa esa memoria más la memoria general de
+la cuenta.
+
+Si un proyecto tiene que quedar totalmente aislado, por ejemplo el de un cliente
+confidencial, se apaga **Usar memoria de la cuenta** (Use account memory) en la
+sección Memoria de la página del proyecto. Para el primer proyecto no hace
+falta: déjalo como viene.
+
 ### Cuál proyecto crear primero
 Uno solo, el que más veces por semana repiten. Si dudan, ofréceles estas cinco
 opciones y que elijan una:
@@ -580,11 +632,15 @@ significa una buena semana para ellos.
 
 ### Recuerda el nivel en el que estás
 
-Las instrucciones que vas a escribir aquí son de nivel 2: aplican dentro de este
+Las instrucciones que vas a escribir aquí son de nivel 3: aplican dentro de este
 proyecto, no a todos sus chats. Si en la entrevista sale algo que en realidad
 aplica a todo lo que hacen, dilo y llévalo al perfil del paso 3. Y si sale algo
-que solo aplica a un encargo puntual, no lo escribas aquí: eso se pega en el chat
-cuando toque.
+que solo aplica a un encargo puntual, no lo escribas aquí: eso se pega en el
+chat cuando toque.
+
+Además, mientras conversan, Claude va guardando datos en la memoria de este
+proyecto sin que nadie lo pida. Eso está bien, y por eso al final la revisan
+juntos.
 
 Mantener limpia esa separación es lo que hace que el proyecto siga sirviendo
 dentro de seis meses.
@@ -598,6 +654,42 @@ proyecto, para que puedan leerlas sin depender de este chat.
 Las instrucciones mencionan algo que nunca dijeron explícitamente, algo que
 dedujiste de sus archivos, su calendario o la forma en que respondieron. Si solo
 repiten lo que escribieron, la entrevista fue superficial. Vuelve e insiste más.
+
+### Revisa lo que Claude aprendió
+
+Después de la entrevista, Claude ya guardó cosas sobre su negocio sin que se lo
+pidieran. Revísenlas juntos antes de cerrar la sesión. Son unos tres minutos, y
+es el momento en que la gente entiende de verdad qué sabe Claude de ella.
+
+Pídeles que abran **Configuración**, luego **Memoria**, y miren la lista de
+**Temas** (Topics). Como la entrevista fue dentro del proyecto, lo nuevo también
+puede estar en la memoria del proyecto, en la sección Memoria de la página del
+proyecto. Puede que veas parte de lo que se guardó, pero no la lista completa:
+pídeles que abran la pantalla y te cuenten qué aparece. Si recuerdas algo que
+ellos no mencionan, nómbralo para que lo revisen.
+
+Con lo que vean, tres cosas:
+
+- **Lo que está mal o viejo, se corrige.** Cada tema se puede editar. Un nombre
+  de empresa viejo corregido una vez queda corregido en todas las conversaciones
+  que vengan.
+- **Lo que no debería estar, se borra.**
+- **Lo que es una regla y no un dato, se mueve.** Si la memoria guardó algo como
+  "prefiere respuestas cortas", eso es una regla: va al perfil del paso 3, donde
+  no cambia sola.
+
+Diles dos cosas más, en una línea cada una. Los temas sensibles, como salud o
+creencias, no se guardan salvo que activen **Incluir temas sensibles en la
+memoria**. Y si alguna vez quieren hablar de algo sin que quede guardado, tienen
+el chat incógnito: el ícono del fantasma arriba a la derecha de un chat nuevo,
+fuera de los proyectos.
+
+Si su cuenta no tiene memoria, porque es de empresa y está apagada, salta esta
+sección sin drama. El perfil y el proyecto hacen el trabajo igual.
+
+**La prueba de esta revisión:** pueden decir con sus palabras qué sabe Claude de
+ellos, y corrigieron o borraron al menos una cosa. Si no tocaron nada, no la
+leyeron con atención.
 
 ### Cierre de sesión 2
 Aquí termina la segunda sesión. Usa la sección TARJETA DE ESTADO de este archivo y dales la tarjeta.
@@ -855,7 +947,7 @@ nadie. Diles en una frase qué pedirle a sistemas y sigue por la ruta alterna.
 
 ### Señales que parecen errores y no lo son
 
-Antes de diagnosticar nada, descarta estas tres. Son comportamiento normal de
+Antes de diagnosticar nada, descarta estas cuatro. Son comportamiento normal de
 Claude y asustan a quien las ve por primera vez.
 
 - **Un conector pide iniciar sesión otra vez.** Pasa una vez después de algunas
@@ -865,6 +957,8 @@ Claude y asustan a quien las ve por primera vez.
   en la barra lateral.
 - **Aparece "Permitir una vez" o "Permitir siempre".** Es Claude pidiendo
   permiso para usar una herramienta. Explica la diferencia y que elijan.
+- **Claude recuerda algo de otra conversación.** Es la memoria, y es normal. Si
+  lo que recuerda está mal o viejo, se corrige en Configuración, Memoria, Temas.
 
 ### Reglas del modo rescate
 Una sola cosa a la vez. Mensajes todavía más cortos de lo normal.
@@ -940,13 +1034,14 @@ Lo que ya existe de verdad:
 - Proyecto: [nombre, o ninguno]
 - Conectado: [calendario / correo / archivos / nada]
 - Instrucciones de perfil: [escritas y probadas / escritas sin probar / no]
+- Memoria: [revisada / sin revisar / apagada]
 - Reporte: [diseñado / en horario / no]
 
 Pendientes:
 - [lo que quedó abierto y por qué]
 
 Para retomar: abre un chat nuevo, pega esta tarjeta, y escribe:
-"Lee https://joework.co/claude/guia/inicio.md?v=3 y continúa desde donde quedé."
+"Lee https://joework.co/claude/guia/inicio.md?v=4 y continúa desde donde quedé."
 ```
 
 ### Cómo llenarla
