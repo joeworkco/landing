@@ -140,9 +140,27 @@ describe("Claude guide progress", () => {
     const schedule = readFileSync("public/claude/guia/08-horario.md", "utf8");
     const close = readFileSync("public/claude/guia/09-cierre.md", "utf8");
     const page = readFileSync("app/claude/content.ts", "utf8");
+    const skill = readFileSync(
+      "public/claude/skill/claude-en-marcha/SKILL.md",
+      "utf8",
+    );
+    const skillDiagnosis = readFileSync(
+      "public/claude/skill/claude-en-marcha/referencias/00-diagnostico.md",
+      "utf8",
+    );
 
     assert.match(conductor, /Avisa antes de mostrar datos personales/);
-    assert.match(diagnosis, /¿Te parece si compruebo que tu calendario/);
+    assert.match(conductor, /La memoria cuenta aunque ya esté en tu contexto/);
+    assert.match(
+      conductor,
+      /Las instrucciones\s+personales sí las puedes resumir desde el primer mensaje/,
+    );
+    assert.match(diagnosis, /y te muestro lo\s+>\s+que ya tengo en tu memoria/);
+    assert.match(skill, /La memoria cuenta aunque ya esté en tu contexto/);
+    assert.match(
+      skillDiagnosis,
+      /y te muestro lo\s+>\s+que ya tengo en tu memoria/,
+    );
     assert.doesNotMatch(diagnosis, /no les creas\. Úsalo ahora mismo/);
 
     assert.match(deliverable, /Claude\s+Slides/);

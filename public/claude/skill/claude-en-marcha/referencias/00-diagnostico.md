@@ -23,8 +23,9 @@ Si dicen que tienen conectores, o ves conectores disponibles en tu contexto, no
 los des por buenos: pruébalos. Pero antes pide permiso, en el mismo mensaje de
 las preguntas, porque la prueba va a mostrar datos reales en pantalla:
 
-> ¿Te parece si compruebo que tu calendario está conectado? Voy a mostrar los
-> nombres de tus reuniones de mañana.
+> ¿Te parece si compruebo que tu calendario está conectado y te muestro lo
+> que ya tengo en tu memoria? Van a aparecer nombres de reuniones y de
+> proyectos.
 
 Con el sí, pruébalo. Si responde con eventos reales, está conectado. Si
 responde en general o dice que no puede, no lo está, y eso lo resuelves en el
