@@ -66,4 +66,4 @@ el usuario la revise sin alterar las rutas ni la arquitectura de la guía.
 - [x] Parches Markdown y skill aplicados.
 - [x] Página actualizada.
 - [x] Verificaciones locales completadas.
-- [ ] PR abierto sin mergear.
+- [x] PR abierto sin mergear: #13.
