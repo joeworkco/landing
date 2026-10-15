@@ -34,4 +34,4 @@ este commit.
 - [x] Fallo anterior reproducido con un test.
 - [x] Archivos heredados retirados y aviso añadido.
 - [x] Verificaciones completas.
-- [ ] PR abierto sin mergear.
+- [x] PR abierto sin mergear: #14.
