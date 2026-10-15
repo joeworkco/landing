@@ -103,7 +103,7 @@ describe("Claude guide progress", () => {
   it("sirve la guía y el ZIP desde el único repositorio de joework.co", () => {
     assert.equal(
       CLAUDE_GUIDE_START_URL,
-      "https://joework.co/claude/guia/inicio.md?v=4",
+      "https://joework.co/claude/guia/inicio.md?v=5",
     );
     assert.equal(
       CLAUDE_GUIDE_DOWNLOAD_URL,
@@ -116,7 +116,7 @@ describe("Claude guide progress", () => {
   });
 
   it("mantiene sincronizada la versión del conductor en todos los prompts de entrada", () => {
-    const expectedUrl = "https://joework.co/claude/guia/inicio.md?v=4";
+    const expectedUrl = "https://joework.co/claude/guia/inicio.md?v=5";
     const statusGuide = readFileSync("public/claude/guia/estado.md", "utf8");
     const publicReadme = readFileSync("public/claude/guia/README.md", "utf8");
     const generatedGuide = readFileSync("public/claude/guia/inicio.md", "utf8");
@@ -129,6 +129,69 @@ describe("Claude guide progress", () => {
     assert.ok(publicReadme.includes(expectedUrl));
     assert.ok(generatedGuide.includes(expectedUrl));
     assert.doesNotMatch(generatedGuide, /archivo\?v=/);
+  });
+
+  it("incorpora privacidad, nuevos entregables y edición en el lugar", () => {
+    const conductor = readFileSync("scripts/claude-guide/_conductor.md", "utf8");
+    const diagnosis = readFileSync("public/claude/guia/00-diagnostico.md", "utf8");
+    const deliverable = readFileSync("public/claude/guia/01-entregable.md", "utf8");
+    const report = readFileSync("public/claude/guia/06-reporte.md", "utf8");
+    const destination = readFileSync("public/claude/guia/07-destino.md", "utf8");
+    const schedule = readFileSync("public/claude/guia/08-horario.md", "utf8");
+    const close = readFileSync("public/claude/guia/09-cierre.md", "utf8");
+    const page = readFileSync("app/claude/content.ts", "utf8");
+    const skill = readFileSync(
+      "public/claude/skill/claude-en-marcha/SKILL.md",
+      "utf8",
+    );
+    const skillDiagnosis = readFileSync(
+      "public/claude/skill/claude-en-marcha/referencias/00-diagnostico.md",
+      "utf8",
+    );
+
+    assert.match(conductor, /Avisa antes de mostrar datos personales/);
+    assert.match(conductor, /La memoria cuenta aunque ya esté en tu contexto/);
+    assert.match(
+      conductor,
+      /Las instrucciones\s+personales sí las puedes resumir desde el primer mensaje/,
+    );
+    assert.match(diagnosis, /y te muestro lo\s+>\s+que ya tengo en tu memoria/);
+    assert.match(skill, /La memoria cuenta aunque ya esté en tu contexto/);
+    assert.match(
+      skillDiagnosis,
+      /y te muestro lo\s+>\s+que ya tengo en tu memoria/,
+    );
+    assert.doesNotMatch(diagnosis, /no les creas\. Úsalo ahora mismo/);
+
+    assert.match(deliverable, /Claude\s+Slides/);
+    for (const phrase of ["Claude Doc", "Salida"]) {
+      assert.match(deliverable, new RegExp(phrase));
+    }
+    assert.doesNotMatch(deliverable, /Dales tres opciones/);
+    assert.doesNotMatch(deliverable, /Descargaron el archivo, lo abrieron/);
+
+    assert.match(report, /una por pestaña/);
+    assert.match(report, /Editar con Claude/);
+    assert.match(destination, /En un Claude Doc compartido/);
+    assert.match(schedule, /documento se\s+haya actualizado solo/);
+    assert.match(close, /Configuración, \*\*Reflect\*\*/);
+
+    const steps = claudeGuideSessions.flatMap((session) => session.steps);
+    const step1 = steps.find((step) => step.number === 1);
+    const step2 = steps.find((step) => step.number === 2);
+    const step7 = steps.find((step) => step.number === 7);
+    const step8 = steps.find((step) => step.number === 8);
+    const step10 = steps.find((step) => step.number === 10);
+
+    assert.ok(step1?.actions.some((action) => action.includes("pedir permiso")));
+    assert.equal(step2?.actions.length, 6);
+    assert.match(step2?.proof ?? "", /Artefactos/);
+    assert.match(step7?.note ?? "", /Editar con Claude/);
+    assert.ok(step8?.actions.some((action) => action.includes("Claude Doc compartido")));
+    assert.ok(step10?.actions.some((action) => action.includes("Reflect")));
+    assert.match(page, /Claude Slides/);
+    assert.match(page, /Editar con Claude/);
+    assert.doesNotMatch(page, /inicio\.md\?v=4/);
   });
 
   it("distingue el contexto visible de las pantallas que Claude no puede ver", () => {

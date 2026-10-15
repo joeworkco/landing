@@ -19,7 +19,7 @@ export type ClaudeGuideSession = {
 };
 
 export const CLAUDE_GUIDE_START_URL =
-  "https://joework.co/claude/guia/inicio.md?v=4";
+  "https://joework.co/claude/guia/inicio.md?v=5";
 
 export const CLAUDE_GUIDE_DOWNLOAD_URL =
   "https://joework.co/claude/descargas/claude-en-marcha.zip";
@@ -55,6 +55,7 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
           "Confirma si estás en la app de escritorio, navegador o teléfono.",
           "Revisa si ya tienes instrucciones personales, conectores o proyectos.",
           "Si estás en el teléfono, continúa desde un computador.",
+          "Antes de mostrar tu calendario, tu correo o tu memoria, Claude te va a pedir permiso. Si compartes pantalla con alguien, ese es el momento de decidir.",
         ],
         proof: "Puedes resumir en una frase tu plan, dispositivo y qué está conectado hoy.",
         prompt: `Antes de configurar nada, ayúdame a diagnosticar mi punto de partida. Pregúntame en un solo mensaje: qué plan de Claude tengo, dónde lo estoy usando, si ya escribí instrucciones personales y si ya conecté una herramienta o creé un proyecto. No avances hasta poder resumir mi estado en una frase.`,
@@ -68,12 +69,14 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
         why: "La mayoría abandona Claude porque nunca ve salir nada más que texto en una ventana. Este paso rompe esa percepción antes de pedirte que configures nada: demuestra que puede construir un Excel con fórmulas, un documento o una presentación que funciona fuera del chat.",
         payoff: "Un archivo útil descargado y abierto en tu computador: la primera prueba de que Claude puede producir, no solo conversar.",
         actions: [
-          "Pega como texto una lista de clientes, los gastos del mes o un proceso que repites.",
-          "Pide entre dos y cuatro preguntas antes de construir.",
-          "Solicita el archivo completo, no una muestra ni una explicación.",
-          "Descárgalo, ábrelo en tu computador y comprueba que funciona.",
+          "Tablero de clientes en Excel, a partir de una lista en desorden.",
+          "Modelo de gastos en Excel, con totales, porcentajes y alertas.",
+          "Presentación para tu próxima reunión importante con Claude Slides.",
+          "Documento de un proceso con Claude Doc.",
+          "Presentaciones y documentos se piden en la conversación o en Salida, en la caja de mensaje. Funcionan en todos los planes.",
+          "Antes de construir, responde entre dos y cuatro preguntas para que el entregable salga bien a la primera.",
         ],
-        proof: "El archivo abre fuera del chat y, si es una hoja, sus fórmulas calculan de verdad.",
+        proof: "Lo abriste fuera del chat: el Excel en Excel, la presentación en PowerPoint o Google Slides, el documento desde Artefactos.",
         prompt: `Voy a pegar información real de mi negocio. Antes de construir, hazme entre dos y cuatro preguntas para entender qué salida necesito. Después crea el archivo completo, listo para descargar y usar. No me muestres una muestra ni una descripción de lo que harías.`,
       },
       {
@@ -168,12 +171,14 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
         payoff: "Un reporte aprobado con tus datos reales y suficiente criterio para decirte qué mirar primero y qué puedes ignorar.",
         actions: [
           "Pide tres reportes completos: operativo, comercial y de foco.",
+          "Claude arma las tres versiones en un solo documento, una por pestaña, para compararlas lado a lado.",
           "Usa datos reales de conectores, archivos e entrevista.",
           "Haz tres rondas de ajuste y quita al menos una sección.",
           "Aprueba la versión completa que sí leerías un martes ocupado.",
         ],
         proof: "Leíste el reporte completo y eliminaste al menos una parte que no aporta.",
         prompt: `Con lo que ya sabes de mi negocio, corre tres reportes completos con mis datos reales: uno operativo, uno comercial y uno de foco. No describas las versiones, ejecútalas. Después de cada una pregúntame qué sobra y qué falta. Itera hasta que aprobemos una versión que yo sí leería un martes ocupado.`,
+        note: "Para corregir, no escribas otro prompt: resalta el texto que quieres cambiar, toca Editar con Claude y di qué cambiar. Claude edita justo ahí.",
       },
       {
         number: 8,
@@ -186,6 +191,7 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
           "Claude: rápido, pero exige que recuerdes abrirlo.",
           "Google Drive: útil si quieres histórico y tendencias.",
           "Borrador de correo: suele ser el mejor destino si el correo es lo primero que abres.",
+          "En un Claude Doc compartido: bueno si el reporte también lo lee un socio o un gerente. Se comparte con un enlace.",
           "Corre una entrega completa hacia el destino elegido.",
         ],
         proof: "El reporte aparece en el destino elegido, fuera del chat.",
@@ -221,6 +227,7 @@ export const claudeGuideSessions: ClaudeGuideSession[] = [
           "Crea cinco frases de trabajo específicas para tu negocio.",
           "Declara pendientes sin esconderlos: correo, horario, permisos o pruebas.",
           "Guarda la tarjeta de estado final para retomar o auditar la configuración.",
+          "Bonus: si tienes la memoria activada, Claude te arma un resumen mensual de cómo trabajaste, en Configuración → Reflect.",
         ],
         proof: "Puedes describir tu sistema, sus límites y el siguiente uso concreto sin depender de este chat.",
         prompt: `Cierra esta puesta en marcha en cuatro bloques: 1) qué sabe Claude de mí, a qué está conectado, qué corre y dónde aterriza; 2) cinco frases de trabajo específicas para mi negocio; 3) pendientes y límites que siguen abiertos; 4) una tarjeta de estado que pueda guardar para retomar. No ocultes nada que no haya sido probado.`,
