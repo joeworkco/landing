@@ -10,7 +10,7 @@ abierto para que puedas revisarlos antes de correr nada.
 Abre un chat nuevo en Claude y pega:
 
 ```
-Lee https://joework.co/claude/guia/inicio.md?v=2 y ponme en marcha.
+Lee https://joework.co/claude/guia/inicio.md?v=3 y ponme en marcha.
 ```
 
 ## Qué es cada archivo
@@ -41,3 +41,5 @@ silencio.
 Sin registro, sin correo, sin formulario.
 
 Hecho por [JoeWork](https://joework.co). Licencia CC BY 4.0.
+
+Actualizada en octubre de 2026.

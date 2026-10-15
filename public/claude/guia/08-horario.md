@@ -10,16 +10,34 @@ tal como va a llegar. Si programan algo que no aprobaron, van a recibir algo que
 no leen.
 
 ## La ruta
-En la caja de mensaje, botón Cowork. Describen la tarea, y escriben `/schedule`
-dentro de la tarea. También se llega desde "Programadas" en la barra lateral.
+Hay dos versiones de la app conviviendo, y la ruta cambia según cuál tengan.
 
-Cowork corre en la nube de Anthropic, así que el reporte llega con el computador
-apagado y la app cerrada. Frecuencias: diaria, días hábiles, semanal, por hora.
+**En la versión nueva no hay botón Cowork.** Se programa desde cualquier
+conversación: describen la tarea y cada cuánto debe correr, por ejemplo "Corre
+este reporte todos los días hábiles a las 7 de la mañana". Claude hace
+preguntas, muestra el nombre, el horario y las instrucciones, y ellos tocan
+**Programar** (Schedule).
+
+**La ruta que existe en las dos versiones** es la barra lateral: **Programadas**
+(Scheduled), luego **Nueva tarea** (New task), luego **Crear con Claude**
+(Create with Claude). Si la primera no aparece, usa esta.
+
+Las tareas corren en la nube de Anthropic, así que el reporte llega con el
+computador apagado y la app cerrada. Frecuencias: cada hora, diaria, días
+hábiles, semanal, o manual.
+
+Las tareas que Claude programa por ellos se aprueban solas por defecto cuando la
+organización lo permite: corren sin pedir permiso en cada paso y solo se
+detienen si algo parece riesgoso. Si prefieren revisar cada acción, que lo digan
+al programarla.
 
 ## Dos límites que rompen esto si no los saben
-**Las tareas programadas no leen carpetas del computador.** Solo alcanzan cuentas
-conectadas y archivos guardados en Claude. Si el reporte dependía de un archivo
-local, hay que subirlo al proyecto o guardarlo en Drive.
+**Una carpeta del computador cambia dónde corre la tarea.** Si el reporte solo
+usa cuentas conectadas y archivos guardados en Claude, corre en la nube aunque
+el computador esté apagado. Si se le asigna una carpeta del computador, solo
+corre con el computador encendido y la app abierta. Para un reporte de las 7 de
+la mañana, lo seguro es no depender de carpetas locales: si el reporte necesita
+un archivo, súbanlo al proyecto o guárdenlo en Drive.
 
 **Lo que se ve perfecto dentro del chat puede salir distinto al correr solo.** Más
 corto, más plano, o en otro orden. Por eso la comprobación de abajo es contra la

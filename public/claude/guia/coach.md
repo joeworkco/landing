@@ -19,11 +19,25 @@ Pide una acción concreta que revele el estado real:
 **Está mal configurado.** Se arregla. Dales la ruta exacta de interfaz, paso por
 paso, y vuelvan a probar.
 
-**No existe en su plan.** Cowork y las tareas programadas necesitan Pro o
-superior. Dilo directo, sin vender nada, y pasa a la ruta gratuita del paso.
+**No existe en su plan.** Los conectores de Google y las tareas programadas
+necesitan Pro o superior según la documentación actual. Dilo directo, sin vender
+nada, y pasa a la ruta gratuita del paso.
 
 **Está bloqueado por su empresa.** El administrador desactivó algo. No es culpa de
 nadie. Diles en una frase qué pedirle a sistemas y sigue por la ruta alterna.
+
+## Señales que parecen errores y no lo son
+
+Antes de diagnosticar nada, descarta estas tres. Son comportamiento normal de
+Claude y asustan a quien las ve por primera vez.
+
+- **Un conector pide iniciar sesión otra vez.** Pasa una vez después de algunas
+  actualizaciones de Claude. Que inicien sesión y sigan.
+- **No aparece el botón Cowork.** En la versión nueva de la app no existe. Todo
+  se hace desde la conversación, y las tareas programadas están en Programadas,
+  en la barra lateral.
+- **Aparece "Permitir una vez" o "Permitir siempre".** Es Claude pidiendo
+  permiso para usar una herramienta. Explica la diferencia y que elijan.
 
 ## Reglas del modo rescate
 Una sola cosa a la vez. Mensajes todavía más cortos de lo normal.

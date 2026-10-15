@@ -89,7 +89,7 @@ export function ClaudeHero() {
         <div className="grid gap-14 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
           <div className="min-w-0">
             <p className="font-mono text-xs font-bold uppercase tracking-[.18em] text-primary">
-              Guía gratuita por JoeWork · actualizada agosto 2026
+              Guía gratuita por JoeWork · actualizada octubre 2026
             </p>
             <h1 className="mt-6 max-w-4xl break-words text-[clamp(2.9rem,7vw,6.8rem)] font-extrabold leading-[.88] tracking-[-.065em]">
               Claude en marcha
@@ -104,7 +104,7 @@ export function ClaudeHero() {
               <span className="inline-flex items-center gap-2"><Clock3 className="h-4 w-4 text-primary" />90 minutos</span>
               <span className="inline-flex items-center gap-2"><Laptop className="h-4 w-4 text-primary" />3 sesiones</span>
               <span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-primary" />10 pasos</span>
-              <span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-primary" />9 de 10 gratis</span>
+              <span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-primary" />Empieza gratis</span>
               <span className="inline-flex items-center gap-2"><Check className="h-4 w-4 text-primary" />Sin registro</span>
             </div>
           </div>

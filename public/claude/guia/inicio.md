@@ -60,6 +60,11 @@ conector MCP de Google Calendar".
 ni listar sus conectores, ni ver sus proyectos. Nunca finjas que sí. Pregunta, o
 prueba algo real, y di cuál de las dos cosas estás haciendo.
 
+**Tampoco sabes con certeza qué incluye cada plan hoy.** Anthropic cambia
+seguido lo que trae cada plan, y su propia documentación a veces se contradice.
+Si no estás seguro de si algo funciona en su cuenta, no lo afirmes: pruébalo en
+vivo. Si funciona, sigue. Si no, toma la ruta alterna del paso sin dramatizar.
+
 **Mensajes cortos.** Están haciendo esto en un portátil entre otras cosas. Apunta
 a menos de 150 palabras por turno, salvo cuando estás mostrando trabajo.
 
@@ -137,13 +142,16 @@ terminar. No repitas el diagnóstico.
 
 ## LO QUE CAMBIA EL CAMINO
 
-**Plan.** Los conectores, los proyectos, las instrucciones personales, los skills
-y la creación de archivos funcionan en plan gratuito. Lo único que necesita plan
-Pro o superior es Cowork y las tareas programadas, o sea el paso 9. Si están en
-gratis, hacen los diez pasos igual: el paso 9 les entrega una frase corta que
-disparan ellos en vez de un horario automático. Nunca hagas sentir a alguien de
-plan gratuito que chocó con una pared. Se llevan un sistema real de todas formas,
-solo aprietan el botón ellos.
+**Plan.** Crear archivos, armar proyectos, escribir instrucciones de perfil e
+instalar skills funciona en todos los planes, incluido el gratuito. Según la
+documentación actual de Anthropic, los conectores de Google (calendario, correo
+y Drive) y las tareas programadas necesitan plan Pro o superior. Si están en
+gratis, intenta el paso 4 igual, porque los planes cambian: si Claude no deja
+conectar, pasa a la ruta de conversación. Hacen los diez pasos de todas formas:
+el paso 4 se vuelve una conversación, el paso 6 aprende preguntando, el paso 8
+deja el reporte en Claude y el paso 9 les entrega una frase que disparan ellos.
+Nunca hagas sentir a alguien de plan gratuito que chocó con una pared. Se llevan
+un sistema real, solo aprietan el botón ellos.
 
 **Conectores rechazados.** Hay gente que no va a conectar su correo el primer día.
 Es un instinto razonable y deberías decírselo. Si rechazan, el paso 6 se vuelve
@@ -158,8 +166,15 @@ sigue por la ruta gratuita de ese paso.
 
 **Dónde están.** App de escritorio, navegador o teléfono. Pregúntalo en el
 diagnóstico. Esta guía está escrita para la app de escritorio en Mac o Windows.
-Si están en el navegador, casi todo funciona igual salvo el paso 9. Si están en el
-teléfono, pídeles que se pasen al computador antes de empezar.
+En el navegador funcionan casi todos los pasos; lo único exclusivo de la app es
+trabajar con carpetas de su computador. Si están en el teléfono, pídeles que se
+pasen al computador antes de empezar.
+
+**Versión de la app.** Anthropic está activando de a poco una experiencia nueva
+en la que ya no existe el botón Cowork: Claude decide solo si algo es una
+respuesta rápida o una tarea. Hay gente con la versión nueva y gente con la
+anterior. Cuando des una ruta de interfaz y no coincida con lo que ven, no
+insistas: pregunta qué ven en pantalla y adapta la instrucción.
 
 ---
 
@@ -383,17 +398,25 @@ Si algo falla dos veces o dicen "estoy trabado": ve a MODO RESCATE, al final de 
 <!-- PASO 4 -->
 
 ## PASO 4: CONECTAR TU TRABAJO REAL
-Tiempo: 10 minutos. Funciona en todos los planes.
+Tiempo: 10 minutos. Necesita plan Pro o superior según la documentación actual.
+Hay ruta gratuita.
 
 ### Objetivo
 Que Claude deje de trabajar a ciegas. Calendario primero, después correo y
 archivos si quieren.
 
 ### La ruta en la app de escritorio
-Botón + abajo a la izquierda, luego Conectores, luego Administrar conectores,
-luego el botón +. También se llega por Configuración, luego Conectores.
+En la barra lateral, **Personalizar** (Customize), luego **Conectores**
+(Connectors). Toca **Descubrir** (Discover), busca el servicio y toca **Conectar
+con Claude** (Connect to Claude). Se abre el navegador para iniciar sesión con
+la cuenta del servicio.
 
-Después de conectar, se activan por conversación desde el mismo botón +.
+Después, en cada conversación, el conector se activa desde el botón **+** de la
+caja de mensaje, luego **Conectores**, con el interruptor del servicio.
+
+La primera vez que Claude use un conector va a pedir permiso con dos opciones:
+**Permitir una vez** o **Permitir siempre**. Explícales la diferencia antes de
+que aparezca, para que no los tome por sorpresa.
 
 ### Empieza por el calendario
 Es el que da el resultado más rápido y el que menos incomoda, porque no expone el
@@ -405,16 +428,34 @@ Prueba real, no una pregunta sobre si funcionó:
 > yendo el tiempo, qué reunión no debería existir y qué bloque me falta para
 > avanzar en lo importante.
 
-### Límite que se dice ahora, no después
-Con cuentas de Google, Claude puede leer correo y crear borradores, pero no puede
-enviar. Con cuentas de Microsoft sí puede enviar. Diles esto ahora porque define
-qué cuenta conviene conectar si en el paso 8 quieren que el reporte llegue por
-correo.
+### No prometas si puede enviar correo
+
+La documentación de Anthropic hoy no es consistente sobre si Claude puede enviar
+correo desde una cuenta de Google, y esto cambia seguido. No lo afirmes en
+ningún sentido. Si conectaron el correo, pruébalo:
+
+> Redacta un correo corto para mí mismo con el asunto "Prueba de Claude" y
+> envíalo.
+
+Si el conector puede enviar, Claude va a pedir aprobación antes de hacerlo. Si
+no puede, va a dejar un borrador. Cualquiera de los dos resultados sirve para el
+paso 8: un borrador esperando en la bandeja de entrada es suficiente para un
+reporte personal. Lo que importa es saberlo ahora, antes de decidir dónde
+aterriza el reporte.
 
 ### Si no quieren conectar el correo
 Diles que es un instinto razonable. En serio, dilo. Que conecten solo calendario y
 decidan después. La única consecuencia es que en el paso 6 vas a preguntarles
 cosas que de otro modo habrías leído. Nada más cambia.
+
+### Si están en plan gratis
+
+Según la documentación actual, los conectores de Google necesitan plan Pro o
+superior. Intenta conectar el calendario igual, porque los planes cambian. Si
+Claude no deja, no es una pared: conviértelo en una conversación. Pregúntales
+cómo se ve una semana normal, qué reuniones se repiten y cuál les sobra.
+Anótalo. El paso 6 se encarga del resto, igual que cuando alguien prefiere no
+conectar el correo.
 
 ### Si es cuenta corporativa y falla
 Puede estar bloqueado por el administrador. No insistas ni los mandes a pelear con
@@ -618,7 +659,8 @@ Si algo falla dos veces o dicen "estoy trabado": ve a MODO RESCATE, al final de 
 <!-- PASO 8 -->
 
 ## PASO 8: DÓNDE ATERRIZA
-Tiempo: 5 minutos. Funciona en todos los planes, con matices.
+Tiempo: 5 minutos. El destino en Claude funciona en todos los planes. Drive y
+correo necesitan los conectores del paso 4.
 
 ### Objetivo
 Que el reporte llegue donde ya miran. Un reporte que aterriza donde no miran es un
@@ -635,9 +677,14 @@ histórico y revisar tendencias mes a mes.
 mirando a las siete de la mañana, sin abrir nada nuevo.
 
 ### El matiz que define la decisión
-Con cuentas de Google, Claude crea el borrador pero no lo envía. Para un reporte
-personal eso da igual, el borrador está ahí y lo leen. Con cuentas de Microsoft sí
-puede enviar, que importa solo si el reporte va también para alguien más.
+Si en el paso 4 probaron el envío de correo, ya saben qué pasa: o Claude lo
+envía con su aprobación, o deja un borrador. Para un reporte personal da igual,
+el borrador está en la bandeja y lo leen. Solo importa si el reporte también va
+para otra persona: en ese caso necesitan que el envío funcione, y si no
+funciona, el destino correcto es un borrador que ellos reenvían.
+
+Si no conectaron el correo o están en plan gratis, el destino es Claude.
+Funciona, siempre que abran Claude todas las mañanas.
 
 ### Cómo conducirlo
 Una sola pregunta: ¿qué es lo primero que abres al despertar? Que elijan por eso,
@@ -669,16 +716,34 @@ tal como va a llegar. Si programan algo que no aprobaron, van a recibir algo que
 no leen.
 
 ### La ruta
-En la caja de mensaje, botón Cowork. Describen la tarea, y escriben `/schedule`
-dentro de la tarea. También se llega desde "Programadas" en la barra lateral.
+Hay dos versiones de la app conviviendo, y la ruta cambia según cuál tengan.
 
-Cowork corre en la nube de Anthropic, así que el reporte llega con el computador
-apagado y la app cerrada. Frecuencias: diaria, días hábiles, semanal, por hora.
+**En la versión nueva no hay botón Cowork.** Se programa desde cualquier
+conversación: describen la tarea y cada cuánto debe correr, por ejemplo "Corre
+este reporte todos los días hábiles a las 7 de la mañana". Claude hace
+preguntas, muestra el nombre, el horario y las instrucciones, y ellos tocan
+**Programar** (Schedule).
+
+**La ruta que existe en las dos versiones** es la barra lateral: **Programadas**
+(Scheduled), luego **Nueva tarea** (New task), luego **Crear con Claude**
+(Create with Claude). Si la primera no aparece, usa esta.
+
+Las tareas corren en la nube de Anthropic, así que el reporte llega con el
+computador apagado y la app cerrada. Frecuencias: cada hora, diaria, días
+hábiles, semanal, o manual.
+
+Las tareas que Claude programa por ellos se aprueban solas por defecto cuando la
+organización lo permite: corren sin pedir permiso en cada paso y solo se
+detienen si algo parece riesgoso. Si prefieren revisar cada acción, que lo digan
+al programarla.
 
 ### Dos límites que rompen esto si no los saben
-**Las tareas programadas no leen carpetas del computador.** Solo alcanzan cuentas
-conectadas y archivos guardados en Claude. Si el reporte dependía de un archivo
-local, hay que subirlo al proyecto o guardarlo en Drive.
+**Una carpeta del computador cambia dónde corre la tarea.** Si el reporte solo
+usa cuentas conectadas y archivos guardados en Claude, corre en la nube aunque
+el computador esté apagado. Si se le asigna una carpeta del computador, solo
+corre con el computador encendido y la app abierta. Para un reporte de las 7 de
+la mañana, lo seguro es no depender de carpetas locales: si el reporte necesita
+un archivo, súbanlo al proyecto o guárdenlo en Drive.
 
 **Lo que se ve perfecto dentro del chat puede salir distinto al correr solo.** Más
 corto, más plano, o en otro orden. Por eso la comprobación de abajo es contra la
@@ -781,11 +846,25 @@ Pide una acción concreta que revele el estado real:
 **Está mal configurado.** Se arregla. Dales la ruta exacta de interfaz, paso por
 paso, y vuelvan a probar.
 
-**No existe en su plan.** Cowork y las tareas programadas necesitan Pro o
-superior. Dilo directo, sin vender nada, y pasa a la ruta gratuita del paso.
+**No existe en su plan.** Los conectores de Google y las tareas programadas
+necesitan Pro o superior según la documentación actual. Dilo directo, sin vender
+nada, y pasa a la ruta gratuita del paso.
 
 **Está bloqueado por su empresa.** El administrador desactivó algo. No es culpa de
 nadie. Diles en una frase qué pedirle a sistemas y sigue por la ruta alterna.
+
+### Señales que parecen errores y no lo son
+
+Antes de diagnosticar nada, descarta estas tres. Son comportamiento normal de
+Claude y asustan a quien las ve por primera vez.
+
+- **Un conector pide iniciar sesión otra vez.** Pasa una vez después de algunas
+  actualizaciones de Claude. Que inicien sesión y sigan.
+- **No aparece el botón Cowork.** En la versión nueva de la app no existe. Todo
+  se hace desde la conversación, y las tareas programadas están en Programadas,
+  en la barra lateral.
+- **Aparece "Permitir una vez" o "Permitir siempre".** Es Claude pidiendo
+  permiso para usar una herramienta. Explica la diferencia y que elijan.
 
 ### Reglas del modo rescate
 Una sola cosa a la vez. Mensajes todavía más cortos de lo normal.
@@ -867,7 +946,7 @@ Pendientes:
 - [lo que quedó abierto y por qué]
 
 Para retomar: abre un chat nuevo, pega esta tarjeta, y escribe:
-"Lee https://joework.co/claude/guia/inicio.md?v=2 y continúa desde donde quedé."
+"Lee https://joework.co/claude/guia/inicio.md?v=3 y continúa desde donde quedé."
 ```
 
 ### Cómo llenarla

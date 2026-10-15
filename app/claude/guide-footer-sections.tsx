@@ -10,8 +10,7 @@ import { CopyPrompt } from "./copy-prompt";
 export function SkillInstall() {
   const steps = [
     "Descarga claude-en-marcha.zip.",
-    "En Claude: Configuración → Personalizar → Skills.",
-    "Botón + → Crear skill → Subir un skill.",
+    "En Claude: Personalizar (en la barra lateral) → Skills → + → Crear skill → Subir un skill.",
     "Súbelo y actívalo con el interruptor.",
   ];
 
@@ -48,6 +47,9 @@ export function SkillInstall() {
           </ol>
           <p className="mt-5 text-sm leading-6 text-muted-foreground">
             Necesitas la ejecución de código activada. Después escribe:
+          </p>
+          <p className="mt-4 text-sm leading-6 text-muted-foreground">
+            ¿Lo instalaste antes del 5 de octubre de 2026? Reinstálalo. Una falla de Claude, ya corregida, dejaba los skills subidos en .zip sin sus archivos de referencia.
           </p>
           <CopyPrompt label="Después de instalarlo, escribe esto" value={CLAUDE_SKILL_PROMPT} />
         </div>
