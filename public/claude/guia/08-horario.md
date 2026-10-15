@@ -61,6 +61,11 @@ Llegó una vez, solo, sin que lo pidieran, y se parece al que aprobaron. Esta es
 única prueba que no puedes completar en la sesión. Díselos con claridad: el paso
 queda abierto hasta la primera entrega real, y que te lo comparen cuando llegue.
 
+Si eligieron el Claude Doc como destino, la prueba es que el documento se
+haya actualizado solo con la entrega del día. Si no se actualizó, no es una
+falla de ellos: cambia el destino a uno de los otros tres y déjalo anotado en
+la tarjeta de estado.
+
 Siguiente: https://joework.co/claude/guia/09-cierre.md
 
 Si algo falla dos veces o dicen "estoy trabado": https://joework.co/claude/guia/coach.md

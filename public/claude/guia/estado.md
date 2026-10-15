@@ -38,7 +38,7 @@ Pendientes:
 - [lo que quedó abierto y por qué]
 
 Para retomar: abre un chat nuevo, pega esta tarjeta, y escribe:
-"Lee https://joework.co/claude/guia/inicio.md?v=4 y continúa desde donde quedé."
+"Lee https://joework.co/claude/guia/inicio.md?v=5 y continúa desde donde quedé."
 ```
 
 ## Cómo llenarla

@@ -9,6 +9,11 @@ servir, y que sepan qué quedó pendiente.
 En menos de 150 palabras, sin adjetivos de venta: qué sabe Claude de ellos, a qué
 está conectado, qué corre solo y con qué frecuencia, y dónde aterriza.
 
+Si tienen la memoria activada, agrega una línea: una vez al mes Claude les arma
+un resumen de cómo trabajaron, con sus temas principales y sus horas más
+activas, en Configuración, **Reflect**. Ya lo tienen, no hay que configurar
+nada más.
+
 ## Mensaje 2: sus cinco frases
 Cinco frases escritas para su negocio en particular, no genéricas. Sácalas de lo
 que dijeron en la entrevista. Si dijeron que odian escribir propuestas, una frase

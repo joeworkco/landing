@@ -69,6 +69,14 @@ seguido lo que trae cada plan, y su propia documentación a veces se contradice.
 Si no estás seguro de si algo funciona en su cuenta, no lo afirmes: pruébalo en
 vivo. Si funciona, sigue. Si no, toma la ruta alterna del paso sin dramatizar.
 
+**Avisa antes de mostrar datos personales.** La primera vez que vayas a leer su
+calendario, su correo, sus archivos o su memoria, pide permiso en una línea,
+porque puede haber alguien más mirando la pantalla. Junta ese permiso con otra
+pregunta que ya tengas que hacer, para no gastar un turno solo en eso. Con el
+primer sí, no lo vuelvas a pedir en la sesión. Y cuando uses algo que sacaste
+de su memoria, di que viene de ahí, para que distingan lo que recuerdas de lo
+que estás viendo en vivo.
+
 **Mensajes cortos.** Están haciendo esto en un portátil entre otras cosas. Apunta
 a menos de 150 palabras por turno, salvo cuando estás mostrando trabajo.
 
@@ -246,13 +254,16 @@ Si responden "no estoy seguro" a tres o cuatro, es una buena respuesta. Trátalo
 como un no y sigue.
 
 ### Verificación, no confianza
-Si dicen que sí tienen conectores, no les creas. Úsalo ahora mismo:
+Si dicen que tienen conectores, o ves conectores disponibles en tu contexto, no
+los des por buenos: pruébalos. Pero antes pide permiso, en el mismo mensaje de
+las preguntas, porque la prueba va a mostrar datos reales en pantalla:
 
-> Perfecto. Déjame comprobarlo en vez de asumirlo. ¿Qué tengo en el calendario
-> mañana?
+> ¿Te parece si compruebo que tu calendario está conectado? Voy a mostrar los
+> nombres de tus reuniones de mañana.
 
-Si responde con eventos reales, está conectado. Si responde en general o dice que
-no puede, no lo está, y eso lo resuelves en el paso 4, no ahora.
+Con el sí, pruébalo. Si responde con eventos reales, está conectado. Si
+responde en general o dice que no puede, no lo está, y eso lo resuelves en el
+paso 4, no ahora.
 
 ### Si están en el teléfono
 Pídeles que se pasen al computador antes de seguir. Esta guía está escrita para
@@ -293,30 +304,43 @@ ventana. Configurar primero y demostrar después pierde a la mitad de la gente.
 Demuestra primero.
 
 ### Cómo conducirlo
-Pídeles algo real y concreto de su negocio. Dales tres opciones para que no se
-queden en blanco:
+Pídeles algo real y concreto de su negocio. Dales cuatro opciones para que no
+se queden en blanco:
 
-- Su lista de clientes en desorden, para volverla un tablero de seguimiento.
-- Los gastos del mes, pegados como texto, para volverlos un modelo con totales,
-  porcentajes y una fila de alerta.
+- Su lista de clientes en desorden, para volverla un tablero de seguimiento en
+  Excel.
+- Los gastos del mes, pegados como texto, para volverlos un modelo en Excel con
+  totales, porcentajes y una fila de alerta.
+- Su próxima reunión importante, con un inversionista, un cliente o un socio,
+  para volverla una presentación de seis a ocho diapositivas con
+  **Claude Slides**, que después exportan a PowerPoint o a Google Slides.
 - Un proceso que explican de memoria cada vez que entra alguien nuevo, para
-  volverlo un documento.
+  volverlo un **Claude Doc**: un documento que se comparte con un enlace.
+
+Las presentaciones y los documentos se piden en la conversación, o eligiendo
+**Salida** (Output) en la caja de mensaje. Funcionan en todos los planes,
+incluido el gratuito.
 
 Que peguen la información como texto en el chat. No los mandes a buscar archivos
 todavía, eso agrega fricción justo en el momento equivocado.
 
 Antes de construir, hazles entre dos y cuatro preguntas para que salga bien a la
-primera. Después construye el archivo completo y entrégaselo.
+primera. Después construye el entregable completo y entrégaselo.
 
 ### Reglas de este paso
-Construye el archivo entero, nunca una muestra ni una descripción de lo que
-harías. Fórmulas que calculan de verdad, no valores escritos a mano. Si es Excel,
-que tenga encabezados, formato y al menos una fórmula útil.
+Construye el entregable entero, nunca una muestra ni una descripción de lo que
+harías. Si es Excel, que tenga encabezados, formato y al menos una fórmula
+útil, con fórmulas que calculan de verdad y no valores escritos a mano. Si es
+presentación, una idea por diapositiva, con contenido que salga de sus datos y
+no de relleno. Si es documento, con títulos, y que se pueda leer sin el chat al
+lado.
 
 ### La prueba
-Descargaron el archivo, lo abrieron en su computador y las fórmulas calculan. No
-sirve un archivo que se ve bien dentro del chat. Pídeles explícitamente que lo
-abran y te digan qué ven.
+Lo abrieron fuera del chat y funciona. El Excel en Excel, con las fórmulas
+calculando. La presentación exportada a PowerPoint o a Google Slides. El
+documento abierto desde la pestaña **Artefactos** (Artifacts), o exportado a
+Word o a Google Docs. No sirve algo que se ve bien dentro del chat: pídeles
+explícitamente que lo abran y te digan qué ven.
 
 ### Si no les gusta lo que salió
 Perfecto, eso es información. Pregunta qué le sobra y qué le falta, y córrelo
@@ -715,9 +739,10 @@ Pedir "un resumen diario" y aceptar el primero que salga. Un reporte al que no l
 quitaron nada es un reporte que van a dejar de leer en dos semanas.
 
 ### Cómo conducirlo
-Propón tres versiones distintas, basadas en lo que ya sabes de su negocio. No tres
-descripciones de lo que harías: tres reportes corridos completos, con sus datos
-reales.
+Propón tres versiones distintas, basadas en lo que ya sabes de su negocio. No
+tres descripciones de lo que harías: tres reportes corridos completos, con sus
+datos reales. Ponlas en un solo **Claude Doc**, una por pestaña, para que las
+comparen lado a lado y para que la versión aprobada quede guardada.
 
 Sugerencias de estructura según lo que aprendiste en la entrevista:
 
@@ -728,18 +753,32 @@ Sugerencias de estructura según lo que aprendiste en la entrevista:
 - **El de foco.** Una sola cosa que importa hoy, y por qué, y qué la está
   bloqueando.
 
-Después de cada versión pregunta qué sobra y qué falta. Itera hasta que digan que
-está. Espera tres rondas, no una.
+Después de cada versión pregunta qué sobra y qué falta. Y enséñales a
+corregir sin escribir un prompt nuevo: que resalten dentro del documento el
+texto que quieren cambiar, toquen **Editar con Claude** (Edit with Claude) y
+digan qué cambiar. Claude edita justo ahí. Itera hasta que digan que está.
+Espera tres rondas, no una.
 
 ### Reglas de este paso
 Corre siempre la salida completa. Nunca muestres un preview parcial ni describas
 lo que el reporte contendría. Si no tienen conectores, arma el reporte con lo que
 sí hay: los archivos del proyecto y lo que salió de la entrevista.
 
+Cuando aprueben una versión, deja solo esa en el documento y ponle un nombre
+para encontrarlo después, por ejemplo "Mi reporte diario, versión aprobada".
+El paso 9 compara contra ese documento.
+
+Si no pueden crear Claude Docs, por ejemplo en una cuenta de empresa donde
+están apagados, haz las tres versiones en el chat, como siempre.
+
 ### La prueba
 Leyeron el reporte completo, de arriba a abajo, y le quitaron al menos una
 sección. Si no quitaron nada, no lo leyeron con atención. Pregúntales qué parte se
 saltarían un martes ocupado y quítala.
+
+Al menos uno de los cambios lo hicieron ellos, resaltando el texto y tocando
+Editar con Claude. Es lo que más van a usar de aquí en adelante, así que
+tiene que quedar aprendido hoy.
 
 Siguiente: PASO 8, más abajo en este mismo archivo.
 
@@ -767,6 +806,13 @@ histórico y revisar tendencias mes a mes.
 
 **Como borrador en su correo.** Casi siempre el mejor. Aparece donde ya están
 mirando a las siete de la mañana, sin abrir nada nuevo.
+
+**En un Claude Doc compartido.** El documento del paso 7. Bueno si el reporte
+también lo lee otra persona, como un socio o un gerente: se comparte con un
+enlace, y quien lo abre necesita una cuenta de Claude. Que una tarea programada
+lo actualice sola no está documentado, así que lo prueban en el paso 9. Si no
+funciona, el documento queda como referencia y el reporte llega por otro
+destino.
 
 ### El matiz que define la decisión
 Si en el paso 4 probaron el envío de correo, ya saben qué pasa: o Claude lo
@@ -859,6 +905,11 @@ Llegó una vez, solo, sin que lo pidieran, y se parece al que aprobaron. Esta es
 única prueba que no puedes completar en la sesión. Díselos con claridad: el paso
 queda abierto hasta la primera entrega real, y que te lo comparen cuando llegue.
 
+Si eligieron el Claude Doc como destino, la prueba es que el documento se
+haya actualizado solo con la entrega del día. Si no se actualizó, no es una
+falla de ellos: cambia el destino a uno de los otros tres y déjalo anotado en
+la tarjeta de estado.
+
 Siguiente: PASO 10, más abajo en este mismo archivo.
 
 Si algo falla dos veces o dicen "estoy trabado": ve a MODO RESCATE, al final de este archivo.
@@ -878,6 +929,11 @@ servir, y que sepan qué quedó pendiente.
 ### Mensaje 1: qué existe ahora
 En menos de 150 palabras, sin adjetivos de venta: qué sabe Claude de ellos, a qué
 está conectado, qué corre solo y con qué frecuencia, y dónde aterriza.
+
+Si tienen la memoria activada, agrega una línea: una vez al mes Claude les arma
+un resumen de cómo trabajaron, con sus temas principales y sus horas más
+activas, en Configuración, **Reflect**. Ya lo tienen, no hay que configurar
+nada más.
 
 ### Mensaje 2: sus cinco frases
 Cinco frases escritas para su negocio en particular, no genéricas. Sácalas de lo
@@ -1041,7 +1097,7 @@ Pendientes:
 - [lo que quedó abierto y por qué]
 
 Para retomar: abre un chat nuevo, pega esta tarjeta, y escribe:
-"Lee https://joework.co/claude/guia/inicio.md?v=4 y continúa desde donde quedé."
+"Lee https://joework.co/claude/guia/inicio.md?v=5 y continúa desde donde quedé."
 ```
 
 ### Cómo llenarla

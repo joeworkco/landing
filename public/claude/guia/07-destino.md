@@ -16,6 +16,13 @@ histórico y revisar tendencias mes a mes.
 **Como borrador en su correo.** Casi siempre el mejor. Aparece donde ya están
 mirando a las siete de la mañana, sin abrir nada nuevo.
 
+**En un Claude Doc compartido.** El documento del paso 7. Bueno si el reporte
+también lo lee otra persona, como un socio o un gerente: se comparte con un
+enlace, y quien lo abre necesita una cuenta de Claude. Que una tarea programada
+lo actualice sola no está documentado, así que lo prueban en el paso 9. Si no
+funciona, el documento queda como referencia y el reporte llega por otro
+destino.
+
 ## El matiz que define la decisión
 Si en el paso 4 probaron el envío de correo, ya saben qué pasa: o Claude lo
 envía con su aprobación, o deja un borrador. Para un reporte personal da igual,

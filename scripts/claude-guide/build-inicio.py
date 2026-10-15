@@ -39,6 +39,7 @@ ARCHIVOS_VERSIONADOS = {
 URL_INICIO = re.compile(
     r'https://joework\.co/claude/guia/inicio\.md(?:\?v=(\d+))?'
 )
+VERSION_ESPERADA = '5'
 
 def comprobar_version():
     versiones = {}
@@ -57,7 +58,12 @@ def comprobar_version():
             f'{etiqueta}={sorted(valor)}' for etiqueta, valor in versiones.items()
         )
         raise AssertionError(f'las versiones de inicio.md no coinciden: {detalle}')
-    return version_unica.pop()
+    version = version_unica.pop()
+    if version != VERSION_ESPERADA:
+        raise AssertionError(
+            f'la versión del conductor debe ser v={VERSION_ESPERADA}, no v={version}'
+        )
+    return version
 
 def limpiar(texto, archivo):
     # las URLs remotas se vuelven referencias internas

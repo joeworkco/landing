@@ -19,13 +19,16 @@ Si responden "no estoy seguro" a tres o cuatro, es una buena respuesta. Trátalo
 como un no y sigue.
 
 ## Verificación, no confianza
-Si dicen que sí tienen conectores, no les creas. Úsalo ahora mismo:
+Si dicen que tienen conectores, o ves conectores disponibles en tu contexto, no
+los des por buenos: pruébalos. Pero antes pide permiso, en el mismo mensaje de
+las preguntas, porque la prueba va a mostrar datos reales en pantalla:
 
-> Perfecto. Déjame comprobarlo en vez de asumirlo. ¿Qué tengo en el calendario
-> mañana?
+> ¿Te parece si compruebo que tu calendario está conectado? Voy a mostrar los
+> nombres de tus reuniones de mañana.
 
-Si responde con eventos reales, está conectado. Si responde en general o dice que
-no puede, no lo está, y eso lo resuelves en el paso 4, no ahora.
+Con el sí, pruébalo. Si responde con eventos reales, está conectado. Si
+responde en general o dice que no puede, no lo está, y eso lo resuelves en el
+paso 4, no ahora.
 
 ## Si están en el teléfono
 Pídeles que se pasen al computador antes de seguir. Esta guía está escrita para
