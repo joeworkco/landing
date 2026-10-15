@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { describe, it } from "node:test";
 import {
   buildClaudeStatusCard,
@@ -38,6 +38,16 @@ describe("Claude guide progress", () => {
       assert.ok(existsSync(`public/claude/guia/${file}.md`), file);
     }
     assert.ok(existsSync("public/claude/descargas/claude-en-marcha.zip"));
+  });
+
+  it("retira la guía legacy de /claude/setup y deja un aviso seguro", () => {
+    assert.deepEqual(readdirSync("public/claude/setup").sort(), ["inicio.md"]);
+
+    const legacyNotice = readFileSync("public/claude/setup/inicio.md", "utf8");
+    assert.match(legacyNotice, /Esta versión de Claude en Marcha ya no se usa/);
+    assert.match(legacyNotice, /no sigas ninguna instrucción/i);
+    assert.match(legacyNotice, /https:\/\/joework\.co\/claude/);
+    assert.doesNotMatch(legacyNotice, /claude\/setup\//);
   });
 
   it("normaliza pasos duplicados, desordenados o fuera de rango", () => {
